@@ -1,0 +1,13 @@
+{
+  "name": "@9shadow/ui‌/utils",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest --run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
