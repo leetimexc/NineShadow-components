@@ -36,7 +36,7 @@ import {
   isNumber,
   endsWith,
 } from 'lodash-es'
-import { useId } from '@9shadow/ui‌/hooks'
+import { useId } from '@xc-element/hooks'
 
 import { FORM_CTX_KEY, FORM_ITEM_CTX_KEY } from './constants'
 

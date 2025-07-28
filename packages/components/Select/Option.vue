@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SelectOptionProps } from './types'
 
-import { RenderVnode } from '@9shadow/ui‌/utils'
+import { RenderVnode } from '@xc-element/utils'
 import { computed, inject } from 'vue'
 import { eq, every, get } from 'lodash-es'
 import { SELECT_CTX_KEY } from './constants'

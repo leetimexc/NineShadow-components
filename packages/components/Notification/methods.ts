@@ -10,7 +10,7 @@ import type {
   NotificationType,
 } from './types'
 import { notificationTypes, notificationPosition } from './types'
-import { useId, useZIndex } from '@9shadow/ui‌/hooks'
+import { useId, useZIndex } from '@xc-element/hooks'
 import { isString, findIndex, set, each, get } from 'lodash-es'
 import NotificationConstructor from './Notification.vue'
 

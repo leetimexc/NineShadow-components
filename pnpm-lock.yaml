@@ -14,19 +14,19 @@ importers:
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
-      '@9shadow/ui‌/hooks':
+      '@xc-element/hooks':
         specifier: workspace:*
         version: link:packages/hooks
-      '@9shadow/ui‌/locale':
+      '@xc-element/locale':
         specifier: workspace:*
         version: link:packages/locale
-      '@9shadow/ui‌/theme':
+      '@xc-element/theme':
         specifier: workspace:*
         version: link:packages/theme
-      '@9shadow/ui‌/utils':
+      '@xc-element/utils':
         specifier: workspace:*
         version: link:packages/utils
-      '@9shadow/ui‌/vite-plugins':
+      '@xc-element/vite-plugins':
         specifier: workspace:*
         version: link:libs/vite-plugins
       jsdom:
@@ -192,7 +192,7 @@ importers:
       '@rollup/plugin-terser':
         specifier: ^0.4.4
         version: 0.4.4(rollup@4.41.1)
-      '@9shadow/ui‌/components':
+      '@xc-element/components':
         specifier: workspace:*
         version: link:../components
       terser:

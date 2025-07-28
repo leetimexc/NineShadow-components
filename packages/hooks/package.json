@@ -1,5 +1,5 @@
 {
-  "name": "@9shadow/ui‌/hooks",
+  "name": "@xc-element/hooks",
   "version": "1.0.0",
   "type": "module",
   "module": "./dist/index.js",

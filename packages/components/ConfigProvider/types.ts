@@ -1,4 +1,4 @@
-import type { Language, TranslatePair } from '@9shadow/ui‌/locale'
+import type { Language, TranslatePair } from '@xc-element/locale'
 
 export interface ConfigProviderProps {
   locale?: Language

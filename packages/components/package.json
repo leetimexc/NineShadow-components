@@ -1,12 +1,12 @@
 {
-  "name": "@9shadow/ui‌/components",
+  "name": "@xc-element/components",
   "version": "1.0.0",
   "description": "",
   "private":true,
   "main": "index.ts",
   "scripts": {
-    "test": "cross-env NODE_ENV=test pnpm --filter @9shadow/ui‌/hooks build && vitest --run --coverage",
-    "test:watch":"cross-env NODE_ENV=test pnpm --filter @9shadow/ui‌/hooks build && vitest --coverage"
+    "test": "cross-env NODE_ENV=test pnpm --filter @xc-element/hooks build && vitest --run --coverage",
+    "test:watch":"cross-env NODE_ENV=test pnpm --filter @xc-element/hooks build && vitest --coverage"
   },
   "keywords": [],
   "author": "",

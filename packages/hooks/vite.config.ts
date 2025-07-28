@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { last, split, first, includes } from 'lodash-es'
-import { hooksPlugin as hooks } from '@9shadow/ui‌/vite-plugins'
+import { hooksPlugin as hooks } from '@xc-element/vite-plugins'
 
 import dts from 'vite-plugin-dts'
 

@@ -1,8 +1,8 @@
 import { inject, ref, unref, computed, type Ref } from 'vue'
 import { omit } from 'lodash-es'
 import { createI18n, i18nSymbol, type I18nInstance } from 'vue3-i18n'
-import type { Language } from '@9shadow/ui‌/locale'
-import English from '@9shadow/ui‌/locale/lang/en'
+import type { Language } from '@xc-element/locale'
+import English from '@xc-element/locale/lang/en'
 
 const omitInstall = (obj: I18nInstance) => omit(obj, 'install')
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SwitchProps, SwitchEmits, SwitchInstance } from './types'
 import { ref, computed, onMounted, watch } from 'vue'
-import { useId } from '@9shadow/ui‌/hooks'
+import { useId } from '@xc-element/hooks'
 
 defineOptions({ name: 'XcSwitch', inheritAttrs: false })
 const props = withDefaults(defineProps<SwitchProps>(), {

@@ -3,7 +3,7 @@ import { each } from 'lodash-es'
 import {
   provideGlobalConfig,
   type ConfigProviderProps,
-} from '@9shadow/ui‌/components'
+} from '@xc-element/components'
 
 export function makeInstaller(componets: Plugin[]) {
   const installer = (app: App, opts?: ConfigProviderProps) => {

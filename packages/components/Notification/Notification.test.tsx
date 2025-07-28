@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { rAF } from "@9shadow/ui‌/utils";
+import { rAF } from "@xc-element/utils";
 import { notification } from "./methods";
 
 function getTopValue(element: Element) {

@@ -1,6 +1,6 @@
 import { describe, it,test, expect,vi, beforeEach } from "vitest";
 import { mount } from "@vue/test-utils";
-import { withInstall } from "@9shadow/ui‌/utils";
+import { withInstall } from "@xc-element/utils";
 import { each, get } from "lodash-es";
 import type { PopconfirmProps } from "./types";
 import { XcPopconfirm } from ".";

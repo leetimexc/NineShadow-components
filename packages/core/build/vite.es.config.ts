@@ -3,7 +3,7 @@ import { readdirSync, readdir } from 'fs'
 import { resolve } from 'path'
 import { defer, delay, filter, map, includes } from 'lodash-es'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { hooksPlugin as hooks } from '@9shadow/ui‌/vite-plugins'
+import { hooksPlugin as hooks } from '@xc-element/vite-plugins'
 import shell from 'shelljs'
 
 import vue from '@vitejs/plugin-vue'

@@ -13,10 +13,10 @@ import {
   configProviderContextKey,
 } from './constants'
 import { createI18n, i18nSymbol } from 'vue3-i18n'
-import type { TranslatePair } from '@9shadow/ui‌/locale'
-import English from '@9shadow/ui‌/locale/lang/en'
+import type { TranslatePair } from '@xc-element/locale'
+import English from '@xc-element/locale/lang/en'
 import { merge } from 'lodash-es'
-import { debugWarn } from '@9shadow/ui‌/utils'
+import { debugWarn } from '@xc-element/utils'
 
 const globalConfig = ref<ConfigProviderContext>()
 

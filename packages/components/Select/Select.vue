@@ -21,7 +21,7 @@ import {
   type VNode,
   onMounted,
 } from 'vue'
-import { useId, useFocusController, useClickOutside } from '@9shadow/ui‌/hooks'
+import { useId, useFocusController, useClickOutside } from '@xc-element/hooks'
 import { POPPER_OPTIONS, SELECT_CTX_KEY } from './constants'
 import {
   each,
@@ -46,7 +46,7 @@ import XcOption from './Option.vue'
 import XcTooltip from '../Tooltip/Tooltip.vue'
 import XcInput from '../Input/Input.vue'
 import XcIcon from '../Icon/Icon.vue'
-import { debugWarn, RenderVnode } from '@9shadow/ui‌/utils'
+import { debugWarn, RenderVnode } from '@xc-element/utils'
 
 const COMPONENT_NAME = 'XcSelect'
 

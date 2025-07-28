@@ -1,5 +1,5 @@
 import Notification from './methods'
-import { withInstallFunction } from '@9shadow/ui‌/utils'
+import { withInstallFunction } from '@xc-element/utils'
 
 export const XcNotification = withInstallFunction(Notification, '$notify')
 

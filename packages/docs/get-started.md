@@ -10,7 +10,7 @@ next:
 ## 安装
 
 ```bash
-npm i @9shadow/ui‌ --save
+npm i @xc-element --save
 ```
 
 ## 开始使用
@@ -19,9 +19,9 @@ npm i @9shadow/ui‌ --save
 
 ```js
 // 引入所有组件
-import XcElement from '@9shadow/ui‌'
+import XcElement from '@xc-element'
 // 引入样式
-import '@9shadow/ui‌/dist/style.css'
+import '@xc-element/dist/style.css'
 
 import App from './App.vue'
 // 全局使用
@@ -43,7 +43,7 @@ Xc-element 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
   <xc-button>我是 Button</xc-button>
 </template>
 <script>
-import { XcButton } from '@9shadow/ui‌'
+import { XcButton } from '@xc-element'
 export default {
   components: { XcButton },
 }

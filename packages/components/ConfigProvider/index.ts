@@ -1,5 +1,5 @@
 import ConfigProvider from './ConfigProvider.vue'
-import { withInstall } from '@9shadow/ui‌/utils'
+import { withInstall } from '@xc-element/utils'
 
 export const XcConfigProvider = withInstall(ConfigProvider)
 

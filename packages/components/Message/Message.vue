@@ -3,9 +3,9 @@ import type { MessageProps, MessageCompInstance } from './types'
 import { computed, onMounted, ref, watch } from 'vue'
 import { getLastBottomOffset } from './methods'
 import { delay, bind } from 'lodash-es'
-import { useOffset, useEventListener } from '@9shadow/ui‌/hooks'
-import { addUnit } from '@9shadow/ui‌/utils'
-import { typeIconMap, RenderVnode } from '@9shadow/ui‌/utils'
+import { useOffset, useEventListener } from '@xc-element/hooks'
+import { addUnit } from '@xc-element/utils'
+import { typeIconMap, RenderVnode } from '@xc-element/utils'
 import XcIcon from '../Icon/Icon.vue'
 
 defineOptions({ name: 'XcMessage' })

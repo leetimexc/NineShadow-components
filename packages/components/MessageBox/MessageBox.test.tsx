@@ -1,6 +1,6 @@
 import type { MessageBoxType } from "./types";
 import { describe, it, expect, vi } from "vitest";
-import { rAF } from "@9shadow/ui‌/utils";
+import { rAF } from "@xc-element/utils";
 import MessageBox from "./methods";
 
 describe("MessageBox Component", () => {

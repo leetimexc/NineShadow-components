@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { AlertProps, AlertEmits, AlertInstance } from './types'
-import { typeIconMap } from '@9shadow/ui‌/utils'
+import { typeIconMap } from '@xc-element/utils'
 import { ref, computed } from 'vue'
 import XcIcon from '../Icon/Icon.vue'
 
@@ -56,9 +56,7 @@ defineExpose<AlertInstance>({
         <span
           class="xc-alert__title"
           :class="{ 'with-desc': withDescription }"
-          :style="{
-            display: props.center && !props.showIcon ? 'flow' : 'inline',
-          }"
+          :style="{ display: props.center && !props.showIcon ? 'flow' : 'inline' }"
         >
           <slot name="title">{{ props.title }}</slot>
         </span>

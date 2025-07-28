@@ -1,4 +1,4 @@
-import { rAF } from "@9shadow/ui‌/utils";
+import { rAF } from "@xc-element/utils";
 import { describe, it, expect } from "vitest";
 import { Loading } from "./service";
 

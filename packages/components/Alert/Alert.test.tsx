@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import type { AlertType } from "./types";
 import { mount } from "@vue/test-utils";
-import {withInstall} from '@9shadow/ui‌/utils'
+import {withInstall} from '@xc-element/utils'
 import Alert from "./Alert.vue";
 import Icon from "../Icon/Icon.vue";
 import {XcAlert} from './index'

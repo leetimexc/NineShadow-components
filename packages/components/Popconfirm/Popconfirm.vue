@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { addUnit } from '@9shadow/ui‌/utils'
-import { useLocale } from '@9shadow/ui‌/hooks'
+import { addUnit } from '@xc-element/utils'
+import { useLocale } from '@xc-element/hooks'
 import type { TooltipInstance } from '../Tooltip'
 import type { PopconfirmProps, PopconfirmEmits } from './types'
 
