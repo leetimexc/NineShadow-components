@@ -19,7 +19,7 @@ import {
   XcOption,
   XcForm,
   XcFormItem,
-} from '@xc-element/components'
+} from '@shadow-ui/components'
 import type { Plugin } from 'vue'
 
 // Add these named exports

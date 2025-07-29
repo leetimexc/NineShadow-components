@@ -1,6 +1,6 @@
 import type { LoadingOptions, LoadingOptionsResolved } from './types'
 import { ref, createApp, reactive, nextTick } from 'vue'
-import { useZIndex } from '@xc-element/hooks'
+import { useZIndex } from '@shadow-ui/hooks'
 import LoadingComp from './Loading.vue'
 import { defer, delay, isNil, isString } from 'lodash-es'
 

@@ -1,5 +1,5 @@
 import Icon from './Icon.vue'
-import { withInstall } from '@xc-element/utils'
+import { withInstall } from '@shadow-ui/utils'
 
 export const XcIcon = withInstall(Icon)
 

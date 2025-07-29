@@ -3,7 +3,7 @@ import type { TooltipProps, TooltipEmits, TooltipInstance } from './types'
 import { createPopper, type Instance } from '@popperjs/core'
 import { ref, computed, watch, watchEffect, onUnmounted, type Ref } from 'vue'
 import { bind, debounce, isNil, type DebouncedFunc } from 'lodash-es'
-import { useClickOutside } from '@xc-element/hooks'
+import { useClickOutside } from '@shadow-ui/hooks'
 
 import useEventsToTiggerNode from './useEventsToTiggerNode'
 

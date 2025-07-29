@@ -1,4 +1,4 @@
-import type { Language, TranslatePair } from '@xc-element/locale'
+import type { Language, TranslatePair } from '@shadow-ui/locale'
 
 export interface ConfigProviderProps {
   locale?: Language

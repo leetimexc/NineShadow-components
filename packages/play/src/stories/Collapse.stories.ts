@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { XcCollapse, XcCollapseItem } from 'xc-element'
-import 'xc-element/dist/theme/Collapse.css'
+import { XcCollapse, XcCollapseItem } from 'shadow-ui'
+import 'shadow-ui/dist/theme/Collapse.css'
 
 type Story = StoryObj<typeof XcCollapse>
 

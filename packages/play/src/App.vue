@@ -16,7 +16,7 @@ import {
   XcLoading,
   XcSelect,
   XcOption,
-} from 'xc-element'
+} from 'shadow-ui'
 import { get } from 'lodash-es'
 import { computed, ref, reactive, h } from 'vue'
 

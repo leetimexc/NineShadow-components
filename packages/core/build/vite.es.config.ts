@@ -3,7 +3,7 @@ import { readdirSync, readdir } from 'fs'
 import { resolve } from 'path'
 import { defer, delay, filter, map, includes } from 'lodash-es'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { hooksPlugin as hooks } from '@xc-element/vite-plugins'
+import { hooksPlugin as hooks } from '@shadow-ui/vite-plugins'
 import shell from 'shelljs'
 
 import vue from '@vitejs/plugin-vue'
@@ -86,7 +86,7 @@ export default defineConfig({
     sourcemap: !isProd,
     lib: {
       entry: resolve(__dirname, '../index.ts'),
-      name: 'xc-element',
+      name: 'shadow-ui',
       fileName: 'index',
       formats: ['es'],
     },

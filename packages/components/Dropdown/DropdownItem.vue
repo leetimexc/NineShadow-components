@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject, computed } from 'vue'
 import { DROPDOWN_CTX_KEY } from './constants'
-import { useId } from '@xc-element/hooks'
+import { useId } from '@shadow-ui/hooks'
 
 import type { DropdownItemProps } from './types'
 

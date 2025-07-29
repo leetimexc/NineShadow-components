@@ -10,7 +10,7 @@ import type {
   DropdownInstance,
   DropdownContext,
 } from './types'
-import { useDisabledStyle } from '@xc-element/hooks'
+import { useDisabledStyle } from '@shadow-ui/hooks'
 
 import { DROPDOWN_CTX_KEY } from './constants'
 

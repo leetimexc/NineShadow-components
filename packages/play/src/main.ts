@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import XcElement from 'xc-element'
-import 'xc-element/dist/index.css'
+import XcElement from 'shadow-ui'
+import 'shadow-ui/dist/index.css'
 
 createApp(App).use(XcElement).mount('#app')

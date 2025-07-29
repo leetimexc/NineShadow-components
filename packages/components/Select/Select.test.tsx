@@ -1,4 +1,4 @@
-import { rAF } from "@xc-element/utils";
+import { rAF } from "@shadow-ui/utils";
 import { describe, test, expect, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 import { SELECT_CTX_KEY } from "./constants";

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref, computed, watch, useAttrs, shallowRef, nextTick } from 'vue'
-import { useFocusController } from '@xc-element/hooks'
+import { useFocusController } from '@shadow-ui/hooks'
 import { useFormItem, useFormDisabled, useFormItemInputId } from '../Form'
 import { each, noop } from 'lodash-es'
 import type { InputProps, InputEmits, InputInstance } from './types'
 
 import Icon from '../Icon/Icon.vue'
-import { debugWarn } from '@xc-element/utils'
+import { debugWarn } from '@shadow-ui/utils'
 
 defineOptions({
   name: 'XcInput',

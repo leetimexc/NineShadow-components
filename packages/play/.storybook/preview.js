@@ -1,4 +1,4 @@
-import "xc-element/dist/theme/index.css"
+import "shadow-ui/dist/theme/index.css"
 
 /** @type { import('@storybook/vue3').Preview } */
 const preview = {

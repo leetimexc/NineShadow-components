@@ -1,8 +1,8 @@
 import type { StoryObj, Meta } from '@storybook/vue3'
 
 import { fn } from '@storybook/test'
-import { XcTooltip } from 'xc-element'
-import 'xc-element/dist/theme/Tooltip.css'
+import { XcTooltip } from 'shadow-ui'
+import 'shadow-ui/dist/theme/Tooltip.css'
 
 type Story = StoryObj<typeof XcTooltip>
 

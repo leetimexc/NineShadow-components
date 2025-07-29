@@ -1,8 +1,8 @@
 import type { StoryObj, Meta, ArgTypes } from '@storybook/vue3'
 import { ref, watch } from 'vue'
 import { fn } from '@storybook/test'
-import { XcAlert, type AlertInstance } from 'xc-element'
-import 'xc-element/dist/theme/Alert.css'
+import { XcAlert, type AlertInstance } from 'shadow-ui'
+import 'shadow-ui/dist/theme/Alert.css'
 
 type Story = StoryObj<typeof XcAlert> & { argTypes?: ArgTypes }
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CollapseProps, CollapseEmits, CollapseItemName } from './types'
 import { ref, provide, watch } from 'vue'
-import { debugWarn } from '@xc-element/utils'
+import { debugWarn } from '@shadow-ui/utils'
 import { COLLAPSE_CTX_KEY } from './constants'
 
 const COMPONENT_NAME = 'XcCollapse' as const

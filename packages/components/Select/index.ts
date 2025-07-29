@@ -1,7 +1,7 @@
 import Select from './Select.vue'
 import Option from './Option.vue'
 
-import { withInstall } from '@xc-element/utils'
+import { withInstall } from '@shadow-ui/utils'
 
 export const XcSelect = withInstall(Select)
 export const XcOption = withInstall(Option)

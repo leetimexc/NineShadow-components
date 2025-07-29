@@ -1,4 +1,4 @@
-import type { SelectOptionProps, SelectStates } from 'xc-element'
+import type { SelectOptionProps, SelectStates } from 'shadow-ui'
 import type { Ref, ComputedRef } from 'vue'
 
 interface KeyMapParams {

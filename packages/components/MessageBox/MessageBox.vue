@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { MessageBoxProps, MessageBoxAction } from './types'
 import type { InputInstance } from '../Input/types'
-import { useZIndex, useId } from '@xc-element/hooks'
-import { typeIconMap } from '@xc-element/utils'
+import { useZIndex, useId } from '@shadow-ui/hooks'
+import { typeIconMap } from '@shadow-ui/utils'
 import { reactive, computed, ref, watch, nextTick, type Ref } from 'vue'
 
 import XcOverlay from '../Overlay/Overlay.vue'

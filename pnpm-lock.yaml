@@ -14,19 +14,19 @@ importers:
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
-      '@xc-element/hooks':
+      '@shadow-ui/hooks':
         specifier: workspace:*
         version: link:packages/hooks
-      '@xc-element/locale':
+      '@shadow-ui/locale':
         specifier: workspace:*
         version: link:packages/locale
-      '@xc-element/theme':
+      '@shadow-ui/theme':
         specifier: workspace:*
         version: link:packages/theme
-      '@xc-element/utils':
+      '@shadow-ui/utils':
         specifier: workspace:*
         version: link:packages/utils
-      '@xc-element/vite-plugins':
+      '@shadow-ui/vite-plugins':
         specifier: workspace:*
         version: link:libs/vite-plugins
       jsdom:
@@ -38,7 +38,7 @@ importers:
       vue:
         specifier: ^3.4.19
         version: 3.5.15(typescript@5.8.3)
-      xc-element:
+      shadow-ui:
         specifier: workspace:*
         version: link:packages/core
     devDependencies:
@@ -192,7 +192,7 @@ importers:
       '@rollup/plugin-terser':
         specifier: ^0.4.4
         version: 0.4.4(rollup@4.41.1)
-      '@xc-element/components':
+      '@shadow-ui/components':
         specifier: workspace:*
         version: link:../components
       terser:

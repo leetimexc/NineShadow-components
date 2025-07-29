@@ -1,5 +1,5 @@
 import { describe, test,it, expect, vi, beforeEach } from "vitest";
-import { withInstall } from "@xc-element/utils";
+import { withInstall } from "@shadow-ui/utils";
 import { mount } from "@vue/test-utils";
 import { XcTooltip } from ".";
 

@@ -25,7 +25,7 @@
     "types": ["node"],
     "baseUrl": "./",
     "paths": {
-      "@xc-element/components": ["./packages/components"]
+      "@shadow-ui/components": ["./packages/components"]
     }
   },
   "include": [

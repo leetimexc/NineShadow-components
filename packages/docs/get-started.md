@@ -10,7 +10,7 @@ next:
 ## 安装
 
 ```bash
-npm i @xc-element --save
+npm i @shadow-ui --save
 ```
 
 ## 开始使用
@@ -19,9 +19,9 @@ npm i @xc-element --save
 
 ```js
 // 引入所有组件
-import XcElement from '@xc-element'
+import XcElement from '@shadow-ui'
 // 引入样式
-import '@xc-element/dist/style.css'
+import '@shadow-ui/dist/style.css'
 
 import App from './App.vue'
 // 全局使用
@@ -36,14 +36,14 @@ createApp(App).use(XcElement).mount('#app')
 
 **单个导入**
 
-Xc-element 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
+shadow-ui 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
 
 ```vue
 <template>
   <xc-button>我是 Button</xc-button>
 </template>
 <script>
-import { XcButton } from '@xc-element'
+import { XcButton } from '@shadow-ui'
 export default {
   components: { XcButton },
 }

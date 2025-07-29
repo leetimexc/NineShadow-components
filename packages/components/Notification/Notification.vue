@@ -3,9 +3,9 @@ import type { NotificationProps, NotificationCompInstance } from './types'
 import { computed, onMounted, ref } from 'vue'
 import { getLastBottomOffset } from './methods'
 import { delay, bind } from 'lodash-es'
-import { useOffset } from '@xc-element/hooks'
-import { addUnit } from '@xc-element/utils'
-import { typeIconMap, RenderVnode } from '@xc-element/utils'
+import { useOffset } from '@shadow-ui/hooks'
+import { addUnit } from '@shadow-ui/utils'
+import { typeIconMap, RenderVnode } from '@shadow-ui/utils'
 import XcIcon from '../Icon/Icon.vue'
 
 defineOptions({ name: 'XcNotification' })

@@ -1,5 +1,5 @@
 import Message from './methods'
-import { withInstallFunction } from '@xc-element/utils'
+import { withInstallFunction } from '@shadow-ui/utils'
 
 export const XcMessage = withInstallFunction(Message, '$message')
 

@@ -6,10 +6,10 @@ import {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Xc-Element',
+  title: 'shadow-ui',
   description: '组件库',
   appearance: false, // 关闭 darkMode @todo 深色模式完成后打开
-  base: '/xc-element/',
+  base: '/shadow-ui/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -55,7 +55,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/leetimexc/xc-element' },
+      { icon: 'github', link: 'https://github.com/leetimexc/shadow-ui' },
     ],
   },
   markdown: {

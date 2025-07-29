@@ -65,13 +65,13 @@ packages/theme/package.json
 packages/utils/package.json
 
 ```
-name: @xc-element/components
-name: @xc-element/core
-name: @xc-element/docs
-name: @xc-element/hooks
-name: @xc-element/play
-name: @xc-element/theme
-name: @xc-element/utils
+name: @shadow-ui/components
+name: @shadow-ui/core
+name: @shadow-ui/docs
+name: @shadow-ui/hooks
+name: @shadow-ui/play
+name: @shadow-ui/theme
+name: @shadow-ui/utils
 ```
 
 cd..
@@ -81,34 +81,34 @@ pnpm add -w lodash-es@^4.17.21 vue@^3.4.19
 vim package.json
 
 ```
-"name": "@xc-element/workspace",
+"name": "@shadow-ui/workspace",
 "dependencies": {
-  "xc-element": "workspace:*",
-  "@xc-element/hooks": "workspace:*",
-  "@xc-element/utils": "workspace:*",
-  "@xc-element/theme": "workspace:*"
+  "shadow-ui": "workspace:*",
+  "@shadow-ui/hooks": "workspace:*",
+  "@shadow-ui/utils": "workspace:*",
+  "@shadow-ui/theme": "workspace:*"
 }
 ```
 
-pnpm add -D @vue/test-utils@^2.4.5 @vitest/coverage-v8@^1.4.0 jsdom@^24.0.0 --filter @xc-element/components
+pnpm add -D @vue/test-utils@^2.4.5 @vitest/coverage-v8@^1.4.0 jsdom@^24.0.0 --filter @shadow-ui/components
 pnpm add @popperjs/core@^2.11.8 async-validator@^4.2.5
---filter @xc-element/components
+--filter @shadow-ui/components
 
 vim packages/core/package.json
 
 ```
 "dependencies": {
-  "@xc-element/components": "workspace:*"
+  "@shadow-ui/components": "workspace:*"
 },
 ```
 
-pnpm add -D vitepress@1.0.0-rc.44 --filter @xc-element/docs
+pnpm add -D vitepress@1.0.0-rc.44 --filter @shadow-ui/docs
 
 vim packages/play/package.json
 
 ```
 {
-  "name": "@xc-element/play",
+  "name": "@shadow-ui/play",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -252,7 +252,7 @@ vim index.ts
 
 ```
 import Button from './Button.vue'
-import { withInstall } from '@xc-element/utils'
+import { withInstall } from '@shadow-ui/utils'
 
 export const XcButton = withInstall(Button)
 ```
@@ -275,7 +275,7 @@ cd packages/core
 vim components.ts
 
 ```
-import { XcButton } from '@xc-element/components'
+import { XcButton } from '@shadow-ui/components'
 import type { Plugin } from 'vue'
 
 export default [XcButton] as Plugin[]
@@ -285,12 +285,12 @@ cd packages/core
 vim index.ts
 
 ```
-import { makeInstaller } from '@xc-element/utils'
+import { makeInstaller } from '@shadow-ui/utils'
 import components from './components'
 
 export const installer = makeInstaller(components)
 
-export * from '@xc-element/components'
+export * from '@shadow-ui/components'
 export default installer
 ```
 
@@ -301,7 +301,7 @@ vim main.ts
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import XcElement from 'xc-element'
+import XcElement from 'shadow-ui'
 
 createApp(App).use(XcElement).mount('#app')
 ```
@@ -323,10 +323,10 @@ vim package.json
 
 ```
  "scripts": {
-    "dev": "pnpm --filter @xc-element/play dev"
+    "dev": "pnpm --filter @shadow-ui/play dev"
   },
 ```
 
-<!-- https://github.com/leetimexc/xc-element -->
+<!-- https://github.com/leetimexc/shadow-ui -->
 
 @9shadow/ui‌

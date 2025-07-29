@@ -1,5 +1,5 @@
 {
-  "name": "xc-element",
+  "name": "shadow-ui",
   "version": "1.0.2",
   "description": "Components library by Vue3 + TS",
   "type": "module",
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
-    "@xc-element/components": "workspace:*",
+    "@shadow-ui/components": "workspace:*",
     "terser": "^5.41.0",
     "vite-plugin-compression2": "^2.0.1",
     "vite-plugin-dts": "^3.9.1"

@@ -1,5 +1,5 @@
 import Switch from './Switch.vue'
-import { withInstall } from '@xc-element/utils'
+import { withInstall } from '@shadow-ui/utils'
 
 export const XcSwitch = withInstall(Switch)
 
