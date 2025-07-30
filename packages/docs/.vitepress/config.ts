@@ -32,6 +32,7 @@ export default defineConfig({
           { text: 'Button 按钮', link: 'components/button' },
           { text: 'Collapse 折叠面板', link: 'components/collapse' },
           { text: 'Dropdown 下拉菜单', link: 'components/dropdown' },
+          { text: 'Icon 图标', link: 'components/icon' },
         ],
       },
       {
@@ -45,12 +46,30 @@ export default defineConfig({
           { text: 'Notification 通知', link: 'components/notification' },
           { text: 'Popconfirm 气泡确认框', link: 'components/popconfirm' },
           { text: 'Tooltip 文字提示', link: 'components/tooltip' },
+          { text: 'Overlay 覆盖层', link: 'components/overlay' },
         ],
       },
       {
         text: '表单组件',
         collapsed: false,
-        items: [{ text: 'Form 表单', link: 'components/form' }],
+        items: [
+          { text: 'Form 表单', link: 'components/form' },
+          { text: 'Input 输入框', link: 'components/input' },
+          { text: 'Select 选择器', link: 'components/select' },
+          { text: 'Checkbox 复选框', link: 'components/checkbox' },
+          { text: 'Radio 单选框', link: 'components/radio' },
+          { text: 'Switch 开关', link: 'components/switch' },
+        ],
+      },
+      {
+        text: '布局',
+        collapsed: false,
+        items: [
+          {
+            text: 'ConfigProvider 配置提供者',
+            link: 'components/configprovider',
+          },
+        ],
       },
     ],
 
