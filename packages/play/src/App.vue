@@ -159,6 +159,23 @@ const onReset = () => {
 </script>
 
 <template>
+  <xc-button size="small" type="primary">填充按钮</xc-button>
+  <xc-button type="primary">填充按钮</xc-button>
+  <xc-button size="large" type="primary">填充按钮</xc-button>
+  <hr />
+  <XcButton size="large">large</XcButton>
+  <XcButton size="default">default</XcButton>
+  <XcButton size="small">small</XcButton>
+  <XcButton tag="a">aaaa</XcButton>
+  <XcButton type="primary">primary</XcButton>
+  <XcButton type="success">success</XcButton>
+  <XcButton type="warning">warning</XcButton>
+  <XcButton type="danger">danger</XcButton>
+  <XcButton type="info">info</XcButton>
+  <XcButton nativeType="submit">submit</XcButton>
+  <XcButton nativeType="reset">reset</XcButton>
+  <XcButton nativeType="button">button</XcButton>
+  <hr />
   <xc-popconfirm title="确定删除吗？" @confirm="confirm" @cancel="cancel">
     <xc-button type="primary" size="small">Button</xc-button>
   </xc-popconfirm>

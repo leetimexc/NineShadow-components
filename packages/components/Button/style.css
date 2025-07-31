@@ -39,7 +39,7 @@
   background-color: var(--xc-button-bg-color);
   border: var(--xc-border);
   border-color: var(--xc-button-border-color);
-  padding: 8px 15px;
+  padding: 8px 16px;
   font-size: var(--xc-font-size-base);
   border-radius: var(--xc-border-radius-base);
   & + & {
@@ -125,8 +125,8 @@
 .xc-button--large {
   --xc-button-size: 40px;
   height: var(--xc-button-size);
-  padding: 12px 19px;
-  font-size: var(--xc-font-size-base);
+  padding: 12px 24px;
+  font-size: var(--xc-font-size-medium);
   border-radius: var(--xc-border-radius-base);
   /*circle*/
   &.is-circle {
@@ -137,7 +137,7 @@
 .xc-button--small {
   --xc-button-size: 24px;
   height: var(--xc-button-size);
-  padding: 5px 11px;
+  padding: 2px 8px;
   font-size: 12px;
   border-radius: calc(var(--xc-border-radius-base) - 1px);
   /*circle*/

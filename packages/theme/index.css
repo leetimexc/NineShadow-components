@@ -5,7 +5,7 @@
   /* colors */
   --xc-color-white: #ffffff;
   --xc-color-black: #000000;
-  --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
+  --colors: (primary: #0052D9, success: #008858, warning: #e6a23c, danger: #D54941, info: #909399);
   --xc-bg-color: #ffffff;
   --xc-bg-color-page: #f2f3f5;
   --xc-bg-color-overlay: #ffffff;
