@@ -1,5 +1,5 @@
 <script setup>
-import { XcMessage } from 'xc-element'
+import { XcMessage } from 'shadow-ui'
 
 function handleClose() {
   XcMessage.info('close callback')
@@ -7,7 +7,12 @@ function handleClose() {
 </script>
 <template>
   <div class="basic block">
-    <xc-alert title="Unclosable alert" type="success" :closable="false" />
-    <xc-alert title="Alert with callback" type="warning" @close="handleClose" />
+    <xc-alert title="Unclosable alert" type="success" closable />
+    <xc-alert
+      title="Alert with callback"
+      type="warning"
+      closable
+      @close="handleClose"
+    />
   </div>
 </template>

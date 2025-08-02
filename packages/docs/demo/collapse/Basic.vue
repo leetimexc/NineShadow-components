@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type CollapseItemName } from 'xc-element'
+import { type CollapseItemName } from 'shadow-ui'
 import { ref } from 'vue'
 
 const activeNames = ref(['1'])
