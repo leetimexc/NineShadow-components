@@ -1,111 +1,89 @@
 ---
 title: Loading
-description: Loading 组件文档
+description: Loaidng 组件文档
 
 next:
-  link: /components/message
+  link: components/message
   text: Message 消息提示
 
 prev:
-  link: /components/alert
+  link: components/alert
   text: Alert 提示
 ---
 
 # Loading 加载
 
-用于在页面或元素上显示加载状态，提供视觉反馈，告知用户系统正在处理操作。
+加载数据时显示动效。
 
 ## 基础用法
 
-通过指令方式或服务方式使用加载组件。
-
-### 指令方式
-
-通过 `v-loading` 指令可以轻松地在任何元素上添加加载状态。
+自定义指令 `v-loading`，只需要绑定 `boolean` 值即可。
 
 ::: preview
 demo-preview=../demo/loading/Basic.vue
 :::
 
-### 自定义文本
+## 自定义加载中组件内容
 
-可以通过 `xc-loading-text` 属性自定义加载文本。
-
-::: preview
-demo-preview=../demo/loading/CustomText.vue
-:::
-
-### 自定义背景色
-
-可以通过 `xc-loading-background` 属性自定义加载遮罩的背景色。
+在绑定了 `v-loading` 指令的元素上添加 `xc-loading-text` 属性，其值会被渲染为加载文案，并显示在加载图标的下方。 类似地， `xc-loading-spinner`、`xc-loading-background` 属性分别用来设定 加载图标、背景色值。
 
 ::: preview
-demo-preview=../demo/loading/CustomBackground.vue
+demo-preview=../demo/loading/Custom.vue
 :::
 
-### 全屏加载
+## 全屏加载
 
-添加 `fullscreen` 修饰符可以使加载状态全屏显示，并且会锁定滚动。
+当使用指令方式时，全屏遮罩需要添加`fullscreen`修饰符（遮罩会插入至 body 上） 此时若需要锁定屏幕的滚动，可以使用`lock`修饰符； 当使用服务方式时，遮罩默认即为全屏，无需额外设置。
 
 ::: preview
 demo-preview=../demo/loading/Fullscreen.vue
 :::
 
-### 服务方式
+## 服务方式调用
 
-除了指令方式，也可以通过服务方式调用 Loading。
-
-::: preview
-demo-preview=../demo/loading/Service.vue
-:::
-
-## API
-
-### 指令
-
-| 名称      | 说明                               |
-| --------- | ---------------------------------- |
-| v-loading | 控制加载状态的显示，接受一个布尔值 |
-
-### 指令修饰符
-
-| 名称       | 说明                         |
-| ---------- | ---------------------------- |
-| fullscreen | 全屏显示加载状态             |
-| lock       | 锁定滚动条                   |
-| body       | 将加载状态添加到 body 元素上 |
-
-### 指令属性
-
-| 名称                  | 说明                                              |
-| --------------------- | ------------------------------------------------- |
-| xc-loading-text       | 自定义加载文本                                    |
-| xc-loading-spinner    | 自定义加载图标，可以是图标名称或 false 以禁用图标 |
-| xc-loading-background | 自定义加载背景色                                  |
-
-### 服务方法
+服务方式调用，可以自定义遮罩的文案，也可以通过 `close` 方法关闭。
 
 ```typescript
-XcLoadingService(options: LoadingOptions): LoadingInstance
+import { XcLoading } from 'shadow-ui'
 ```
 
-### LoadingOptions
+需要的时候通过以下方式调用
 
-| 名称       | 类型                  | 默认值                               | 说明                                              |
-| ---------- | --------------------- | ------------------------------------ | ------------------------------------------------- |
-| target     | HTMLElement \| string | document.body                        | 加载状态的目标元素，可以是 DOM 元素或选择器字符串 |
-| body       | boolean               | false                                | 是否将加载状态添加到 body 元素上                  |
-| fullscreen | boolean               | true (当 target 为 document.body 时) | 是否全屏显示                                      |
-| lock       | boolean               | false                                | 是否锁定滚动条                                    |
-| text       | string                | -                                    | 加载文本                                          |
-| spinner    | boolean \| string     | true                                 | 是否显示加载图标或自定义图标名称                  |
-| background | string                | 'rgba(0, 0, 0, 0.5)'                 | 加载背景色                                        |
-| zIndex     | number                | -                                    | 自定义 z-index 值                                 |
+```typescript
+XcLoading.service(options)
+```
 
-### LoadingInstance
+LoadingService 会返回一个 Loading 实例，可通过调用该实例的 close 方法来关闭它
 
-| 名称    | 类型                   | 说明               |
-| ------- | ---------------------- | ------------------ |
-| close   | () => void             | 关闭加载状态       |
-| setText | (text: string) => void | 动态设置加载文本   |
-| visible | Ref\<boolean\>         | 控制加载状态的显示 |
+```typescript
+const loading = XcLoading.service(options)
+nextTick(() => {
+  loading.close()
+})
+```
+
+::: tip
+以服务的方式调用的全屏 Loading 是单例的。 若在前一个全屏 Loading 关闭前再次调用全屏 Loading，并不会创建一个新的 Loading 实例，而是返回现有全屏 Loading 的实例
+:::
+
+## Loading API
+
+### Options
+
+| Name       | Description        | Type          | Default       |
+| ---------- | ------------------ | ------------- | ------------- |
+| target     | 遮罩绑定的目标元素 | `HTMLElement` | document.body |
+| fullscreen | 是否为全屏遮罩     | `boolean`     | true          |
+| lock       | 是否锁定屏幕滚动   | `boolean`     | false         |
+| text       | 加载文案           | `string`      | --            |
+| spinner    | 加载图标           | `string`      | --            |
+| background | 遮罩背景色         | `string`      | --            |
+
+### Directive
+
+| Name                  | Description      | Type      |
+| --------------------- | ---------------- | --------- |
+| v-loading             | 是否显示加载动画 | `boolean` |
+| xc-loading-text       | 加载文案         | `string`  |
+| xc-loading-spinner    | 加载图标         | `string`  |
+| xc-loading-background | 遮罩背景色       | `string`  |

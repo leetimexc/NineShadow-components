@@ -1,18 +1,36 @@
-<template>
-  <xc-button @click="openFullScreen">打开全屏加载</xc-button>
-  <div v-loading.fullscreen.lock="fullscreenLoading">
-    <!-- 内容 -->
-  </div>
-</template>
-
 <script setup>
 import { ref } from 'vue'
+import { XcLoading } from 'shadow-ui'
 
-const fullscreenLoading = ref(false)
-const openFullScreen = () => {
-  fullscreenLoading.value = true
+const loading = ref(false)
+
+function openLoading1() {
+  loading.value = true
   setTimeout(() => {
-    fullscreenLoading.value = false
+    loading.value = false
+  }, 2000)
+}
+
+function openLoading2() {
+  const _loading = XcLoading.service({
+    lock: true,
+    spinner: 'circle-notch',
+    text: '加载中...',
+    background: 'rgba(255,255,255,0.5)',
+  })
+  setTimeout(() => {
+    _loading.close()
   }, 2000)
 }
 </script>
+
+<template>
+  <xc-button
+    v-loading.fullscreen.lock="loading"
+    type="primary"
+    @click="openLoading1"
+  >
+    As a directive
+  </xc-button>
+  <xc-button type="primary" @click="openLoading2"> As a service </xc-button>
+</template>

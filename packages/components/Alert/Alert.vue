@@ -10,7 +10,7 @@ defineOptions({
 const props = withDefaults(defineProps<AlertProps>(), {
   effect: 'light',
   type: 'info',
-  closable: false,
+  closable: true,
 })
 const emit = defineEmits<AlertEmits>()
 const slots = defineSlots()

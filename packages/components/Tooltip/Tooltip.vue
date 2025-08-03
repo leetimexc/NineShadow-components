@@ -1,27 +1,29 @@
 <script setup lang="ts">
-import type { TooltipProps, TooltipEmits, TooltipInstance } from './types'
 import { createPopper, type Instance } from '@popperjs/core'
-import { ref, computed, watch, watchEffect, onUnmounted, type Ref } from 'vue'
-import { bind, debounce, isNil, type DebouncedFunc } from 'lodash-es'
+import { ref, watch, watchEffect, onUnmounted, computed, type Ref } from 'vue'
+import { bind, debounce, type DebouncedFunc } from 'lodash-es'
 import { useClickOutside } from '@shadow-ui/hooks'
 
-import useEventsToTiggerNode from './useEventsToTiggerNode'
+import type { TooltipProps, TooltipEmits, TooltipInstance } from './types'
+import type { ButtonInstance } from '../Button'
+
+import useEvenstToTiggerNode from './useEventsToTiggerNode'
+
+defineOptions({
+  name: 'XcTooltip',
+})
 
 interface _TooltipProps extends TooltipProps {
   virtualRef?: HTMLElement | ButtonInstance | void
   virtualTriggering?: boolean
 }
 
-defineOptions({
-  name: 'XcTooltip',
-})
-
 const props = withDefaults(defineProps<_TooltipProps>(), {
   placement: 'bottom',
   trigger: 'hover',
   transition: 'fade',
   showTimeout: 0,
-  delay: 200,
+  hideTimeout: 200,
 })
 const emits = defineEmits<TooltipEmits>()
 const visible = ref(false)
@@ -35,15 +37,13 @@ const popperNode = ref<HTMLElement>()
 const _triggerNode = ref<HTMLElement>()
 
 const triggerNode = computed(() => {
-  if (props.virtualTriggering) {
-    return (props.virtualRef as HTMLElement) ?? _triggerNode.value
-  }
-  // return (
-  //   // @tips any 为了 fix 一个初始设计上的小失误 （后续重构 "虚拟目标节点" 时解决）
-  //   ((props.virtualRef as ButtonInstance)?.ref as any) ??
-  //   (props.virtualRef as HTMLElement) ??
-  //   _triggerNode.value
-  // )
+  if (props.virtualTriggering)
+    return (
+      // @tips any 为了 fix 一个初始设计上的小失误 （后续重构 "虚拟目标节点" 时解决）
+      ((props.virtualRef as ButtonInstance)?.ref as any) ??
+      (props.virtualRef as HTMLElement) ??
+      _triggerNode.value
+    )
   return _triggerNode.value as HTMLElement
 })
 
@@ -88,7 +88,7 @@ let openDebounce: DebouncedFunc<() => void> | void
 let closeDebounce: DebouncedFunc<() => void> | void
 
 function openFinal() {
-  // closeDebounce?.cancel()
+  closeDebounce?.cancel()
   openDebounce?.()
 }
 
@@ -110,29 +110,10 @@ function setVisible(val: boolean) {
 function attachEvents() {
   if (props.disabled || props.manual) return
   triggerStrategyMap.get(props.trigger)?.()
-  // if (props.trigger === 'hover') {
-  //   events.value['mouseenter'] = openFinal
-  //   outerEvents.value['mouseleave'] = closeFinal
-  //   dropdownEvents.value['mouseenter'] = openFinal
-  //   return
-  // }
-  // if (props.trigger === 'click') {
-  //   events.value['click'] = togglePopper
-  //   return
-  // }
-  // if (props.trigger === 'contextmenu') {
-  //   events.value['contextmenu'] = (e) => {
-  //     e.preventDefault()
-  //     openFinal()
-  //   }
-  //   return
-  // }
 }
 
 let popperInstance: null | Instance
-
 function destroyPopperInstance() {
-  if (isNil(popperInstance)) return
   popperInstance?.destroy()
   popperInstance = null
 }
@@ -145,9 +126,9 @@ function resetEvents() {
   attachEvents()
 }
 
-// if (!props.manual) {
-//   attachEvents()
-// }
+if (!props.manual) {
+  attachEvents()
+}
 
 const show: TooltipInstance['show'] = openFinal
 
@@ -182,10 +163,9 @@ watch(
   () => props.manual,
   (isManual) => {
     if (isManual) {
-      resetEvents()
-      // events.value = {}
-      // outerEvents.value = {}
-      // dropdownEvents.value = {}
+      events.value = {}
+      outerEvents.value = {}
+      dropdownEvents.value = {}
       return
     }
     attachEvents()
@@ -194,6 +174,14 @@ watch(
 
 watch(
   () => props.trigger,
+  (newTrigger, oldTrigger) => {
+    if (newTrigger === oldTrigger) return
+    resetEvents()
+  }
+)
+
+watch(
+  () => props.disabled,
   (val, oldVal) => {
     if (val === oldVal) return
     openDebounce?.cancel()
@@ -203,26 +191,12 @@ watch(
   }
 )
 
-// watch(
-//   () => props.disabled,
-//   (val, oldVal) => {
-//     if (val === oldVal) return
-//     openDebounce?.cancel()
-//     visible.value = false
-//     emits('visible-change', false)
-//     resetEvents()
-//   }
-// )
-
 watchEffect(() => {
-  if (!props.manual) {
-    attachEvents()
-  }
   openDebounce = debounce(bind(setVisible, null, true), openDelay.value)
   closeDebounce = debounce(bind(setVisible, null, false), closeDelay.value)
 })
 
-useEventsToTiggerNode(props, triggerNode, events, () => {
+useEvenstToTiggerNode(props, triggerNode, events, () => {
   openDebounce?.cancel()
   setVisible(false)
 })
@@ -236,11 +210,12 @@ defineExpose<TooltipInstance>({
   hide,
 })
 </script>
+
 <template>
   <div class="xc-tooltip" ref="containerNode" v-on="outerEvents">
     <div
       class="xc-tooltip__trigger"
-      ref="triggerNode"
+      ref="_triggerNode"
       v-on="events"
       v-if="!virtualTriggering"
     >
@@ -263,6 +238,7 @@ defineExpose<TooltipInstance>({
     </transition>
   </div>
 </template>
+
 <style scoped>
 @import './style.css';
 </style>
