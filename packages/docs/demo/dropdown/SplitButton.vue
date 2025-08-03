@@ -1,33 +1,39 @@
 <script setup lang="ts">
-function handleCommand(command: string | number) {
-  console.log(`点击了菜单项: ${command}`)
-}
+import { type DropdownItemProps, XcMessage } from 'shadow-ui'
+
+const items: DropdownItemProps[] = [
+  { command: '1', label: 'Action 1' },
+  { command: '2', label: 'Action 2' },
+  { command: '3', label: 'Action 3', disabled: true },
+  { command: '4', label: 'Action 4', divided: true },
+]
 
 function handleClick() {
-  console.log('按钮被点击')
+  XcMessage.info('button click')
 }
 </script>
 
 <template>
-  <div class="demo-dropdown-split-button">
+  <div class="row">
+    <xc-dropdown :items="items">
+      <xc-button type="primary">
+        Dropdown List
+        <xc-icon icon="angle-down" style="margin-left: 8px" />
+      </xc-button>
+    </xc-dropdown>
     <xc-dropdown
-      split-button
+      :items="items"
       type="primary"
       @click="handleClick"
-      @command="handleCommand"
+      split-button
     >
-      分割按钮
-      <template #dropdown>
-        <xc-dropdown-item label="选项1" command="1" />
-        <xc-dropdown-item label="选项2" command="2" />
-        <xc-dropdown-item label="选项3" command="3" />
-      </template>
+      Dropdown List
     </xc-dropdown>
   </div>
 </template>
 
 <style scoped>
-.demo-dropdown-split-button {
-  margin-bottom: 20px;
+.row div {
+  margin-right: 16px;
 }
 </style>

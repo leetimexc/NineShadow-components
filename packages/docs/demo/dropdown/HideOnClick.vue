@@ -12,23 +12,17 @@ const items: DropdownItemProps[] = [
 <template>
   <div class="row">
     <div class="col">
-      <div class="desc">通过 slot 传入 item</div>
-      <xc-dropdown>
+      <div class="desc">hide-on-click="true"(default)</div>
+      <xc-dropdown :items="items">
         <span class="dropdown-link">
           Dropdown List
           <xc-icon icon="angle-down" />
         </span>
-        <template #dropdown>
-          <xc-dropdown-item command="1">Action 1</xc-dropdown-item>
-          <xc-dropdown-item command="2" label="Action 2" />
-          <xc-dropdown-item command="3" disabled>Action 3</xc-dropdown-item>
-          <xc-dropdown-item command="4" divided>Action 4</xc-dropdown-item>
-        </template>
       </xc-dropdown>
     </div>
     <div class="col">
-      <div class="desc">通过 props 传入 item</div>
-      <xc-dropdown :items="items">
+      <div class="desc">hide-on-click="false"</div>
+      <xc-dropdown :items="items" :hide-on-click="false">
         <span class="dropdown-link">
           Dropdown List
           <xc-icon icon="angle-down" />
