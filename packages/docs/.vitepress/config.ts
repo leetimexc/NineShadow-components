@@ -26,6 +26,14 @@ export default defineConfig({
         items: [{ text: '快速开始', link: '/get-started' }],
       },
       {
+        text: '通用',
+        collapsed: false,
+        items: [
+          { text: 'Color 颜色', link: '/color' },
+          { text: 'Typography 字体', link: '/typography' },
+        ],
+      },
+      {
         text: '基础组件',
         collapsed: false,
         items: [

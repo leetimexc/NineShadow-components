@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
-import { XcMessage } from 'shadow-ui'
+import { XcMessage, type FormProps } from 'shadow-ui'
 
 const form = reactive({
   name: '',
@@ -8,19 +8,37 @@ const form = reactive({
   delivery: false,
   desc: '',
 })
-
 const options = ref([
   { value: 'beijing', label: 'Zone One' },
   { value: 'shanghai', label: 'Zone Two' },
 ])
+const labelPosition = ref<FormProps['labelPosition']>('right')
 
 const onSubmit = () => {
-  XcMessage.success('submit!')
+  XcMessage.success('submit')
 }
 </script>
 
 <template>
-  <xc-form :model="form">
+  <xc-button-group size="small">
+    <xc-button
+      @click="labelPosition = 'left'"
+      :type="labelPosition === 'left' ? 'primary' : 'info'"
+      >Left</xc-button
+    >
+    <xc-button
+      @click="labelPosition = 'right'"
+      :type="labelPosition === 'right' ? 'primary' : 'info'"
+      >Right</xc-button
+    >
+    <xc-button
+      @click="labelPosition = 'top'"
+      :type="labelPosition === 'top' ? 'primary' : 'info'"
+      >Top</xc-button
+    >
+  </xc-button-group>
+  <div style="margin: 20px"></div>
+  <xc-form :model="form" :label-position="labelPosition">
     <xc-form-item label="Activity name">
       <xc-input v-model="form.name" />
     </xc-form-item>
