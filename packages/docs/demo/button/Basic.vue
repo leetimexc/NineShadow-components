@@ -1,4 +1,11 @@
 <template>
+  <h2>基础按钮</h2>
+  <p>
+    <xc-button type="primary">主要按钮</xc-button>
+    <xc-button type="info">次要按钮</xc-button>
+    <xc-button type="default">线框按钮</xc-button>
+  </p>
+  <hr />
   <p>
     <xc-button>Default</xc-button>
     <xc-button type="primary">Primary</xc-button>
