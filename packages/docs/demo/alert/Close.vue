@@ -1,13 +1,13 @@
 <script setup>
-import { XcMessage } from 'shadow-ui'
+import { NsMessage } from "shadow-ui";
 
 function handleClose() {
-  XcMessage.info('close callback')
+  NsMessage.info("close callback");
 }
 </script>
 <template>
   <div class="basic block">
-    <xc-alert title="Unclosable alert" type="success" :closable="false" />
-    <xc-alert title="Alert with callback" type="warning" @close="handleClose" />
+    <ns-alert title="Unclosable alert" type="success" :closable="false" />
+    <ns-alert title="Alert with callback" type="warning" @close="handleClose" />
   </div>
 </template>
