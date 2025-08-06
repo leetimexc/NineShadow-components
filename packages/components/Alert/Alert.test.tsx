@@ -1,10 +1,10 @@
 import { describe, it, expect, vi } from "vitest";
 import type { AlertType } from "./types";
 import { mount } from "@vue/test-utils";
-import {withInstall} from '@shadow-ui/utils'
+import { withInstall } from "@shadow-ui/utils";
 import Alert from "./Alert.vue";
 import Icon from "../Icon/Icon.vue";
-import {XcAlert} from './index'
+import { NsAlert } from "./index";
 
 describe("Alert.vue", () => {
   const title = "Test Alert" as const;
@@ -19,7 +19,7 @@ describe("Alert.vue", () => {
         default: desc,
       },
       global: {
-        stubs: ["XcIcon"],
+        stubs: ["NsIcon"],
       },
     });
     expect(wrapper.text()).toContain(title);
@@ -57,7 +57,7 @@ describe("Alert.vue", () => {
         default: desc,
       },
       global: {
-        stubs: ["XcIcon"],
+        stubs: ["NsIcon"],
       },
     });
 
@@ -80,7 +80,7 @@ describe("Alert.vue", () => {
         default: desc,
       },
       global: {
-        stubs: ["XcIcon"],
+        stubs: ["NsIcon"],
       },
     });
     wrapper.findComponent(Icon).trigger("click");
@@ -111,7 +111,7 @@ describe("Alert.vue", () => {
       },
     });
     //class
-    const rootNode = wrapper.find(".xc-alert");
+    const rootNode = wrapper.find(".ns-alert");
     expect(rootNode.classes()).toContain("text-center");
   });
 
@@ -119,7 +119,7 @@ describe("Alert.vue", () => {
     const wrapper = mount(Alert, {
       props: { closable: false },
     });
-    expect(wrapper.find(".xc-alert__close").exists()).toBe(false);
+    expect(wrapper.find(".ns-alert__close").exists()).toBe(false);
   });
 
   it("should toggle visibility when open and close methods are called", async () => {
@@ -127,29 +127,29 @@ describe("Alert.vue", () => {
       props: { title, closable: false },
     });
     await wrapper.vm.close();
-    expect(wrapper.find(".xc-alert").attributes().style).toBe("display: none;");
+    expect(wrapper.find(".ns-alert").attributes().style).toBe("display: none;");
     await wrapper.vm.open();
-    expect(wrapper.find(".xc-alert").attributes().style).toBe("");
+    expect(wrapper.find(".ns-alert").attributes().style).toBe("");
   });
 });
 
-describe('Alert/index',()=>{
-  it('should be exported with withInstall()',()=>{
-    expect(XcAlert.install).toBeDefined()
-  })
-  it('component should be exported',()=>{
-    expect(XcAlert).toBe(Alert)
-  })
+describe("Alert/index", () => {
+  it("should be exported with withInstall()", () => {
+    expect(NsAlert.install).toBeDefined();
+  });
+  it("component should be exported", () => {
+    expect(NsAlert).toBe(Alert);
+  });
 
   // 可选
-  it('should enhance Alert component',()=>{
-    const enhancedAlert = withInstall(Alert)
-    expect(enhancedAlert).toBe(XcAlert)
-  })
+  it("should enhance Alert component", () => {
+    const enhancedAlert = withInstall(Alert);
+    expect(enhancedAlert).toBe(NsAlert);
+  });
 
   // 可选
-  it('should apply specific enhance',()=>{
-    const enhancedAlert = withInstall(Alert)
-    expect(enhancedAlert).toHaveProperty('install')
-  })
-})
+  it("should apply specific enhance", () => {
+    const enhancedAlert = withInstall(Alert);
+    expect(enhancedAlert).toHaveProperty("install");
+  });
+});

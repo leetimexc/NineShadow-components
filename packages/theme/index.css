@@ -3,66 +3,74 @@
 
 :root {
   /* colors */
-  --xc-color-white: #ffffff;
-  --xc-color-black: #000000;
-  --colors: (primary: #0052D9, success: #008858, warning: #e6a23c, danger: #D54941, info: #DCDDE1);
-  --xc-bg-color: #ffffff;
-  --xc-bg-color-page: #f2f3f5;
-  --xc-bg-color-overlay: #ffffff;
-  --xc-text-color-primary: #303133;
-  --xc-text-color-regular: #606266;
-  --xc-text-color-secondary: #909399;
-  --xc-text-color-placeholder: #a8abb2;
-  --xc-text-color-disabled: #c0c4cc;
-  --xc-border-color: #dcdfe6;
-  --xc-border-color-light: #e4e7ed;
-  --xc-border-color-lighter: #ebeef5;
-  --xc-border-color-extra-light: #f2f6fc;
-  --xc-border-color-dark: #d4d7de;
-  --xc-border-color-darker: #cdd0d6;
-  --xc-fill-color: #f0f2f5;
-  --xc-fill-color-light: #f5f7fa;
-  --xc-fill-color-lighter: #fafafa;
-  --xc-fill-color-extra-light: #fafcff;
-  --xc-fill-color-dark: #ebedf0;
-  --xc-fill-color-darker: #e6e8eb;
-  --xc-fill-color-blank: #ffffff;
-  
+  --ns-color-white: #ffffff;
+  --ns-color-black: #000000;
+  --colors: (
+    primary: #0052d9,
+    success: #008858,
+    warning: #e6a23c,
+    danger: #d54941,
+    info: #dcdde1
+  );
+  --ns-bg-color: #ffffff;
+  --ns-bg-color-page: #f2f3f5;
+  --ns-bg-color-overlay: #ffffff;
+  --ns-text-color-primary: #303133;
+  --ns-text-color-regular: #606266;
+  --ns-text-color-secondary: #909399;
+  --ns-text-color-placeholder: #a8abb2;
+  --ns-text-color-disabled: #c0c4cc;
+  --ns-border-color: #dcdfe6;
+  --ns-border-color-light: #e4e7ed;
+  --ns-border-color-lighter: #ebeef5;
+  --ns-border-color-extra-light: #f2f6fc;
+  --ns-border-color-dark: #d4d7de;
+  --ns-border-color-darker: #cdd0d6;
+  --ns-fill-color: #f0f2f5;
+  --ns-fill-color-light: #f5f7fa;
+  --ns-fill-color-lighter: #fafafa;
+  --ns-fill-color-extra-light: #fafcff;
+  --ns-fill-color-dark: #ebedf0;
+  --ns-fill-color-darker: #e6e8eb;
+  --ns-fill-color-blank: #ffffff;
+
   @each $val, $color in var(--colors) {
-    --xc-color-$(val): $(color);
+    --ns-color-$(val): $(color);
     @for $i from 3 to 9 {
-      --xc-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+      --ns-color-$(val)-light-$(i): mix(#fff, $(color), 0$ (i));
     }
-    --xc-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+    --ns-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }
 
   /* border */
-  --xc-border-width: 1px;
-  --xc-border-style: solid;
-  --xc-border-color-hover: var(--xc-text-color-disabled);
-  --xc-border: var(--xc-border-width) var(--xc-border-style) var(--xc-border-color);
-  --xc-border-radius-base: 4px;
-  --xc-border-radius-small: 2px;
-  --xc-border-radius-round: 20px;
-  --xc-border-radius-circle: 100%;
+  --ns-border-width: 1px;
+  --ns-border-style: solid;
+  --ns-border-color-hover: var(--ns-text-color-disabled);
+  --ns-border: var(--ns-border-width) var(--ns-border-style)
+    var(--ns-border-color);
+  --ns-border-radius-base: 4px;
+  --ns-border-radius-small: 2px;
+  --ns-border-radius-round: 20px;
+  --ns-border-radius-circle: 100%;
 
   /*font*/
-  --xc-font-size-extra-large: 20px;
-  --xc-font-size-large: 18px;
-  --xc-font-size-medium: 16px;
-  --xc-font-size-base: 14px;
-  --xc-font-size-small: 13px;
-  --xc-font-size-extra-small: 12px;
-  --xc-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
-  --xc-font-weight-primary: 500;
+  --ns-font-size-extra-large: 20px;
+  --ns-font-size-large: 18px;
+  --ns-font-size-medium: 16px;
+  --ns-font-size-base: 14px;
+  --ns-font-size-small: 13px;
+  --ns-font-size-extra-small: 12px;
+  --ns-font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial,
+    sans-serif;
+  --ns-font-weight-primary: 500;
 
   /*disabled*/
-  --xc-disabled-bg-color: var(--xc-fill-color-light);
-  --xc-disabled-text-color: var(--xc-text-color-placeholder);
-  --xc-disabled-border-color: var(--xc-border-color-light);
+  --ns-disabled-bg-color: var(--ns-fill-color-light);
+  --ns-disabled-text-color: var(--ns-text-color-placeholder);
+  --ns-disabled-border-color: var(--ns-border-color-light);
 
   /*animation*/
-  --xc-transition-duration: 0.4s;
-  --xc-transition-duration-fast: 0.2s;
+  --ns-transition-duration: 0.4s;
+  --ns-transition-duration-fast: 0.2s;
 }
