@@ -3,7 +3,7 @@ import { mount } from "@vue/test-utils";
 import { withInstall } from "@shadow-ui/utils";
 import { each, get } from "lodash-es";
 import type { PopconfirmProps } from "./types";
-import { XcPopconfirm } from ".";
+import { NsPopconfirm } from ".";
 
 import Popconfirm from "./Popconfirm.vue";
 
@@ -13,18 +13,18 @@ const onCancel = vi.fn();
 describe("Popconfirm/index.ts", () => {
   // 测试 withInstall 函数是否被正确应用
   it("should be exported with withInstall()", () => {
-    expect(XcPopconfirm.install).toBeDefined();
+    expect(NsPopconfirm.install).toBeDefined();
   });
 
   // 测试 Popconfirm 组件是否被正确导出
   it("should be exported Popconfirm component", () => {
-    expect(XcPopconfirm).toBe(Popconfirm);
+    expect(NsPopconfirm).toBe(Popconfirm);
   });
 
   // 可选：测试 withInstall 是否增强了 Popconfirm 组件的功能
   test("should enhance Popconfirm component", () => {
     const enhancedPopconfirm = withInstall(Popconfirm);
-    expect(enhancedPopconfirm).toBe(XcPopconfirm);
+    expect(enhancedPopconfirm).toBe(NsPopconfirm);
     // 这里可以添加更多测试，确保 withInstall 增强了组件的特定功能
   });
 
@@ -101,25 +101,25 @@ describe("Popconfirm.vue", () => {
     await vi.runAllTimers();
 
     // 弹出层是否出现
-    expect(wrapper.find(".xc-popconfirm").exists()).toBeTruthy();
-    const confirmButton = wrapper.find(".xc-popconfirm__confirm");
+    expect(wrapper.find(".ns-popconfirm").exists()).toBeTruthy();
+    const confirmButton = wrapper.find(".ns-popconfirm__confirm");
     expect(confirmButton.exists()).toBeTruthy();
 
     confirmButton.trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-popconfirm").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-popconfirm").exists()).toBeFalsy();
     expect(onConfirm).toBeCalled();
 
     triggerArea.trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-popconfirm").exists()).toBeTruthy();
-    const cancelButton = wrapper.find(".xc-popconfirm__cancel");
+    expect(wrapper.find(".ns-popconfirm").exists()).toBeTruthy();
+    const cancelButton = wrapper.find(".ns-popconfirm__cancel");
     expect(cancelButton.exists()).toBeTruthy();
 
     // await vi.runAllTimers();
     cancelButton.trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-popconfirm").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-popconfirm").exists()).toBeFalsy();
     expect(onCancel).toBeCalled();
   });
 });

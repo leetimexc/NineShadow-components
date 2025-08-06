@@ -3,9 +3,9 @@ import { set } from 'lodash-es'
 
 import type { App } from 'vue'
 
-export const XcMessageBox = MessageBox
+export const NsMessageBox = MessageBox
 
-set(XcMessageBox, 'install', (app: App) => {
+set(NsMessageBox, 'install', (app: App) => {
   app.config.globalProperties.$msgbox = MessageBox
   app.config.globalProperties.$messagebox = MessageBox
   app.config.globalProperties.$alert = MessageBox.alert
@@ -13,5 +13,5 @@ set(XcMessageBox, 'install', (app: App) => {
   app.config.globalProperties.$prompt = MessageBox.prompt
 })
 
-export default XcMessageBox
+export default NsMessageBox
 export * from './types'

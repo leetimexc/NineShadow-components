@@ -2,8 +2,8 @@ import { vLoading } from './directive'
 import { Loading } from './service'
 import type { App } from 'vue'
 
-export const XcLoading = {
-  name: 'XcLoading',
+export const NsLoading = {
+  name: 'NsLoading',
   install(app: App) {
     app.directive('loading', vLoading)
     app.config.globalProperties.$loading = Loading
@@ -12,7 +12,7 @@ export const XcLoading = {
   service: Loading,
 }
 
-export default XcLoading
+export default NsLoading
 
-export { vLoading, vLoading as XcLoadingDirective, Loading as XcLoadingService }
+export { vLoading, vLoading as NsLoadingDirective, Loading as NsLoadingService }
 export * from './types'

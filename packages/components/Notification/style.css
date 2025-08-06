@@ -1,29 +1,29 @@
-.xc-notification {
-  --xc-notification-width: 330px;
-  --xc-notification-padding: 14px 26px 14px 13px;
-  --xc-notification-radius: 8px;
-  --xc-notification-shadow: var(--xc-box-shadow-light);
-  --xc-notification-border-color: var(--xc-border-color-lighter);
-  --xc-notification-icon-size: 24px;
-  --xc-notification-close-font-size: var(--xc-message-close-size, 16px);
-  --xc-notification-content-font-size: var(--xc-font-size-base);
-  --xc-notification-content-color: var(--xc-text-color-regular);
-  --xc-notification-title-font-size: 16px;
-  --xc-notification-title-color: var(--xc-text-color-primary);
-  --xc-notification-close-color: var(--xc-text-color-secondary);
-  --xc-notification-close-hover-color: var(--xc-text-color-regular)
+.ns-notification {
+  --ns-notification-width: 330px;
+  --ns-notification-padding: 14px 26px 14px 13px;
+  --ns-notification-radius: 8px;
+  --ns-notification-shadow: var(--ns-box-shadow-light);
+  --ns-notification-border-color: var(--ns-border-color-lighter);
+  --ns-notification-icon-size: 24px;
+  --ns-notification-close-font-size: var(--ns-message-close-size, 16px);
+  --ns-notification-content-font-size: var(--ns-font-size-base);
+  --ns-notification-content-color: var(--ns-text-color-regular);
+  --ns-notification-title-font-size: 16px;
+  --ns-notification-title-color: var(--ns-text-color-primary);
+  --ns-notification-close-color: var(--ns-text-color-secondary);
+  --ns-notification-close-hover-color: var(--ns-text-color-regular)
 }
-.xc-notification {
+.ns-notification {
   display: flex;
-  width: var(--xc-notification-width);
-  padding: var(--xc-notification-padding);
-  border-radius: var(--xc-notification-radius);
+  width: var(--ns-notification-width);
+  padding: var(--ns-notification-padding);
+  border-radius: var(--ns-notification-radius);
   box-sizing: border-box;
-  border: 1px solid var(--xc-notification-border-color);
+  border: 1px solid var(--ns-notification-border-color);
   position: fixed;
-  background-color: var(--xc-bg-color-overlay);
-  box-shadow: var(--xc-notification-shadow);
-  transition: opacity var(--xc-transition-duration),transform var(--xc-transition-duration),right var(--xc-transition-duration),top .4s,bottom var(--xc-transition-duration);
+  background-color: var(--ns-bg-color-overlay);
+  box-shadow: var(--ns-notification-shadow);
+  transition: opacity var(--ns-transition-duration),transform var(--ns-transition-duration),right var(--ns-transition-duration),top .4s,bottom var(--ns-transition-duration);
   overflow-wrap: anywhere;
   overflow: hidden;
   z-index: 9999;
@@ -34,51 +34,51 @@
     left: 10px;
   }
   
-  .xc-notification__text {
+  .ns-notification__text {
     margin: 0 10px;
   }
-  .xc-notification__icon {
-    height: var(--xc-notification-icon-size);
-    width: var(--xc-notification-icon-size);
-    font-size: var(--xc-notification-icon-size);
-    color: var(--xc-notification-icon-color);
+  .ns-notification__icon {
+    height: var(--ns-notification-icon-size);
+    width: var(--ns-notification-icon-size);
+    font-size: var(--ns-notification-icon-size);
+    color: var(--ns-notification-icon-color);
   }
 
-  .xc-notification__title {
+  .ns-notification__title {
     font-weight: 700;
-    font-size: var(--xc-notification-title-font-size);
-    line-height: var(--xc-notification-icon-size);
-    color: var(--xc-notification-title-color);
+    font-size: var(--ns-notification-title-font-size);
+    line-height: var(--ns-notification-icon-size);
+    color: var(--ns-notification-title-color);
     margin: 0
   }
-  .xc-notification__content {
-    font-size: var(--xc-notification-content-font-size);
+  .ns-notification__content {
+    font-size: var(--ns-notification-content-font-size);
     line-height: 24px;
     margin: 6px 0 0;
-    color: var(--xc-notification-content-color);
+    color: var(--ns-notification-content-color);
     text-align: justify
   }
-  .xc-notification__close {
+  .ns-notification__close {
     position: absolute;
     top: 18px;
     right: 15px;
     cursor: pointer;
-    color: var(--xc-notification-close-color);
-    font-size: var(--xc-notification-close-font-size)
+    color: var(--ns-notification-close-color);
+    font-size: var(--ns-notification-close-font-size)
   }
 }
 @each $val in info,success,warning,danger { 
-  .xc-notification--$(val) {
-    --xc-notification-icon-color: var(--xc-color-$(val));
-    color: var(--xc-notification-icon-color);
+  .ns-notification--$(val) {
+    --ns-notification-icon-color: var(--ns-color-$(val));
+    color: var(--ns-notification-icon-color);
   }
 }
-.xc-notification--error {
-  --xc-notification-icon-color: var(--xc-color-danger);
-  color: var(--xc-notification-icon-color);
+.ns-notification--error {
+  --ns-notification-icon-color: var(--ns-color-danger);
+  color: var(--ns-notification-icon-color);
 }
 
-.xc-notification-fade-enter-from {
+.ns-notification-fade-enter-from {
   &.right {
     right: 0;
     transform: translate(100%);
@@ -88,6 +88,6 @@
     transform: translate(-100%);
   }
 }
-.xc-notification-fade-leave-to {
+.ns-notification-fade-leave-to {
   opacity: 0;
 }

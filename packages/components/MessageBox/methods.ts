@@ -4,7 +4,7 @@ import type {
   MessageBoxData,
   MessageBoxCallback,
   MessageBoxProps,
-  IXcMessageBox,
+  INsMessageBox,
 } from './types'
 import type { ComponentPublicInstance, VNode, VNodeProps, Ref } from 'vue'
 import { createVNode, isVNode, ref, render, nextTick } from 'vue'
@@ -164,4 +164,4 @@ set(MessageBox, 'close', () => {
   messageInstanceMap.clear()
 })
 
-export default MessageBox as IXcMessageBox
+export default MessageBox as INsMessageBox

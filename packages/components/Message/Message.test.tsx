@@ -23,20 +23,20 @@ describe("Message", () => {
   test("message() function", async () => {
     const handler = message({ message: "hello msg", duration: 0 });
     await rAF();
-    expect(document.querySelector(".xc-message")).toBeTruthy();
+    expect(document.querySelector(".ns-message")).toBeTruthy();
     handler.close();
     await rAF();
-    expect(document.querySelector(".xc-message")).toBeFalsy();
+    expect(document.querySelector(".ns-message")).toBeFalsy();
   });
 
   test("call message() function more than once", async () => {
     message({ message: "hello msg", duration: 0 });
     message({ message: "hello msg1", duration: 0 });
     await rAF();
-    expect(document.querySelectorAll(".xc-message").length).toBe(2);
+    expect(document.querySelectorAll(".ns-message").length).toBe(2);
     closeAll();
     await rAF();
-    expect(document.querySelector(".xc-message")).toBeFalsy();
+    expect(document.querySelector(".ns-message")).toBeFalsy();
   });
 
   test("message offset", async () => {
@@ -44,7 +44,7 @@ describe("Message", () => {
     message({ message: "hello msg", duration: 0, offset: 50 });
 
     await rAF();
-    const elements = document.querySelectorAll(".xc-message");
+    const elements = document.querySelectorAll(".ns-message");
     expect(elements.length).toBe(2);
 
     expect(getTopValue(elements[0])).toBe(100);

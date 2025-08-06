@@ -2,10 +2,10 @@
 import type { LoadingOptions } from './types'
 import { computed, type Ref } from 'vue'
 import { isString } from 'lodash-es'
-import XcIcon from '../Icon/Icon.vue'
+import NsIcon from '../Icon/Icon.vue'
 
 defineOptions({
-  name: 'XcLoading',
+  name: 'NsLoading',
   inheritAttrs: false,
 })
 const props = defineProps<LoadingOptions>()
@@ -22,12 +22,12 @@ const iconName = computed(() => {
   <transition name="fade-in-linear" @after-leave="onAfterLeave">
     <div
       v-show="(props.visible as Ref).value"
-      class="xc-loading xc-loading__mask"
+      class="ns-loading ns-loading__mask"
       :class="{ 'is-fullscreen': fullscreen }"
     >
-      <div class="xc-loading__spinner">
-        <XcIcon v-if="props.spinner !== false" :icon="iconName" spin />
-        <p v-if="text" class="xc-loading-text">{{ text }}</p>
+      <div class="ns-loading__spinner">
+        <NsIcon v-if="props.spinner !== false" :icon="iconName" spin />
+        <p v-if="text" class="ns-loading-text">{{ text }}</p>
       </div>
     </div>
   </transition>
@@ -35,8 +35,8 @@ const iconName = computed(() => {
 
 <style>
 @import './style.css';
-.xc-loading {
-  --xc-loading-bg-color: v-bind(background) !important;
-  --xc-loading-z-index: v-bind(zIndex) !important;
+.ns-loading {
+  --ns-loading-bg-color: v-bind(background) !important;
+  --ns-loading-z-index: v-bind(zIndex) !important;
 }
 </style>

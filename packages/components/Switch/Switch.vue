@@ -3,7 +3,7 @@ import type { SwitchProps, SwitchEmits, SwitchInstance } from './types'
 import { ref, computed, onMounted, watch } from 'vue'
 import { useId } from '@shadow-ui/hooks'
 
-defineOptions({ name: 'XcSwitch', inheritAttrs: false })
+defineOptions({ name: 'NsSwitch', inheritAttrs: false })
 const props = withDefaults(defineProps<SwitchProps>(), {
   activeValue: true,
   inactiveValue: false,
@@ -48,16 +48,16 @@ defineExpose<SwitchInstance>({
 
 <template>
   <div
-    class="xc-switch"
+    class="ns-switch"
     :class="{
-      [`xc-switch--${size}`]: size,
+      [`ns-switch--${size}`]: size,
       'is-disabled': isDisabled,
       'is-checked': checked,
     }"
     @click="handleChange"
   >
     <input
-      class="xc-switch__input"
+      class="ns-switch__input"
       type="checkbox"
       role="switch"
       ref="inputRef"
@@ -67,16 +67,16 @@ defineExpose<SwitchInstance>({
       :checked="checked"
       @keydown.enter="handleChange"
     />
-    <div class="xc-switch__core">
-      <div class="xc-switch__core-inner">
+    <div class="ns-switch__core">
+      <div class="ns-switch__core-inner">
         <span
           v-if="activeText || inactiveText"
-          class="xc-switch__core-inner-text"
+          class="ns-switch__core-inner-text"
         >
           {{ checked ? activeText : inactiveText }}
         </span>
       </div>
-      <div class="xc-switch__core-action"></div>
+      <div class="ns-switch__core-action"></div>
     </div>
   </div>
 </template>

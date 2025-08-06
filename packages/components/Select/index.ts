@@ -3,8 +3,8 @@ import Option from './Option.vue'
 
 import { withInstall } from '@shadow-ui/utils'
 
-export const XcSelect = withInstall(Select)
-export const XcOption = withInstall(Option)
+export const NsSelect = withInstall(Select)
+export const NsOption = withInstall(Option)
 
 console.log('Select', Select, 'Option', Option)
 

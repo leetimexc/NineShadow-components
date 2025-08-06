@@ -6,7 +6,7 @@ import { useId } from '@shadow-ui/hooks'
 import type { DropdownItemProps } from './types'
 
 defineOptions({
-  name: 'XcDropdownItem',
+  name: 'NsDropdownItem',
 })
 
 const props = withDefaults(defineProps<DropdownItemProps>(), {
@@ -29,8 +29,8 @@ function handleClick() {
   <li
     :id="`dropdown-item-${command ?? useId().value}`"
     :class="{
-      'xc-dropdown__item': true,
-      ['xc-dropdown__item--' + size]: size,
+      'ns-dropdown__item': true,
+      ['ns-dropdown__item--' + size]: size,
       'is-disabled': disabled,
       'is-divided': divided,
     }"

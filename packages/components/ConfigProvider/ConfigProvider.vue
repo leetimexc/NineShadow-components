@@ -3,7 +3,7 @@ import type { ConfigProviderProps } from './types'
 import { provideGlobalConfig } from './hooks'
 
 defineOptions({
-  name: 'XcConfigProvider',
+  name: 'NsConfigProvider',
 })
 const props = defineProps<ConfigProviderProps>()
 const config = provideGlobalConfig(props)

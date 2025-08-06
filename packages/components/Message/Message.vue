@@ -6,9 +6,9 @@ import { delay, bind } from 'lodash-es'
 import { useOffset, useEventListener } from '@shadow-ui/hooks'
 import { addUnit } from '@shadow-ui/utils'
 import { typeIconMap, RenderVnode } from '@shadow-ui/utils'
-import XcIcon from '../Icon/Icon.vue'
+import NsIcon from '../Icon/Icon.vue'
 
-defineOptions({ name: 'XcMessage' })
+defineOptions({ name: 'NsMessage' })
 
 const props = withDefaults(defineProps<MessageProps>(), {
   type: 'info',
@@ -77,9 +77,9 @@ defineExpose<MessageCompInstance>({
   >
     <div
       ref="messageRef"
-      class="xc-message"
+      class="ns-message"
       :class="{
-        [`xc-message--${type}`]: type,
+        [`ns-message--${type}`]: type,
         'is-close': showClose,
         'text-center': center,
       }"
@@ -89,14 +89,14 @@ defineExpose<MessageCompInstance>({
       @mouseenter="clearTimer"
       @mouseleave="startTimmer"
     >
-      <xc-icon class="xc-message__icon" :icon="iconName" />
-      <div class="xc-message__content">
+      <ns-icon class="ns-message__icon" :icon="iconName" />
+      <div class="ns-message__content">
         <slot>
           <render-vnode v-if="message" :vNode="message" />
         </slot>
       </div>
-      <div class="xc-message__close" v-if="showClose">
-        <xc-icon icon="xmark" @click.stop="close" />
+      <div class="ns-message__close" v-if="showClose">
+        <ns-icon icon="xmark" @click.stop="close" />
       </div>
     </div>
   </Transition>

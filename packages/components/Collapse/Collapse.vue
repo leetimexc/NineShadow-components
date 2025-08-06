@@ -4,7 +4,7 @@ import { ref, provide, watch } from 'vue'
 import { debugWarn } from '@shadow-ui/utils'
 import { COLLAPSE_CTX_KEY } from './constants'
 
-const COMPONENT_NAME = 'XcCollapse' as const
+const COMPONENT_NAME = 'NsCollapse' as const
 
 defineOptions({
   name: COMPONENT_NAME,
@@ -61,7 +61,7 @@ provide(COLLAPSE_CTX_KEY, {
 })
 </script>
 <template>
-  <div class="xc-collapse">
+  <div class="ns-collapse">
     <slot></slot>
   </div>
 </template>

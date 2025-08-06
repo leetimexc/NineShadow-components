@@ -5,12 +5,12 @@ import { useLocale } from '@shadow-ui/hooks'
 import type { TooltipInstance } from '../Tooltip'
 import type { PopconfirmProps, PopconfirmEmits } from './types'
 
-import XcTooltip from '../Tooltip/Tooltip.vue'
-import XcButton from '../Button/Button.vue'
-import XcIcon from '../Icon/Icon.vue'
+import NsTooltip from '../Tooltip/Tooltip.vue'
+import NsButton from '../Button/Button.vue'
+import NsIcon from '../Icon/Icon.vue'
 
 defineOptions({
-  name: 'XcPopconfirm',
+  name: 'NsPopconfirm',
 })
 
 const props = withDefaults(defineProps<PopconfirmProps>(), {
@@ -44,30 +44,30 @@ function cancel(e: MouseEvent) {
 </script>
 
 <template>
-  <xc-tooltip ref="tooltipRef" trigger="click" :hide-timeout="hideAfter">
+  <ns-tooltip ref="tooltipRef" trigger="click" :hide-timeout="hideAfter">
     <template #content>
-      <div class="xc-popconfirm" :style="style">
-        <div class="xc-popconfirm__main">
-          <xc-icon v-if="!hideIcon && icon" :icon="icon" :color="iconColor" />
+      <div class="ns-popconfirm" :style="style">
+        <div class="ns-popconfirm__main">
+          <ns-icon v-if="!hideIcon && icon" :icon="icon" :color="iconColor" />
           {{ title }}
         </div>
-        <div class="xc-popconfirm__action">
-          <xc-button
-            class="xc-popconfirm__cancel"
+        <div class="ns-popconfirm__action">
+          <ns-button
+            class="ns-popconfirm__cancel"
             size="small"
             :type="cancelButtonType"
             @click="cancel"
           >
             {{ cancelButtonText || locale.t('popconfirm.cancelButtonText') }}
-          </xc-button>
-          <xc-button
-            class="xc-popconfirm__confirm"
+          </ns-button>
+          <ns-button
+            class="ns-popconfirm__confirm"
             size="small"
             :type="confirmButtonType"
             @click="confrim"
           >
             {{ confirmButtonText || locale.t('popconfirm.confirmButtonText') }}
-          </xc-button>
+          </ns-button>
         </div>
       </div>
     </template>
@@ -79,7 +79,7 @@ function cancel(e: MouseEvent) {
     <template v-if="$slots.reference" #default>
       <slot name="reference"></slot>
     </template>
-  </xc-tooltip>
+  </ns-tooltip>
 </template>
 
 <style scoped>

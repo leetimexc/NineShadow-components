@@ -1,7 +1,7 @@
 import { describe, test,it, expect, vi, beforeEach } from "vitest";
 import { withInstall } from "@shadow-ui/utils";
 import { mount } from "@vue/test-utils";
-import { XcTooltip } from ".";
+import { NsTooltip } from ".";
 
 import Tooltip from "./Tooltip.vue";
 
@@ -12,18 +12,18 @@ const onVisibleChange = vi.fn();
 describe("Tooltip/index.ts", () => {
   // 测试 withInstall 函数是否被正确应用
   it("should be exported with withInstall()", () => {
-    expect(XcTooltip.install).toBeDefined();
+    expect(NsTooltip.install).toBeDefined();
   });
 
   // 测试 Tooltip 组件是否被正确导出
   it("should be exported Tooltip component", () => {
-    expect(XcTooltip).toBe(Tooltip);
+    expect(NsTooltip).toBe(Tooltip);
   });
 
   // 可选：测试 withInstall 是否增强了 Tooltip 组件的功能
   test("should enhance Tooltip component", () => {
     const enhancedTooltip = withInstall(Tooltip);
-    expect(enhancedTooltip).toBe(XcTooltip);
+    expect(enhancedTooltip).toBe(NsTooltip);
     // 这里可以添加更多测试，确保 withInstall 增强了组件的特定功能
   });
 
@@ -60,19 +60,19 @@ describe("Tooltip.vue", () => {
     );
     const triggerArea = wrapper.find("#trigger");
     expect(triggerArea.exists()).toBeTruthy();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
 
     // 弹出层是否出现
     triggerArea.trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
-    expect(wrapper.get(".xc-tooltip__popper").text()).toBe("hello tooltip");
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.get(".ns-tooltip__popper").text()).toBe("hello tooltip");
     expect(onVisibleChange).toHaveBeenCalledWith(true);
 
     // 再次点击
     triggerArea.trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
     expect(onVisibleChange).toHaveBeenCalledTimes(2);
 
     // 等待动画
@@ -80,11 +80,11 @@ describe("Tooltip.vue", () => {
 
     triggerArea.trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
     // 区域外点击关闭 tooltip
     wrapper.get("#outside").trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
     expect(onVisibleChange).toHaveBeenCalledTimes(4);
 
     // 注销流程
@@ -97,13 +97,13 @@ describe("Tooltip.vue", () => {
       props: { trigger: "hover", content: "test" },
     });
     // 测试悬停显示
-    wrapper.find(".xc-tooltip__trigger").trigger("mouseenter");
+    wrapper.find(".ns-tooltip__trigger").trigger("mouseenter");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
     // 测试悬外隐藏
-    wrapper.find(".xc-tooltip").trigger("mouseleave");
+    wrapper.find(".ns-tooltip").trigger("mouseleave");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
   });
 
   // 右键菜单触发的测试
@@ -113,9 +113,9 @@ describe("Tooltip.vue", () => {
       props: { trigger: "contextmenu", content: "test" },
     });
     // 测试右键菜单显示
-    wrapper.find(".xc-tooltip__trigger").trigger("contextmenu");
+    wrapper.find(".ns-tooltip__trigger").trigger("contextmenu");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
     // 测试右键菜单隐藏（可以模拟点击外部区域）
   });
 
@@ -128,16 +128,16 @@ describe("Tooltip.vue", () => {
     // 测试手动触发显示和隐藏
     wrapper.vm.show(); // 假设 show 方法可以通过某种方式访问
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
     wrapper.vm.hide();
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
 
     wrapper.setProps({ disabled: true });
     await vi.runAllTimers();
     wrapper.vm.show();
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
   });
 
   // 禁用状态的测试
@@ -147,9 +147,9 @@ describe("Tooltip.vue", () => {
       props: { disabled: true, content: "test" },
     });
     // 测试禁用状态下点击不会触发显示
-    wrapper.find(".xc-tooltip__trigger").trigger("click");
+    wrapper.find(".ns-tooltip__trigger").trigger("click");
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
   });
 
   // 虚拟触发节点的测试
@@ -162,13 +162,13 @@ describe("Tooltip.vue", () => {
     // 测试虚拟节点的事件触发
     virtualRef.dispatchEvent(new Event("mouseenter"));
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
 
     wrapper.setProps({ trigger: "click" });
     await vi.runAllTimers(); 
     virtualRef.dispatchEvent(new Event("click"));
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
     
     wrapper.unmount();
   });
@@ -181,18 +181,18 @@ describe("Tooltip.vue", () => {
     wrapper.setProps({ trigger: "click" });
 
     await vi.runAllTimers();
-    wrapper.find(".xc-tooltip__trigger").trigger("click");
+    wrapper.find(".ns-tooltip__trigger").trigger("click");
 
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
 
-    wrapper.find(".xc-tooltip__trigger").trigger("click");
-
-    await vi.runAllTimers();
-    wrapper.find(".xc-tooltip__trigger").trigger("hover");
+    wrapper.find(".ns-tooltip__trigger").trigger("click");
 
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    wrapper.find(".ns-tooltip__trigger").trigger("hover");
+
+    await vi.runAllTimers();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
 
   })
   // test("change trigger prop",async()=>{
@@ -203,18 +203,18 @@ describe("Tooltip.vue", () => {
   //   wrapper.setProps({ trigger: "click" });
 
   //   await vi.runAllTimers();
-  //   wrapper.find(".xc-tooltip__trigger").trigger("click");
+  //   wrapper.find(".ns-tooltip__trigger").trigger("click");
 
   //   await vi.runAllTimers();
-  //   expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+  //   expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
 
-  //   wrapper.find(".xc-tooltip__trigger").trigger("click");
-
-  //   await vi.runAllTimers();
-  //   wrapper.find(".xc-tooltip__trigger").trigger("hover");
+  //   wrapper.find(".ns-tooltip__trigger").trigger("click");
 
   //   await vi.runAllTimers();
-  //   expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+  //   wrapper.find(".ns-tooltip__trigger").trigger("hover");
+
+  //   await vi.runAllTimers();
+  //   expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
 
   // })
   test("change manual prop",async()=>{
@@ -225,18 +225,18 @@ describe("Tooltip.vue", () => {
     wrapper.setProps({ manual: true });
     await vi.runAllTimers();
 
-    wrapper.find(".xc-tooltip__trigger").trigger("hover");
+    wrapper.find(".ns-tooltip__trigger").trigger("hover");
 
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
 
     wrapper.setProps({ manual: false, trigger: "contextmenu" });
 
     await vi.runAllTimers();
-    wrapper.find(".xc-tooltip__trigger").trigger("contextmenu");
+    wrapper.find(".ns-tooltip__trigger").trigger("contextmenu");
 
     await vi.runAllTimers();
-    expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+    expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
   })
 
 
@@ -257,17 +257,17 @@ describe("Tooltip.vue", () => {
   //   });
   //   const triggerArea = wrapper.find("#trigger");
   //   expect(triggerArea.exists()).toBeTruthy();
-  //   expect(wrapper.find(".xc-tooltip__popper").exists()).toBeFalsy();
+  //   expect(wrapper.find(".ns-tooltip__popper").exists()).toBeFalsy();
 
   //   // 弹出层是否出现
-  //   wrapper.find(".xc-tooltip__popper").trigger("mouseenter")
+  //   wrapper.find(".ns-tooltip__popper").trigger("mouseenter")
   //   await vi.runAllTimers()
-  //   expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+  //   expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
 
   //   // trigger:hover外层惦记不触发
   //   wrapper.get('#outside').trigger("click")
   //   await vi.runAllTimers()
-  //   expect(wrapper.find(".xc-tooltip__popper").exists()).toBeTruthy();
+  //   expect(wrapper.find(".ns-tooltip__popper").exists()).toBeTruthy();
 
   //   // 注销流程
   //   wrapper.unmount();

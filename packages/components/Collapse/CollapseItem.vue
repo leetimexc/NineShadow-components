@@ -2,10 +2,10 @@
 import type { CollapseItemProps } from './types'
 import { inject, computed } from 'vue'
 import { COLLAPSE_CTX_KEY } from './constants'
-import XcIcon from '../Icon/Icon.vue'
+import NsIcon from '../Icon/Icon.vue'
 import transitionEvents from './transitionEvents.ts'
 
-defineOptions({ name: 'XcCollapseItem' })
+defineOptions({ name: 'NsCollapseItem' })
 const props = defineProps<CollapseItemProps>()
 const ctx = inject(COLLAPSE_CTX_KEY, void 0)
 
@@ -17,13 +17,13 @@ function handleClick() {
 </script>
 <template>
   <div
-    class="xc-collapse-item"
+    class="ns-collapse-item"
     :class="{
       'is-disabled': disabled,
     }"
   >
     <div
-      class="xc-collapse-item__header"
+      class="ns-collapse-item__header"
       :id="`item-header-${name}`"
       :class="{
         'is-disabled': disabled,
@@ -31,16 +31,16 @@ function handleClick() {
       }"
       @click="handleClick"
     >
-      <span class="xc-collapse-item__title">
+      <span class="ns-collapse-item__title">
         <slot name="title">
           {{ title }}
         </slot>
       </span>
-      <xc-icon icon="angle-right" class="header-angle" />
+      <ns-icon icon="angle-right" class="header-angle" />
     </div>
     <transition name="slide" v-on="transitionEvents">
-      <div class="xc-collapse-item__wapper" v-show="isActive">
-        <div class="xc-collapse-item__content" :id="`item-content-${name}`">
+      <div class="ns-collapse-item__wapper" v-show="isActive">
+        <div class="ns-collapse-item__content" :id="`item-content-${name}`">
           <slot></slot>
         </div>
       </div>

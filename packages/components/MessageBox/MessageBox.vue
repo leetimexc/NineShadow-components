@@ -5,14 +5,14 @@ import { useZIndex, useId } from '@shadow-ui/hooks'
 import { typeIconMap } from '@shadow-ui/utils'
 import { reactive, computed, ref, watch, nextTick, type Ref } from 'vue'
 
-import XcOverlay from '../Overlay/Overlay.vue'
-import XcIcon from '../Icon/Icon.vue'
-import XcButton from '../Button/Button.vue'
-import XcInput from '../Input/Input.vue'
+import NsOverlay from '../Overlay/Overlay.vue'
+import NsIcon from '../Icon/Icon.vue'
+import NsButton from '../Button/Button.vue'
+import NsInput from '../Input/Input.vue'
 import { isFunction, isNil } from 'lodash-es'
 
 defineOptions({
-  name: 'XcMessageBox',
+  name: 'NsMessageBox',
   inheritAttrs: false,
 })
 
@@ -84,16 +84,16 @@ function handleClose() {
 
 <template>
   <transition name="fade-in-linear" @after-leave="destroy">
-    <xc-overlay v-show="(visible as Ref).value" :z-index="state.zIndex" mask>
+    <ns-overlay v-show="(visible as Ref).value" :z-index="state.zIndex" mask>
       <div
         role="dialog"
-        class="xc-overlay-message-box"
+        class="ns-overlay-message-box"
         @click="handleWrapperClick"
       >
         <div
           ref="rootRef"
           :class="[
-            'xc-message-box',
+            'ns-message-box',
             {
               'is-center': state.center,
             },
@@ -103,14 +103,14 @@ function handleClose() {
           <div
             v-if="!isNil(state.title)"
             ref="headerRef"
-            class="xc-message-box__header"
+            class="ns-message-box__header"
             :class="{ 'show-close': state.showClose }"
           >
-            <div class="xc-message-box__title">
-              <xc-icon
+            <div class="ns-message-box__title">
+              <ns-icon
                 v-if="iconComponent && state.center"
                 :class="{
-                  [`xc-icon-${state.type}`]: state.type,
+                  [`ns-icon-${state.type}`]: state.type,
                 }"
                 :icon="iconComponent"
               />
@@ -118,21 +118,21 @@ function handleClose() {
             </div>
             <button
               v-if="showClose"
-              class="xc-message-box__header-btn"
+              class="ns-message-box__header-btn"
               @click.stop="handleClose"
             >
-              <xc-icon icon="xmark" />
+              <ns-icon icon="xmark" />
             </button>
           </div>
-          <div class="xc-message-box__content">
-            <xc-icon
+          <div class="ns-message-box__content">
+            <ns-icon
               v-if="iconComponent && !state.center && hasMessage"
               :class="{
-                [`xc-icon-${state.type}`]: state.type,
+                [`ns-icon-${state.type}`]: state.type,
               }"
               :icon="iconComponent"
             />
-            <div v-if="hasMessage" class="xc-message-box__message">
+            <div v-if="hasMessage" class="ns-message-box__message">
               <slot>
                 <component
                   :is="state.showInput ? 'label' : 'p'"
@@ -143,8 +143,8 @@ function handleClose() {
               </slot>
             </div>
           </div>
-          <div v-show="state.showInput" class="xc-message-box__input">
-            <xc-input
+          <div v-show="state.showInput" class="ns-message-box__input">
+            <ns-input
               v-model="state.inputValue"
               ref="inputRef"
               :placeholder="state.inputPlaceholder"
@@ -152,31 +152,31 @@ function handleClose() {
               @keyup.enter="handleInputEnter"
             />
           </div>
-          <div class="xc-message-box__footer">
-            <xc-button
+          <div class="ns-message-box__footer">
+            <ns-button
               v-if="state.showCancelButton"
-              class="xc-message-box__footer-btn xc-message-box__cancel-btn"
+              class="ns-message-box__footer-btn ns-message-box__cancel-btn"
               :type="state.cancelButtonType"
               :round="state.roundButton"
               :loading="state.cancelButtonLoading"
               @click="handleAction('cancel')"
               @keydown.prevent.enter="handleAction('cancel')"
-              >{{ state.cancelButtonText }}</xc-button
+              >{{ state.cancelButtonText }}</ns-button
             >
-            <xc-button
+            <ns-button
               v-show="state.showConfirmButton"
-              class="xc-message-box__footer-btn xc-message-box__confirm-btn"
+              class="ns-message-box__footer-btn ns-message-box__confirm-btn"
               :type="state.confirmButtonType ?? 'primary'"
               :round="state.roundButton"
               :loading="state.confirmButtonLoading"
               @click="handleAction('confirm')"
               @keydown.prevent.enter="handleAction('confirm')"
-              >{{ state.confirmButtonText }}</xc-button
+              >{{ state.confirmButtonText }}</ns-button
             >
           </div>
         </div>
       </div>
-    </xc-overlay>
+    </ns-overlay>
   </transition>
 </template>
 

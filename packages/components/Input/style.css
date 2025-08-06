@@ -1,26 +1,26 @@
-.xc-input {
-  --xc-input-text-color: var(--xc-text-color-regular);
-  --xc-input-border: var(--xc-border);
-  --xc-input-hover-border: var(--xc-border-color-hover);
-  --xc-input-focus-border: var(--xc-color-primary);
-  --xc-input-transparent-border: 0 0 0 1px transparent inset;
-  --xc-input-border-color: var(--xc-border-color);
-  --xc-input-border-radius: var(--xc-border-radius-base);
-  --xc-input-bg-color: var(--xc-fill-color-blank);
-  --xc-input-icon-color: var(--xc-text-color-placeholder);
-  --xc-input-placeholder-color: var(--xc-text-color-placeholder);
-  --xc-input-hover-border-color: var(--xc-border-color-hover);
-  --xc-input-clear-hover-color: var(--xc-text-color-secondary);
-  --xc-input-focus-border-color: var(--xc-color-primary);
+.ns-input {
+  --ns-input-text-color: var(--ns-text-color-regular);
+  --ns-input-border: var(--ns-border);
+  --ns-input-hover-border: var(--ns-border-color-hover);
+  --ns-input-focus-border: var(--ns-color-primary);
+  --ns-input-transparent-border: 0 0 0 1px transparent inset;
+  --ns-input-border-color: var(--ns-border-color);
+  --ns-input-border-radius: var(--ns-border-radius-base);
+  --ns-input-bg-color: var(--ns-fill-color-blank);
+  --ns-input-icon-color: var(--ns-text-color-placeholder);
+  --ns-input-placeholder-color: var(--ns-text-color-placeholder);
+  --ns-input-hover-border-color: var(--ns-border-color-hover);
+  --ns-input-clear-hover-color: var(--ns-text-color-secondary);
+  --ns-input-focus-border-color: var(--ns-color-primary);
 }
 
-.xc-input {
-  --xc-input-height: var(--xc-component-size);
+.ns-input {
+  --ns-input-height: var(--ns-component-size);
   position: relative;
-  font-size: var(--xc-font-size-base);
+  font-size: var(--ns-font-size-base);
   display: inline-flex;
   width: 100%;
-  line-height: var(--xc-input-height);
+  line-height: var(--ns-input-height);
   box-sizing: border-box;
   vertical-align: middle;
 
@@ -41,72 +41,72 @@
 
   &.is-disabled {
     cursor: not-allowed;
-    .xc-input__wrapper {
-      background-color: var(--xc-disabled-bg-color);
-      box-shadow: 0 0 0 1px var(--xc-disabled-border-color) inset;
+    .ns-input__wrapper {
+      background-color: var(--ns-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--ns-disabled-border-color) inset;
     }
-    .xc-input__inner {
-      color: var(--xc-disabled-text-color);
-      -webkit-text-fill-color: var(--xc-disabled-text-color);
+    .ns-input__inner {
+      color: var(--ns-disabled-text-color);
+      -webkit-text-fill-color: var(--ns-disabled-text-color);
       cursor: not-allowed;
     }
-    .xc-textarea__inner {
-      background-color: var(--xc-disabled-bg-color);
-      box-shadow: 0 0 0 1px var(--xc-disabled-border-color) inset;
-      color: var(--xc-disabled-text-color);
-      -webkit-text-fill-color: var(--xc-disabled-text-color);
+    .ns-textarea__inner {
+      background-color: var(--ns-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--ns-disabled-border-color) inset;
+      color: var(--ns-disabled-text-color);
+      -webkit-text-fill-color: var(--ns-disabled-text-color);
       cursor: not-allowed;
     }
   }
   &.is-prepend {
-    >.xc-input__wrapper {
+    >.ns-input__wrapper {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
   }
   &.is-append {
-    >.xc-input__wrapper {
+    >.ns-input__wrapper {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
   }
-  &.is-focus .xc-input__wrapper {
-    box-shadow: 0 0 0 1px var(--xc-input-focus-border-color) inset!important
+  &.is-focus .ns-input__wrapper {
+    box-shadow: 0 0 0 1px var(--ns-input-focus-border-color) inset!important
   }
 }
 
-.xc-input--large {
-  --xc-input-height: var(--xc-component-size-large);
+.ns-input--large {
+  --ns-input-height: var(--ns-component-size-large);
   font-size: 14px;
-  .xc-input__wrapper {
+  .ns-input__wrapper {
     padding: 1px 15px;
-    .xc-input__inner {
-      --xc-input-inner-height: calc(var(--xc-input-height, 40px) - 2px);
+    .ns-input__inner {
+      --ns-input-inner-height: calc(var(--ns-input-height, 40px) - 2px);
     }
   }
 
 }
-.xc-input--small {
-  --xc-input-height: var(--xc-component-size-small);
+.ns-input--small {
+  --ns-input-height: var(--ns-component-size-small);
   font-size: 12px;
-  .xc-input__wrapper {
+  .ns-input__wrapper {
     padding: 1px 7px;
-    .xc-input__inner {
-      --xc-input-inner-height: calc(var(--xc-input-height, 24px) - 2px);
+    .ns-input__inner {
+      --ns-input-inner-height: calc(var(--ns-input-height, 24px) - 2px);
     } 
   }
 }
-.xc-input__prefix, .xc-input__suffix {
+.ns-input__prefix, .ns-input__suffix {
   display: inline-flex;
   white-space: nowrap;
   flex-shrink: 0;
   flex-wrap: nowrap;
   height: 100%;
   text-align: center;
-  color: var(--xc-input-icon-color, var(--xc-text-color-placeholder));
-  transition: all var(--xc-transition-duration);
+  color: var(--ns-input-icon-color, var(--ns-text-color-placeholder));
+  transition: all var(--ns-transition-duration);
 }
-.xc-input__prefix {
+.ns-input__prefix {
   >:first-child {
     margin-left: 0px !important;
   }
@@ -114,7 +114,7 @@
     margin-right: 8px !important;
   }
 }
-.xc-input__suffix {
+.ns-input__suffix {
   >:first-child {
     margin-left: 8px !important;
   }
@@ -122,44 +122,44 @@
     margin-right: 0px !important;
   }
 }
-.xc-input__prepend, .xc-input__append {
-  background-color: var(--xc-fill-color-light);
-  color: var(--xc-color-info);
+.ns-input__prepend, .ns-input__append {
+  background-color: var(--ns-fill-color-light);
+  color: var(--ns-color-info);
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  border-radius: var(--xc-input-border-radius);
+  border-radius: var(--ns-input-border-radius);
   padding: 0 20px;
   white-space: nowrap;
 }
-.xc-input__prepend {
+.ns-input__prepend {
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  box-shadow: 1px 0 0 0 var(--xc-input-border-color) inset,0 1px 0 0 var(--xc-input-border-color) inset,0 -1px 0 0 var(--xc-input-border-color) inset;
+  box-shadow: 1px 0 0 0 var(--ns-input-border-color) inset,0 1px 0 0 var(--ns-input-border-color) inset,0 -1px 0 0 var(--ns-input-border-color) inset;
 
 }
-.xc-input__append {
+.ns-input__append {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  box-shadow: 0 1px 0 0 var(--xc-input-border-color) inset,0 -1px 0 0 var(--xc-input-border-color) inset,-1px 0 0 0 var(--xc-input-border-color) inset;
-  & >.xc-input__wrapper {
+  box-shadow: 0 1px 0 0 var(--ns-input-border-color) inset,0 -1px 0 0 var(--ns-input-border-color) inset,-1px 0 0 0 var(--ns-input-border-color) inset;
+  & >.ns-input__wrapper {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 }
 
-.xc-input--textarea {
+.ns-input--textarea {
   position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: bottom;
-  font-size: var(--xc-font-size-base);
+  font-size: var(--ns-font-size-base);
 }
-.xc-textarea__wrapper {
+.ns-textarea__wrapper {
   position: relative;
   display: block;
   resize: vertical;
@@ -169,72 +169,72 @@
   width: 100%;
   font-size: inherit;
   font-family: inherit;
-  color: var(--xc-input-text-color, var(--xc-text-color-regular));
-  background-color: var(--xc-input-bg-color, var(--xc-fill-color-blank));
+  color: var(--ns-input-text-color, var(--ns-text-color-regular));
+  background-color: var(--ns-input-bg-color, var(--ns-fill-color-blank));
   background-image: none;
   -webkit-appearance: none;
-  box-shadow: 0 0 0 1px var(--xc-input-border-color, var(--xc-border-color)) inset;
-  border-radius: var(--xc-input-border-radius, var(--xc-border-radius-base));
-  transition: var(--xc-transition-box-shadow);
+  box-shadow: 0 0 0 1px var(--ns-input-border-color, var(--ns-border-color)) inset;
+  border-radius: var(--ns-input-border-radius, var(--ns-border-radius-base));
+  transition: var(--ns-transition-box-shadow);
   border: none;
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 1px var(--xc-input-focus-border-color) inset;
+    box-shadow: 0 0 0 1px var(--ns-input-focus-border-color) inset;
   }
   &::placeholder {
-    color: var(--xc-input-placeholder-color);
+    color: var(--ns-input-placeholder-color);
   }
 }
-.xc-input__wrapper {
+.ns-input__wrapper {
   display: inline-flex;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
   padding: 1px 11px;
-  background-color: var(--xc-input-bg-color, var(--xc-fill-color-blank));
+  background-color: var(--ns-input-bg-color, var(--ns-fill-color-blank));
   background-image: none;
-  border-radius: var(--xc-input-border-radius, var(--xc-border-radius-base));
-  transition: var(--xc-transition-box-shadow);
-  box-shadow: 0 0 0 1px var(--xc-input-border-color, var(--xc-border-color)) inset;
+  border-radius: var(--ns-input-border-radius, var(--ns-border-radius-base));
+  transition: var(--ns-transition-box-shadow);
+  box-shadow: 0 0 0 1px var(--ns-input-border-color, var(--ns-border-color)) inset;
   &:hover {
-    box-shadow: 0 0 0 1px var(--xc-input-hover-border-color) inset;
+    box-shadow: 0 0 0 1px var(--ns-input-hover-border-color) inset;
   }
   &.is-focus {
-    box-shadow: 0 0 0 1px var(--xc-input-focus-border-color) inset;
+    box-shadow: 0 0 0 1px var(--ns-input-focus-border-color) inset;
   }
-  .xc-input__inner {
-    --xc-input-inner-height: calc(var(--xc-input-height, 32px) - 2px);
+  .ns-input__inner {
+    --ns-input-inner-height: calc(var(--ns-input-height, 32px) - 2px);
     width: 100%;
     flex-grow: 1;
     -webkit-appearance: none;
-    color: var(--xc-input-text-color, var(--xc-text-color-regular));
+    color: var(--ns-input-text-color, var(--ns-text-color-regular));
     font-size: inherit;
-    height: var(--xc-input-inner-height);
-    line-height: var(--xc-input-inner-height);
+    height: var(--ns-input-inner-height);
+    line-height: var(--ns-input-inner-height);
     padding: 0;
     outline: none;
     border: none;
     background: none;
     box-sizing: border-box;
     &::placeholder {
-      color: var(--xc-input-placeholder-color);
+      color: var(--ns-input-placeholder-color);
     }
   }  
-  .xc-icon {
+  .ns-icon {
     height: inherit;
     line-height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all var(--xc-transition-duration);
+    transition: all var(--ns-transition-duration);
     margin-left: 8px;
   }
-  .xc-input__clear, .xc-input__password {
-    color: var(--xc-input-icon-color);
+  .ns-input__clear, .ns-input__password {
+    color: var(--ns-input-icon-color);
     font-size: 14px;
     cursor: pointer;
     &:hover {
-     color: var(--xc-input-clear-hover-color);
+     color: var(--ns-input-clear-hover-color);
     }
   }
 }

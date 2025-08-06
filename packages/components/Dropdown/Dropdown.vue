@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, provide } from 'vue'
 import { omit, isNil } from 'lodash-es'
-import { type ButtonInstance, XcButton, XcButtonGroup } from '../Button/index'
+import { type ButtonInstance, NsButton, NsButtonGroup } from '../Button/index'
 import type { TooltipInstance } from '../Tooltip/types'
 import type {
   DropdownProps,
@@ -15,10 +15,10 @@ import { useDisabledStyle } from '@shadow-ui/hooks'
 import { DROPDOWN_CTX_KEY } from './constants'
 
 import DropdownItem from './DropdownItem.vue'
-import XcTooltip from '../Tooltip/Tooltip.vue'
+import NsTooltip from '../Tooltip/Tooltip.vue'
 
 defineOptions({
-  name: 'XcDropdown',
+  name: 'NsDropdown',
   inheritAttrs: false,
 })
 const props = withDefaults(defineProps<DropdownProps>(), {
@@ -53,29 +53,29 @@ defineExpose<DropdownInstance>({
 </script>
 
 <template>
-  <div class="xc-dropdown" :class="{ 'is-disabled': props.disabled }">
-    <xc-tooltip
+  <div class="ns-dropdown" :class="{ 'is-disabled': props.disabled }">
+    <ns-tooltip
       ref="tooltipRef"
       v-bind="tooltipProps"
       :virtual-triggering="splitButton"
       :virtual-ref="triggerRef?.ref.value"
       @visible-change="$emit('visible-change', $event)"
     >
-      <xc-button-group
+      <ns-button-group
         v-if="splitButton"
         :type="type"
         :size="size"
         :disabled="disabled"
       >
-        <xc-button @click="$emit('click', $event)">
+        <ns-button @click="$emit('click', $event)">
           <slot name="default"></slot>
-        </xc-button>
-        <xc-button ref="triggerRef" icon="angle-down" />
-      </xc-button-group>
+        </ns-button>
+        <ns-button ref="triggerRef" icon="angle-down" />
+      </ns-button-group>
       <slot name="default" v-else></slot>
 
       <template #content>
-        <div class="xc-dropdown__menu">
+        <div class="ns-dropdown__menu">
           <slot name="dropdown">
             <template v-for="item in items" :key="item.command">
               <dropdown-item v-bind="item" />
@@ -83,14 +83,14 @@ defineExpose<DropdownInstance>({
           </slot>
         </div>
       </template>
-    </xc-tooltip>
+    </ns-tooltip>
   </div>
 </template>
 
 <style scoped>
 @import './style.css';
 
-:deep(.xc-button-group) {
+:deep(.ns-button-group) {
   & > :last-child {
     padding: 5px 7px;
   }

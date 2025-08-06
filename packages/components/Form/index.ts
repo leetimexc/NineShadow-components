@@ -3,8 +3,8 @@ import FormItem from './FormItem.vue'
 
 import { withInstall } from '@shadow-ui/utils'
 
-export const XcForm = withInstall(Form)
-export const XcFormItem = withInstall(FormItem)
+export const NsForm = withInstall(Form)
+export const NsFormItem = withInstall(FormItem)
 
 export * from './types'
 export * from './hooks'

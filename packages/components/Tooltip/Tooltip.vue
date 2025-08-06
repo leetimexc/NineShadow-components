@@ -10,7 +10,7 @@ import type { ButtonInstance } from '../Button'
 import useEvenstToTiggerNode from './useEventsToTiggerNode'
 
 defineOptions({
-  name: 'XcTooltip',
+  name: 'NsTooltip',
 })
 
 interface _TooltipProps extends TooltipProps {
@@ -212,9 +212,9 @@ defineExpose<TooltipInstance>({
 </script>
 
 <template>
-  <div class="xc-tooltip" ref="containerNode" v-on="outerEvents">
+  <div class="ns-tooltip" ref="containerNode" v-on="outerEvents">
     <div
-      class="xc-tooltip__trigger"
+      class="ns-tooltip__trigger"
       ref="_triggerNode"
       v-on="events"
       v-if="!virtualTriggering"
@@ -225,7 +225,7 @@ defineExpose<TooltipInstance>({
 
     <transition :name="transition" @after-leave="destroyPopperInstance">
       <div
-        class="xc-tooltip__popper"
+        class="ns-tooltip__popper"
         ref="popperNode"
         v-on="dropdownEvents"
         v-if="visible"

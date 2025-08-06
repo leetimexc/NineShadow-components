@@ -11,17 +11,17 @@ describe("Loading", () => {
   it("should render mask", async () => {
     Loading();
     await rAF();
-    expect(document.querySelector(".xc-loading__mask")).toBeTruthy();
+    expect(document.querySelector(".ns-loading__mask")).toBeTruthy();
   });
 
   it("should close Loading and remove it from DOM", async () => {
     const instance = Loading();
 
     await rAF();
-    expect(document.querySelector(".xc-loading")).toBeTruthy();
+    expect(document.querySelector(".ns-loading")).toBeTruthy();
     instance.close();
     await rAF();
 
-    expect(document.querySelector(".xc-loading")).toBeFalsy();
+    expect(document.querySelector(".ns-loading")).toBeFalsy();
   });
 });

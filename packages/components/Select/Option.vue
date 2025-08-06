@@ -28,7 +28,7 @@ function handleClick() {
 
 <template>
   <li
-    class="xc-select__menu-item"
+    class="ns-select__menu-item"
     :class="{
       'is-disabled': disabled,
       'is-selected': selected,

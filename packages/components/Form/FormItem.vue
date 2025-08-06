@@ -40,7 +40,7 @@ import { useId } from '@shadow-ui/hooks'
 
 import { FORM_CTX_KEY, FORM_ITEM_CTX_KEY } from './constants'
 
-defineOptions({ name: 'XcFormItem' })
+defineOptions({ name: 'NsFormItem' })
 
 const props = withDefaults(defineProps<FormItemProps>(), {
   required: void 0,
@@ -253,7 +253,7 @@ defineExpose<FormItemInstance>({
 
 <template>
   <div
-    class="xc-form-item"
+    class="ns-form-item"
     :class="{
       'is-error': validateStatus === 'error',
       'is-disabled': isDisabled,
@@ -264,7 +264,7 @@ defineExpose<FormItemInstance>({
   >
     <component
       v-if="hasLabel"
-      class="xc-form-item__label"
+      class="ns-form-item__label"
       :class="`position-${ctx?.labelPosition ?? `right`}`"
       :is="labelFor ? 'label' : 'div'"
       :id="labelId"
@@ -274,9 +274,9 @@ defineExpose<FormItemInstance>({
         {{ currentLabel }}
       </slot>
     </component>
-    <div class="xc-form-item__content">
+    <div class="ns-form-item__content">
       <slot :validate="validate"></slot>
-      <div class="xc-form-item__error-msg" v-if="validateStatus === 'error'">
+      <div class="ns-form-item__error-msg" v-if="validateStatus === 'error'">
         <template v-if="ctx?.showMessage && showMessage">
           <slot name="error" :error="errMsg">{{ errMsg }}</slot>
         </template>
@@ -288,7 +288,7 @@ defineExpose<FormItemInstance>({
 <style scoped>
 @import './style.css';
 
-.xc-form-item {
-  --xc-form-lebel-width: v-bind(normalizeLabelWidth) !important;
+.ns-form-item {
+  --ns-form-lebel-width: v-bind(normalizeLabelWidth) !important;
 }
 </style>

@@ -6,9 +6,9 @@ import { delay, bind } from 'lodash-es'
 import { useOffset } from '@shadow-ui/hooks'
 import { addUnit } from '@shadow-ui/utils'
 import { typeIconMap, RenderVnode } from '@shadow-ui/utils'
-import XcIcon from '../Icon/Icon.vue'
+import NsIcon from '../Icon/Icon.vue'
 
-defineOptions({ name: 'XcNotification' })
+defineOptions({ name: 'NsNotification' })
 
 const props = withDefaults(defineProps<NotificationProps>(), {
   type: 'info',
@@ -73,15 +73,15 @@ defineExpose<NotificationCompInstance>({
 
 <template>
   <transition
-    :name="`xc-notification-${transitionName}`"
+    :name="`ns-notification-${transitionName}`"
     @after-leave="!visible && onDestory()"
     @enter="boxHeight = notifyRef!.getBoundingClientRect().height"
   >
     <div
       ref="notifyRef"
-      class="xc-notification"
+      class="ns-notification"
       :class="{
-        [`xc-notification--${type}`]: type,
+        [`ns-notification--${type}`]: type,
         [horizontalClass]: true,
         'show-close': showClose,
       }"
@@ -92,18 +92,18 @@ defineExpose<NotificationCompInstance>({
       @mouseenter="clearTimer"
       @mouseleave="startTimmer"
     >
-      <xc-icon v-if="iconName" :icon="iconName" class="xc-notification__icon" />
+      <ns-icon v-if="iconName" :icon="iconName" class="ns-notification__icon" />
 
-      <div class="xc-notification__text">
-        <div class="xc-notification__title">{{ title }}</div>
-        <div class="xc-notification__content">
+      <div class="ns-notification__text">
+        <div class="ns-notification__title">{{ title }}</div>
+        <div class="ns-notification__content">
           <slot>
             <render-vnode v-if="message" :vNode="message" />
           </slot>
         </div>
       </div>
-      <div class="xc-notification__close" v-if="showClose">
-        <xc-icon icon="xmark" @click.stop="close" />
+      <div class="ns-notification__close" v-if="showClose">
+        <ns-icon icon="xmark" @click.stop="close" />
       </div>
     </div>
   </transition>

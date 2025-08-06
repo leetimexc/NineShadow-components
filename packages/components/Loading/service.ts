@@ -4,9 +4,9 @@ import { useZIndex } from '@shadow-ui/hooks'
 import LoadingComp from './Loading.vue'
 import { defer, delay, isNil, isString } from 'lodash-es'
 
-const RELATIVE_CLASS = 'xc-loading-parent--relative' as const
-const HIDDEN_CLASS = 'xc-loading-parent--hiden' as const
-const LOADING_NUMB_KEY = 'xc-loading-numb' as const
+const RELATIVE_CLASS = 'ns-loading-parent--relative' as const
+const HIDDEN_CLASS = 'ns-loading-parent--hiden' as const
+const LOADING_NUMB_KEY = 'ns-loading-numb' as const
 
 const instanceMap: Map<HTMLElement, LoadingInstance> = new Map()
 const { nextZIndex } = useZIndex(3000)

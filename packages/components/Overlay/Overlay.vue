@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { OverlayProps, OverlayEmits } from './types'
 
-defineOptions({ name: 'XcOverlay' })
+defineOptions({ name: 'NsOverlay' })
 withDefaults(defineProps<OverlayProps>(), {
   mask: true,
 })
@@ -15,7 +15,7 @@ function onMaskClick(e: MouseEvent) {
 <template>
   <div
     v-if="mask"
-    class="xc-overlay"
+    class="ns-overlay"
     :class="overlayClass"
     :style="{ zIndex: zIndex }"
     @click="onMaskClick"
@@ -39,7 +39,7 @@ function onMaskClick(e: MouseEvent) {
 </template>
 
 <style scoped>
-.xc-overlay {
+.ns-overlay {
   position: fixed;
   top: 0;
   left: 0;

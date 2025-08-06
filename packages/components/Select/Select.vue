@@ -42,13 +42,13 @@ import {
 
 import useKeyMap from './useKeyMap'
 
-import XcOption from './Option.vue'
-import XcTooltip from '../Tooltip/Tooltip.vue'
-import XcInput from '../Input/Input.vue'
-import XcIcon from '../Icon/Icon.vue'
+import NsOption from './Option.vue'
+import NsTooltip from '../Tooltip/Tooltip.vue'
+import NsInput from '../Input/Input.vue'
+import NsIcon from '../Icon/Icon.vue'
 import { debugWarn, RenderVnode } from '@shadow-ui/utils'
 
-const COMPONENT_NAME = 'XcSelect'
+const COMPONENT_NAME = 'NsSelect'
 
 defineOptions({ name: COMPONENT_NAME })
 
@@ -78,7 +78,7 @@ const selectStates = reactive<SelectStates>({
 
 const isDisabled = computed(() => props.disabled)
 const children = computed(() =>
-  filter(slots?.default?.(), (child) => eq(child.type, XcOption))
+  filter(slots?.default?.(), (child) => eq(child.type, NsOption))
 )
 const hasChildren = computed(() => size(children.value) > 0)
 const showClear = computed(
@@ -367,7 +367,7 @@ defineExpose<SelectInstance>({
     @mouseenter="selectStates.mouseHover = true"
     @mouseleave="selectStates.mouseHover = false"
   >
-    <xc-tooltip
+    <ns-tooltip
       ref="tooltipRef"
       placement="bottom-start"
       :popper-options="POPPER_OPTIONS"
@@ -376,7 +376,7 @@ defineExpose<SelectInstance>({
     >
       <template #default>
         <div ref="inputWrapperRef">
-          <xc-input
+          <ns-input
             ref="inputRef"
             v-model="selectStates.inputValue"
             :id="inputId"
@@ -389,33 +389,33 @@ defineExpose<SelectInstance>({
             @keydown="handleKeyDown"
           >
             <template #suffix>
-              <xc-icon
+              <ns-icon
                 v-if="showClear"
                 icon="circle-xmark"
-                class="xc-input__clear"
+                class="ns-input__clear"
                 @click.stop="handleClear"
                 @mousedown.prevent="noop"
               />
-              <xc-icon
+              <ns-icon
                 v-else
                 class="header-angle"
                 icon="angle-down"
                 :class="{ 'is-active': isDropdownVisible }"
               />
             </template>
-          </xc-input>
+          </ns-input>
         </div>
       </template>
       <template #content>
-        <div class="xc-select__loading" v-if="selectStates.loading">
-          <xc-icon icon="spinner" spin />
+        <div class="ns-select__loading" v-if="selectStates.loading">
+          <ns-icon icon="spinner" spin />
         </div>
-        <div class="xc-select__nodata" v-else-if="filterable && isNoData">
+        <div class="ns-select__nodata" v-else-if="filterable && isNoData">
           No data
         </div>
-        <ul class="xc-select__menu">
+        <ul class="ns-select__menu">
           <template v-if="!hasChildren">
-            <xc-option
+            <ns-option
               v-for="item in filteredOptions"
               :key="item.value"
               v-bind="item"
@@ -431,7 +431,7 @@ defineExpose<SelectInstance>({
           </template>
         </ul>
       </template>
-    </xc-tooltip>
+    </ns-tooltip>
   </div>
 </template>
 

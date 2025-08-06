@@ -5,7 +5,7 @@ import { omit } from 'lodash-es'
 import { computed } from 'vue'
 
 defineOptions({
-  name: 'XcIcon',
+  name: 'NsIcon',
   inheritAttrs: false,
 })
 
@@ -17,8 +17,8 @@ const customStyles = computed(() => ({ color: props.color ?? void 0 }))
 
 <template>
   <i
-    class="xc-icon"
-    :class="{ [`xc-icon--${type}`]: type }"
+    class="ns-icon"
+    :class="{ [`ns-icon--${type}`]: type }"
     :style="customStyles"
     v-bind="$attrs"
   >

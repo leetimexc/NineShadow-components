@@ -12,7 +12,7 @@ import { reactive, toRefs, provide } from 'vue'
 import { each, filter, includes, size } from 'lodash-es'
 import type { ValidateFieldsError } from 'async-validator'
 
-defineOptions({ name: 'XcForm' })
+defineOptions({ name: 'NsForm' })
 
 const props = withDefaults(defineProps<FormProps>(), {
   showMessage: true,
@@ -104,7 +104,7 @@ defineExpose<FormInstance>({
 </script>
 
 <template>
-  <form class="xc-form">
+  <form class="ns-form">
     <slot></slot>
   </form>
 </template>

@@ -9,7 +9,7 @@ import Icon from '../Icon/Icon.vue'
 import { debugWarn } from '@shadow-ui/utils'
 
 defineOptions({
-  name: 'XcInput',
+  name: 'NsInput',
   inheritAttrs: false,
 })
 
@@ -113,10 +113,10 @@ defineExpose<InputInstance>({
 
 <template>
   <div
-    class="xc-input"
+    class="ns-input"
     :class="{
-      [`xc-input--${type}`]: type,
-      [`xc-input--${size}`]: size,
+      [`ns-input--${type}`]: type,
+      [`ns-input--${size}`]: size,
       'is-disabled': isDisabled,
       'is-prepend': $slots.prepend,
       'is-append': $slots.append,
@@ -126,15 +126,15 @@ defineExpose<InputInstance>({
     }"
   >
     <template v-if="type !== 'textarea'">
-      <div v-if="$slots.prepend" class="xc-input__prepend">
+      <div v-if="$slots.prepend" class="ns-input__prepend">
         <slot name="prepend"></slot>
       </div>
-      <div class="xc-input__wrapper" ref="wrapperRef">
-        <span v-if="$slots.prefix" class="xc-input__prefix">
+      <div class="ns-input__wrapper" ref="wrapperRef">
+        <span v-if="$slots.prefix" class="ns-input__prefix">
           <slot name="prefix"></slot>
         </span>
         <input
-          class="xc-input__inner"
+          class="ns-input__inner"
           ref="inputRef"
           :id="inputId"
           :type="showPassword ? (pwdVisible ? 'text' : 'password') : type"
@@ -153,37 +153,37 @@ defineExpose<InputInstance>({
         />
         <span
           v-if="$slots.suffix || showClear || showPwdArea"
-          class="xc-input__suffix"
+          class="ns-input__suffix"
         >
           <slot name="suffix"></slot>
           <Icon
             icon="circle-xmark"
             v-if="showClear"
-            class="xc-input__clear"
+            class="ns-input__clear"
             @click="clear"
             @mousedown.prevent="noop"
           />
           <Icon
             icon="eye"
-            class="xc-input__password"
+            class="ns-input__password"
             v-if="showPwdArea && pwdVisible"
             @click="togglePwdVisible"
           />
           <Icon
             icon="eye-slash"
-            class="xc-input__password"
+            class="ns-input__password"
             v-if="showPwdArea && !pwdVisible"
             @click="togglePwdVisible"
           />
         </span>
       </div>
-      <div v-if="$slots.append" class="xc-input__append">
+      <div v-if="$slots.append" class="ns-input__append">
         <slot name="append"></slot>
       </div>
     </template>
     <template v-else>
       <textarea
-        class="xc-textarea__wrapper"
+        class="ns-textarea__wrapper"
         ref="textareaRef"
         :id="inputId"
         :disabled="isDisabled"

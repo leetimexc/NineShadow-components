@@ -36,14 +36,14 @@ describe('Collapse.vue', () => {
       ),
       {
         global: {
-          stubs: ['XcIcon'],
+          stubs: ['NsIcon'],
         },
         attachTo: document.body, // 最新版本 jsdom 更新缓存 bug
       }
     )
 
-    headers = wrapper.findAll('.xc-collapse-item__header')
-    contents = wrapper.findAll('.xc-collapse-item__wapper')
+    headers = wrapper.findAll('.ns-collapse-item__header')
+    contents = wrapper.findAll('.ns-collapse-item__wapper')
 
     firstHeader = headers[0]
     secondHeader = headers[1]
@@ -118,14 +118,14 @@ describe('Collapse.vue', () => {
       ),
       {
         global: {
-          stubs: ['XcIcon'],
+          stubs: ['NsIcon'],
         },
         attachTo: document.body,
       }
     )
 
-    headers = wrapper.findAll('.xc-collapse-item__header')
-    contents = wrapper.findAll('.xc-collapse-item__wapper')
+    headers = wrapper.findAll('.ns-collapse-item__header')
+    contents = wrapper.findAll('.ns-collapse-item__wapper')
 
     firstHeader = headers[0]
     secondHeader = headers[1]
@@ -158,7 +158,7 @@ describe('Collapse.vue', () => {
       ),
       {
         global: {
-          stubs: ['XcIcon'],
+          stubs: ['NsIcon'],
         },
       }
     );
@@ -167,7 +167,7 @@ describe('Collapse.vue', () => {
     //   `
     //     [
     //       [
-    //         [XcUIError: [XcCollapse] accordion mode should only have one active item],
+    //         [NsUIError: [NsCollapse] accordion mode should only have one active item],
     //       ],
     //     ]
     //   `
