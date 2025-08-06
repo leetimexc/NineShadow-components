@@ -1,5 +1,5 @@
 /* Checkbox 基础样式 */
-.xc-checkbox {
+.ns-checkbox {
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -10,7 +10,7 @@
   height: 32px;
 }
 
-.xc-checkbox__input {
+.ns-checkbox__input {
   position: absolute;
   opacity: 0;
   outline: none;
@@ -20,7 +20,7 @@
   margin: 0;
 }
 
-.xc-checkbox__inner {
+.ns-checkbox__inner {
   display: inline-block;
   position: relative;
   border: 1px solid #dcdfe6;
@@ -29,11 +29,11 @@
   width: 14px;
   height: 14px;
   background-color: #fff;
-  transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),
-              background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+  transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
+    background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
 }
 
-.xc-checkbox__inner::after {
+.ns-checkbox__inner::after {
   box-sizing: content-box;
   content: "";
   position: absolute;
@@ -45,54 +45,54 @@
   border-left: 0;
   border-top: 0;
   transform: rotate(45deg) scaleY(0);
-  transition: transform .15s ease-in .05s;
+  transition: transform 0.15s ease-in 0.05s;
   transform-origin: center;
 }
 
-.xc-checkbox__label {
+.ns-checkbox__label {
   padding-left: 8px;
   font-size: 14px;
   line-height: 1;
 }
 
 /* 选中状态 */
-.xc-checkbox.is-checked .xc-checkbox__inner {
+.ns-checkbox.is-checked .ns-checkbox__inner {
   background-color: #409eff;
   border-color: #409eff;
 }
 
-.xc-checkbox.is-checked .xc-checkbox__inner::after {
+.ns-checkbox.is-checked .ns-checkbox__inner::after {
   transform: rotate(45deg) scaleY(1);
 }
 
-.xc-checkbox.is-checked .xc-checkbox__label {
+.ns-checkbox.is-checked .ns-checkbox__label {
   color: #409eff;
 }
 
 /* 禁用状态 */
-.xc-checkbox.is-disabled {
+.ns-checkbox.is-disabled {
   cursor: not-allowed;
 }
 
-.xc-checkbox.is-disabled .xc-checkbox__inner {
+.ns-checkbox.is-disabled .ns-checkbox__inner {
   background-color: #f5f7fa;
   border-color: #e4e7ed;
   cursor: not-allowed;
 }
 
-.xc-checkbox.is-disabled.is-checked .xc-checkbox__inner {
+.ns-checkbox.is-disabled.is-checked .ns-checkbox__inner {
   background-color: #c0c4cc;
   border-color: #c0c4cc;
 }
 
-.xc-checkbox.is-disabled .xc-checkbox__label {
+.ns-checkbox.is-disabled .ns-checkbox__label {
   color: #c0c4cc;
   cursor: not-allowed;
 }
 
 /* 中间状态 */
-.xc-checkbox.is-indeterminate .xc-checkbox__inner::before {
-  content: '';
+.ns-checkbox.is-indeterminate .ns-checkbox__inner::before {
+  content: "";
   position: absolute;
   display: block;
   background-color: #fff;
@@ -103,13 +103,13 @@
   top: 5px;
 }
 
-.xc-checkbox.is-indeterminate .xc-checkbox__inner {
+.ns-checkbox.is-indeterminate .ns-checkbox__inner {
   background-color: #409eff;
   border-color: #409eff;
 }
 
 /* 带边框样式 */
-.xc-checkbox.is-bordered {
+.ns-checkbox.is-bordered {
   padding: 9px 20px 9px 10px;
   border-radius: 4px;
   border: 1px solid #dcdfe6;
@@ -117,72 +117,72 @@
   height: 40px;
 }
 
-.xc-checkbox.is-bordered.is-checked {
+.ns-checkbox.is-bordered.is-checked {
   border-color: #409eff;
 }
 
-.xc-checkbox.is-bordered.is-disabled {
+.ns-checkbox.is-bordered.is-disabled {
   border-color: #ebeef5;
   cursor: not-allowed;
 }
 
 /* 不同尺寸 */
-.xc-checkbox--large {
+.ns-checkbox--large {
   font-size: 16px;
   height: 40px;
 }
 
-.xc-checkbox--large .xc-checkbox__inner {
+.ns-checkbox--large .ns-checkbox__inner {
   width: 16px;
   height: 16px;
 }
 
-.xc-checkbox--large .xc-checkbox__label {
+.ns-checkbox--large .ns-checkbox__label {
   font-size: 16px;
 }
 
-.xc-checkbox--large.is-bordered {
+.ns-checkbox--large.is-bordered {
   padding: 12px 20px 12px 10px;
   border-radius: 4px;
   height: 48px;
 }
 
-.xc-checkbox--small {
+.ns-checkbox--small {
   font-size: 12px;
   height: 24px;
 }
 
-.xc-checkbox--small .xc-checkbox__inner {
+.ns-checkbox--small .ns-checkbox__inner {
   width: 12px;
   height: 12px;
 }
 
-.xc-checkbox--small .xc-checkbox__inner::after {
+.ns-checkbox--small .ns-checkbox__inner::after {
   top: 0;
   left: 3px;
   width: 2px;
   height: 6px;
 }
 
-.xc-checkbox--small .xc-checkbox__label {
+.ns-checkbox--small .ns-checkbox__label {
   font-size: 12px;
 }
 
-.xc-checkbox--small.is-bordered {
+.ns-checkbox--small.is-bordered {
   padding: 5px 15px 5px 10px;
   border-radius: 3px;
   height: 32px;
 }
 
 /* CheckboxGroup 样式 */
-.xc-checkbox-group {
+.ns-checkbox-group {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
 /* CheckboxButton 样式 */
-.xc-checkbox-button {
+.ns-checkbox-button {
   position: relative;
   display: inline-block;
   margin: 0;
@@ -194,7 +194,7 @@
   vertical-align: middle;
 }
 
-.xc-checkbox-button__input {
+.ns-checkbox-button__input {
   position: absolute;
   opacity: 0;
   outline: none;
@@ -204,7 +204,7 @@
   margin: 0;
 }
 
-.xc-checkbox-button__inner {
+.ns-checkbox-button__inner {
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -220,35 +220,35 @@
   outline: none;
   margin: 0;
   position: relative;
-  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   user-select: none;
   padding: 12px 20px;
   font-size: 14px;
   border-radius: 0;
 }
 
-.xc-checkbox-button:first-child .xc-checkbox-button__inner {
+.ns-checkbox-button:first-child .ns-checkbox-button__inner {
   border-left: 1px solid #dcdfe6;
   border-radius: 4px 0 0 4px;
-  box-shadow: none!important;
+  box-shadow: none !important;
 }
 
-.xc-checkbox-button:last-child .xc-checkbox-button__inner {
+.ns-checkbox-button:last-child .ns-checkbox-button__inner {
   border-radius: 0 4px 4px 0;
 }
 
-.xc-checkbox-button.is-checked .xc-checkbox-button__inner {
+.ns-checkbox-button.is-checked .ns-checkbox-button__inner {
   color: #fff;
   background-color: #409eff;
   border-color: #409eff;
   box-shadow: -1px 0 0 0 #409eff;
 }
 
-.xc-checkbox-button.is-disabled {
+.ns-checkbox-button.is-disabled {
   cursor: not-allowed;
 }
 
-.xc-checkbox-button.is-disabled .xc-checkbox-button__inner {
+.ns-checkbox-button.is-disabled .ns-checkbox-button__inner {
   color: #c0c4cc;
   cursor: not-allowed;
   background-image: none;
@@ -257,35 +257,35 @@
   box-shadow: none;
 }
 
-.xc-checkbox-button.is-disabled:first-child .xc-checkbox-button__inner {
+.ns-checkbox-button.is-disabled:first-child .ns-checkbox-button__inner {
   border-left-color: #ebeef5;
 }
 
 /* 不同尺寸的按钮 */
-.xc-checkbox-button--large .xc-checkbox-button__inner {
+.ns-checkbox-button--large .ns-checkbox-button__inner {
   padding: 14px 22px;
   font-size: 16px;
   border-radius: 0;
 }
 
-.xc-checkbox-button--large:first-child .xc-checkbox-button__inner {
+.ns-checkbox-button--large:first-child .ns-checkbox-button__inner {
   border-radius: 4px 0 0 4px;
 }
 
-.xc-checkbox-button--large:last-child .xc-checkbox-button__inner {
+.ns-checkbox-button--large:last-child .ns-checkbox-button__inner {
   border-radius: 0 4px 4px 0;
 }
 
-.xc-checkbox-button--small .xc-checkbox-button__inner {
+.ns-checkbox-button--small .ns-checkbox-button__inner {
   padding: 9px 15px;
   font-size: 12px;
   border-radius: 0;
 }
 
-.xc-checkbox-button--small:first-child .xc-checkbox-button__inner {
+.ns-checkbox-button--small:first-child .ns-checkbox-button__inner {
   border-radius: 3px 0 0 3px;
 }
 
-.xc-checkbox-button--small:last-child .xc-checkbox-button__inner {
+.ns-checkbox-button--small:last-child .ns-checkbox-button__inner {
   border-radius: 0 3px 3px 0;
 }

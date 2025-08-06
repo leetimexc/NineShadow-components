@@ -3,35 +3,35 @@ import type {
   CheckboxGroupProps,
   CheckboxGroupEmits,
   CheckboxGroupContext,
-} from './types'
-import { ref, computed, provide } from 'vue'
-import { checkboxGroupContextKey } from './types'
+} from "./types";
+import { ref, computed, provide } from "vue";
+import { checkboxGroupContextKey } from "./types";
 
-defineOptions({ name: 'XcCheckboxGroup', inheritAttrs: false })
+defineOptions({ name: "NsCheckboxGroup", inheritAttrs: false });
 
 const props = withDefaults(defineProps<CheckboxGroupProps>(), {
   modelValue: () => [],
   disabled: false,
-})
+});
 
-const emits = defineEmits<CheckboxGroupEmits>()
+const emits = defineEmits<CheckboxGroupEmits>();
 
 // 内部值，用于双向绑定
-const innerValue = ref(props.modelValue)
+const innerValue = ref(props.modelValue);
 
 // 计算样式
 const groupClasses = computed(() => {
   return {
-    'is-disabled': props.disabled,
-    [`xc-checkbox-group--${props.size}`]: props.size,
-  }
-})
+    "is-disabled": props.disabled,
+    [`ns-checkbox-group--${props.size}`]: props.size,
+  };
+});
 
 // 处理变更事件
 function handleChange(value: any[]) {
-  innerValue.value = value
-  emits('update:modelValue', value)
-  emits('change', value)
+  innerValue.value = value;
+  emits("update:modelValue", value);
+  emits("change", value);
 }
 
 // 提供上下文给子组件
@@ -44,15 +44,15 @@ provide<CheckboxGroupContext>(checkboxGroupContextKey, {
   max: computed(() => props.max),
   textColor: computed(() => props.textColor),
   fill: computed(() => props.fill),
-})
+});
 </script>
 
 <template>
-  <div class="xc-checkbox-group" :class="groupClasses" role="group">
+  <div class="ns-checkbox-group" :class="groupClasses" role="group">
     <slot></slot>
   </div>
 </template>
 
 <style>
-@import './style.css';
+@import "./style.css";
 </style>

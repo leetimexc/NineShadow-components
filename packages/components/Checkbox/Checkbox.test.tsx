@@ -7,7 +7,7 @@ import CheckboxButton from "./CheckboxButton.vue";
 describe("Checkbox.vue", () => {
   it("should render correctly", () => {
     const wrapper = mount(Checkbox);
-    expect(wrapper.find(".xc-checkbox")).toBeTruthy();
+    expect(wrapper.find(".ns-checkbox")).toBeTruthy();
   });
 
   it("should handle click event and toggle the checked state", async () => {
@@ -46,7 +46,7 @@ describe("Checkbox.vue", () => {
         label: "测试标签",
       },
     });
-    expect(wrapper.find(".xc-checkbox__label").text()).toBe("测试标签");
+    expect(wrapper.find(".ns-checkbox__label").text()).toBe("测试标签");
   });
 
   it("should use slot content when provided", () => {
@@ -55,7 +55,7 @@ describe("Checkbox.vue", () => {
         default: "自定义内容",
       },
     });
-    expect(wrapper.find(".xc-checkbox__label").text()).toBe("自定义内容");
+    expect(wrapper.find(".ns-checkbox__label").text()).toBe("自定义内容");
   });
 
   it("should apply indeterminate state correctly", () => {
@@ -93,7 +93,7 @@ describe("CheckboxGroup.vue", () => {
         modelValue: [],
       },
     });
-    expect(wrapper.find(".xc-checkbox-group")).toBeTruthy();
+    expect(wrapper.find(".ns-checkbox-group")).toBeTruthy();
   });
 
   it("should handle checkbox selection in group", async () => {
@@ -141,15 +141,15 @@ describe("CheckboxGroup.vue", () => {
     });
 
     const checkboxes = wrapper.findAllComponents(Checkbox);
-    
+
     // 尝试取消唯一选中的项（应该失败，因为min=1）
     await checkboxes[0].trigger("click");
     expect(wrapper.vm.checkList).toEqual(["A"]); // 仍然保持选中状态
-    
+
     // 选中第二个选项
     await checkboxes[1].trigger("click");
     expect(wrapper.vm.checkList).toEqual(["A", "B"]);
-    
+
     // 尝试选中第三个选项（应该失败，因为max=2）
     await checkboxes[2].trigger("click");
     expect(wrapper.vm.checkList).toEqual(["A", "B"]); // 仍然只有两个选中
@@ -159,7 +159,7 @@ describe("CheckboxGroup.vue", () => {
 describe("CheckboxButton.vue", () => {
   it("should render correctly", () => {
     const wrapper = mount(CheckboxButton);
-    expect(wrapper.find(".xc-checkbox-button")).toBeTruthy();
+    expect(wrapper.find(".ns-checkbox-button")).toBeTruthy();
   });
 
   it("should handle checkbox button selection in group", async () => {
