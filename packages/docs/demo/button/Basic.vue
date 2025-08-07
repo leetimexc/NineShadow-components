@@ -1,44 +1,44 @@
 <template>
   <h2>基础按钮</h2>
   <p>
-    <xc-button type="primary">主要按钮</xc-button>
-    <xc-button type="info">次要按钮</xc-button>
-    <xc-button type="default">线框按钮</xc-button>
+    <ns-button type="primary">主要按钮</ns-button>
+    <ns-button type="info">次要按钮</ns-button>
+    <ns-button type="default">线框按钮</ns-button>
   </p>
   <hr />
   <p>
-    <xc-button>Default</xc-button>
-    <xc-button type="primary">Primary</xc-button>
-    <xc-button type="success">Success</xc-button>
-    <xc-button type="info">Info</xc-button>
-    <xc-button type="warning">Warning</xc-button>
-    <xc-button type="danger">Danger</xc-button>
+    <ns-button>Default</ns-button>
+    <ns-button type="primary">Primary</ns-button>
+    <ns-button type="success">Success</ns-button>
+    <ns-button type="info">Info</ns-button>
+    <ns-button type="warning">Warning</ns-button>
+    <ns-button type="danger">Danger</ns-button>
   </p>
 
   <p>
-    <xc-button plain>Plain</xc-button>
-    <xc-button type="primary" plain>Primary</xc-button>
-    <xc-button type="success" plain>Success</xc-button>
-    <xc-button type="info" plain>Info</xc-button>
-    <xc-button type="warning" plain>Warning</xc-button>
-    <xc-button type="danger" plain>Danger</xc-button>
+    <ns-button plain>Plain</ns-button>
+    <ns-button type="primary" plain>Primary</ns-button>
+    <ns-button type="success" plain>Success</ns-button>
+    <ns-button type="info" plain>Info</ns-button>
+    <ns-button type="warning" plain>Warning</ns-button>
+    <ns-button type="danger" plain>Danger</ns-button>
   </p>
 
   <p>
-    <xc-button round>Round</xc-button>
-    <xc-button type="primary" round>Primary</xc-button>
-    <xc-button type="success" round>Success</xc-button>
-    <xc-button type="info" round>Info</xc-button>
-    <xc-button type="warning" round>Warning</xc-button>
-    <xc-button type="danger" round>Danger</xc-button>
+    <ns-button round>Round</ns-button>
+    <ns-button type="primary" round>Primary</ns-button>
+    <ns-button type="success" round>Success</ns-button>
+    <ns-button type="info" round>Info</ns-button>
+    <ns-button type="warning" round>Warning</ns-button>
+    <ns-button type="danger" round>Danger</ns-button>
   </p>
 
   <p>
-    <xc-button icon="search" circle />
-    <xc-button type="primary" icon="edit" circle />
-    <xc-button type="success" icon="check" circle />
-    <xc-button type="info" icon="message" circle />
-    <xc-button type="warning" icon="star" circle />
-    <xc-button type="danger" icon="trash" circle />
+    <ns-button icon="search" circle />
+    <ns-button type="primary" icon="edit" circle />
+    <ns-button type="success" icon="check" circle />
+    <ns-button type="info" icon="message" circle />
+    <ns-button type="warning" icon="star" circle />
+    <ns-button type="danger" icon="trash" circle />
   </p>
 </template>

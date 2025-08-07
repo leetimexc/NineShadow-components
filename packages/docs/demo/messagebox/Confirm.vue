@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { XcMessageBox, XcMessage } from 'shadow-ui'
+import { NsMessageBox, NsMessage } from "shadow-ui";
 
 function openConfirm() {
-  XcMessageBox.confirm(
-    'proxy will permanently delete the file. Continue?',
-    'Warning',
-    { type: 'warning' }
+  NsMessageBox.confirm(
+    "proxy will permanently delete the file. Continue?",
+    "Warning",
+    { type: "warning" }
   )
     .then((action) => {
-      XcMessage.info(`action: ${action}`)
+      NsMessage.info(`action: ${action}`);
     })
     .catch((action) => {
-      XcMessage.warning(`action: ${action}`)
-    })
+      NsMessage.warning(`action: ${action}`);
+    });
 }
 </script>
 
 <template>
-  <xc-button @click="openConfirm" plain> Click to open the Confirm</xc-button>
+  <ns-button @click="openConfirm" plain> Click to open the Confirm</ns-button>
 </template>

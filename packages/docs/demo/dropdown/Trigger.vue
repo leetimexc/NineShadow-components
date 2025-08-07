@@ -1,42 +1,42 @@
 <script setup lang="ts">
-import { type DropdownItemProps } from 'shadow-ui'
+import { type DropdownItemProps } from "shadow-ui";
 
 const items: DropdownItemProps[] = [
-  { command: '1', label: 'Action 1' },
-  { command: '2', label: 'Action 2' },
-  { command: '3', label: 'Action 3', disabled: true },
-  { command: '4', label: 'Action 4', divided: true },
-]
+  { command: "1", label: "Action 1" },
+  { command: "2", label: "Action 2" },
+  { command: "3", label: "Action 3", disabled: true },
+  { command: "4", label: "Action 4", divided: true },
+];
 </script>
 
 <template>
   <div class="row">
     <div class="col">
       <div class="desc">hover to trigger</div>
-      <xc-dropdown :items="items">
+      <ns-dropdown :items="items">
         <span class="dropdown-link">
           Dropdown List
-          <xc-icon icon="angle-down" />
+          <ns-icon icon="angle-down" />
         </span>
-      </xc-dropdown>
+      </ns-dropdown>
     </div>
     <div class="col">
       <div class="desc">click to trigger</div>
-      <xc-dropdown :items="items" trigger="click">
+      <ns-dropdown :items="items" trigger="click">
         <span class="dropdown-link">
           Dropdown List
-          <xc-icon icon="angle-down" />
+          <ns-icon icon="angle-down" />
         </span>
-      </xc-dropdown>
+      </ns-dropdown>
     </div>
     <div class="col">
       <div class="desc">right click to trigger</div>
-      <xc-dropdown :items="items" trigger="contextmenu">
+      <ns-dropdown :items="items" trigger="contextmenu">
         <span class="dropdown-link">
           Dropdown List
-          <xc-icon icon="angle-down" />
+          <ns-icon icon="angle-down" />
         </span>
-      </xc-dropdown>
+      </ns-dropdown>
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@ const items: DropdownItemProps[] = [
 }
 .desc {
   display: block;
-  color: var(--xc-text-color-secondary);
+  color: var(--ns-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }
@@ -59,7 +59,7 @@ const items: DropdownItemProps[] = [
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: var(--xc-color-primary);
+  color: var(--ns-color-primary);
   i {
     margin-left: 8px;
   }

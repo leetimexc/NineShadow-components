@@ -1,39 +1,39 @@
 <script setup lang="ts">
-import { XcIcon } from 'shadow-ui'
+import { NsIcon } from "shadow-ui";
 </script>
 
 <template>
   <div class="icon-demo">
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'user']" />
+      <NsIcon :icon="['fas', 'user']" />
       <span>user</span>
     </div>
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'home']" />
+      <NsIcon :icon="['fas', 'home']" />
       <span>home</span>
     </div>
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'search']" />
+      <NsIcon :icon="['fas', 'search']" />
       <span>search</span>
     </div>
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'cog']" />
+      <NsIcon :icon="['fas', 'cog']" />
       <span>cog</span>
     </div>
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'bell']" />
+      <NsIcon :icon="['fas', 'bell']" />
       <span>bell</span>
     </div>
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'envelope']" />
+      <NsIcon :icon="['fas', 'envelope']" />
       <span>envelope</span>
     </div>
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'star']" />
+      <NsIcon :icon="['fas', 'star']" />
       <span>star</span>
     </div>
     <div class="icon-item">
-      <XcIcon :icon="['fas', 'heart']" />
+      <NsIcon :icon="['fas', 'heart']" />
       <span>heart</span>
     </div>
   </div>

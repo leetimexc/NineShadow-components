@@ -1,6 +1,6 @@
 <template>
-  <xc-tooltip placement="top">
+  <ns-tooltip placement="top">
     <template #content> multiple lines<br />second line </template>
-    <xc-button>Top center</xc-button>
-  </xc-tooltip>
+    <ns-button>Top center</ns-button>
+  </ns-tooltip>
 </template>

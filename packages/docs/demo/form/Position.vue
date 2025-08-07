@@ -1,63 +1,63 @@
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
-import { XcMessage, type FormProps } from 'shadow-ui'
+import { reactive, ref } from "vue";
+import { NsMessage, type FormProps } from "shadow-ui";
 
 const form = reactive({
-  name: '',
-  region: '',
+  name: "",
+  region: "",
   delivery: false,
-  desc: '',
-})
+  desc: "",
+});
 const options = ref([
-  { value: 'beijing', label: 'Zone One' },
-  { value: 'shanghai', label: 'Zone Two' },
-])
-const labelPosition = ref<FormProps['labelPosition']>('right')
+  { value: "beijing", label: "Zone One" },
+  { value: "shanghai", label: "Zone Two" },
+]);
+const labelPosition = ref<FormProps["labelPosition"]>("right");
 
 const onSubmit = () => {
-  XcMessage.success('submit')
-}
+  NsMessage.success("submit");
+};
 </script>
 
 <template>
-  <xc-button-group size="small">
-    <xc-button
+  <ns-button-group size="small">
+    <ns-button
       @click="labelPosition = 'left'"
       :type="labelPosition === 'left' ? 'primary' : 'info'"
-      >Left</xc-button
+      >Left</ns-button
     >
-    <xc-button
+    <ns-button
       @click="labelPosition = 'right'"
       :type="labelPosition === 'right' ? 'primary' : 'info'"
-      >Right</xc-button
+      >Right</ns-button
     >
-    <xc-button
+    <ns-button
       @click="labelPosition = 'top'"
       :type="labelPosition === 'top' ? 'primary' : 'info'"
-      >Top</xc-button
+      >Top</ns-button
     >
-  </xc-button-group>
+  </ns-button-group>
   <div style="margin: 20px"></div>
-  <xc-form :model="form" :label-position="labelPosition">
-    <xc-form-item label="Activity name">
-      <xc-input v-model="form.name" />
-    </xc-form-item>
-    <xc-form-item label="Activity zone">
-      <xc-select
+  <ns-form :model="form" :label-position="labelPosition">
+    <ns-form-item label="Activity name">
+      <ns-input v-model="form.name" />
+    </ns-form-item>
+    <ns-form-item label="Activity zone">
+      <ns-select
         v-model="form.region"
         placeholder="please select your zone"
         :options="options"
       />
-    </xc-form-item>
-    <xc-form-item label="Instant delivery">
-      <xc-switch v-model="form.delivery" />
-    </xc-form-item>
-    <xc-form-item label="Activity form">
-      <xc-input v-model="form.desc" type="textarea" />
-    </xc-form-item>
-    <xc-form-item>
-      <xc-button type="primary" @click="onSubmit">Create</xc-button>
-      <xc-button>Cancel</xc-button>
-    </xc-form-item>
-  </xc-form>
+    </ns-form-item>
+    <ns-form-item label="Instant delivery">
+      <ns-switch v-model="form.delivery" />
+    </ns-form-item>
+    <ns-form-item label="Activity form">
+      <ns-input v-model="form.desc" type="textarea" />
+    </ns-form-item>
+    <ns-form-item>
+      <ns-button type="primary" @click="onSubmit">Create</ns-button>
+      <ns-button>Cancel</ns-button>
+    </ns-form-item>
+  </ns-form>
 </template>

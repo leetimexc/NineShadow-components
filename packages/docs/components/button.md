@@ -41,7 +41,7 @@ demo-preview=../demo/button/Icon.vue
 
 ## 按钮组
 
-使用 `<xc-button-group>` 对多个按钮分组。
+使用 `<ns-button-group>` 对多个按钮分组。
 
 ::: preview
 demo-preview=../demo/button/Group.vue

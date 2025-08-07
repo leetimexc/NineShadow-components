@@ -1,45 +1,45 @@
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
-import { XcMessage } from 'shadow-ui'
+import { reactive, ref } from "vue";
+import { NsMessage } from "shadow-ui";
 
 const form = reactive({
-  name: '',
-  region: '',
+  name: "",
+  region: "",
   delivery: false,
-  desc: '',
-})
+  desc: "",
+});
 
 const options = ref([
-  { value: 'beijing', label: 'Zone One' },
-  { value: 'shanghai', label: 'Zone Two' },
-])
+  { value: "beijing", label: "Zone One" },
+  { value: "shanghai", label: "Zone Two" },
+]);
 
 const onSubmit = () => {
-  XcMessage.success('submit!')
-}
+  NsMessage.success("submit!");
+};
 </script>
 
 <template>
-  <xc-form :model="form">
-    <xc-form-item label="Activity name">
-      <xc-input v-model="form.name" />
-    </xc-form-item>
-    <xc-form-item label="Activity zone">
-      <xc-select
+  <ns-form :model="form">
+    <ns-form-item label="Activity name">
+      <ns-input v-model="form.name" />
+    </ns-form-item>
+    <ns-form-item label="Activity zone">
+      <ns-select
         v-model="form.region"
         placeholder="please select your zone"
         :options="options"
       />
-    </xc-form-item>
-    <xc-form-item label="Instant delivery">
-      <xc-switch v-model="form.delivery" />
-    </xc-form-item>
-    <xc-form-item label="Activity form">
-      <xc-input v-model="form.desc" type="textarea" />
-    </xc-form-item>
-    <xc-form-item>
-      <xc-button type="primary" @click="onSubmit">Create</xc-button>
-      <xc-button>Cancel</xc-button>
-    </xc-form-item>
-  </xc-form>
+    </ns-form-item>
+    <ns-form-item label="Instant delivery">
+      <ns-switch v-model="form.delivery" />
+    </ns-form-item>
+    <ns-form-item label="Activity form">
+      <ns-input v-model="form.desc" type="textarea" />
+    </ns-form-item>
+    <ns-form-item>
+      <ns-button type="primary" @click="onSubmit">Create</ns-button>
+      <ns-button>Cancel</ns-button>
+    </ns-form-item>
+  </ns-form>
 </template>

@@ -19,18 +19,18 @@ npm i @shadow-ui --save
 
 ```js
 // 引入所有组件
-import XcElement from '@shadow-ui'
+import NsElement from "@shadow-ui";
 // 引入样式
-import '@shadow-ui/dist/style.css'
+import "@shadow-ui/dist/style.css";
 
-import App from './App.vue'
+import App from "./App.vue";
 // 全局使用
-createApp(App).use(XcElement).mount('#app')
+createApp(App).use(NsElement).mount("#app");
 ```
 
 ```vue
 <template>
-  <xc-button>我是 Button</xc-button>
+  <ns-button>我是 Button</ns-button>
 </template>
 ```
 
@@ -40,13 +40,13 @@ shadow-ui 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
 
 ```vue
 <template>
-  <xc-button>我是 Button</xc-button>
+  <ns-button>我是 Button</ns-button>
 </template>
 <script>
-import { XcButton } from '@shadow-ui'
+import { NsButton } from "@shadow-ui";
 export default {
-  components: { XcButton },
-}
+  components: { NsButton },
+};
 </script>
 ```
 

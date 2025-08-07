@@ -25,7 +25,7 @@ demo-preview=../demo/loading/Basic.vue
 
 ## 自定义加载中组件内容
 
-在绑定了 `v-loading` 指令的元素上添加 `xc-loading-text` 属性，其值会被渲染为加载文案，并显示在加载图标的下方。 类似地， `xc-loading-spinner`、`xc-loading-background` 属性分别用来设定 加载图标、背景色值。
+在绑定了 `v-loading` 指令的元素上添加 `ns-loading-text` 属性，其值会被渲染为加载文案，并显示在加载图标的下方。 类似地， `ns-loading-spinner`、`ns-loading-background` 属性分别用来设定 加载图标、背景色值。
 
 ::: preview
 demo-preview=../demo/loading/Custom.vue
@@ -44,22 +44,22 @@ demo-preview=../demo/loading/Fullscreen.vue
 服务方式调用，可以自定义遮罩的文案，也可以通过 `close` 方法关闭。
 
 ```typescript
-import { XcLoading } from 'shadow-ui'
+import { NsLoading } from "shadow-ui";
 ```
 
 需要的时候通过以下方式调用
 
 ```typescript
-XcLoading.service(options)
+NsLoading.service(options);
 ```
 
 LoadingService 会返回一个 Loading 实例，可通过调用该实例的 close 方法来关闭它
 
 ```typescript
-const loading = XcLoading.service(options)
+const loading = NsLoading.service(options);
 nextTick(() => {
-  loading.close()
-})
+  loading.close();
+});
 ```
 
 ::: tip
@@ -84,6 +84,6 @@ nextTick(() => {
 | Name                  | Description      | Type      |
 | --------------------- | ---------------- | --------- |
 | v-loading             | 是否显示加载动画 | `boolean` |
-| xc-loading-text       | 加载文案         | `string`  |
-| xc-loading-spinner    | 加载图标         | `string`  |
-| xc-loading-background | 遮罩背景色       | `string`  |
+| ns-loading-text       | 加载文案         | `string`  |
+| ns-loading-spinner    | 加载图标         | `string`  |
+| ns-loading-background | 遮罩背景色       | `string`  |

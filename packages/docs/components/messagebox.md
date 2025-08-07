@@ -21,7 +21,7 @@ prev:
 
 ## 消息提示
 
-调用 `XcMessageBox.alert` 方法以打开 alert 框。
+调用 `NsMessageBox.alert` 方法以打开 alert 框。
 
 ::: preview
 demo-preview=../demo/messagebox/Alert.vue
@@ -29,7 +29,7 @@ demo-preview=../demo/messagebox/Alert.vue
 
 ## 确认消息
 
-调用 `XcMessageBox.confirm` 方法以打开 confirm 框。
+调用 `NsMessageBox.confirm` 方法以打开 confirm 框。
 
 ::: preview
 demo-preview=../demo/messagebox/Confirm.vue
@@ -37,7 +37,7 @@ demo-preview=../demo/messagebox/Confirm.vue
 
 ## 提交内容
 
-调用 `XcMessageBox.prompt` 方法以打开 prompt 框。
+调用 `NsMessageBox.prompt` 方法以打开 prompt 框。
 
 ::: preview
 demo-preview=../demo/messagebox/Prompt.vue
@@ -53,7 +53,7 @@ demo-preview=../demo/messagebox/VNode.vue
 
 ## 个性化
 
-可以通过配置 `XcMessageBox` 的参数来实现一些个性化需求（options 参数见下文）。
+可以通过配置 `NsMessageBox` 的参数来实现一些个性化需求（options 参数见下文）。
 
 ::: preview
 demo-preview=../demo/messagebox/Custom.vue
@@ -71,14 +71,14 @@ demo-preview=../demo/messagebox/Center.vue
 
 ## 全局方法
 
-`XcMessageBox` 提供了全局方法 `XcMessageBox.alert`、`XcMessageBox.confirm`、`XcMessageBox.prompt`，用于在需要时弹出消息弹框。
+`NsMessageBox` 提供了全局方法 `NsMessageBox.alert`、`NsMessageBox.confirm`、`NsMessageBox.prompt`，用于在需要时弹出消息弹框。
 如果完整引入了 `ShadowUI`, 则会为 `app.config.globalProperties` 添加全局方法 `$msgbox`、`$alert`、`$confirm`、`$prompt`。
 在 Vue 实例中可以作为 `this.$msgbox`、`this.$alert`、`this.$confirm`、`this.$prompt` 使用。
 
 ## 单独引用
 
 ```typescript
-import { XcMessageBox } from 'shadow-ui'
+import { NsMessageBox } from "shadow-ui";
 ```
 
 ## MessageBox API

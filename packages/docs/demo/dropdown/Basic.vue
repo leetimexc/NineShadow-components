@@ -1,39 +1,39 @@
 <script setup lang="ts">
-import { type DropdownItemProps } from 'shadow-ui'
+import { type DropdownItemProps } from "shadow-ui";
 
 const items: DropdownItemProps[] = [
-  { command: '1', label: 'Action 1' },
-  { command: '2', label: 'Action 2' },
-  { command: '3', label: 'Action 3', disabled: true },
-  { command: '4', label: 'Action 4', divided: true },
-]
+  { command: "1", label: "Action 1" },
+  { command: "2", label: "Action 2" },
+  { command: "3", label: "Action 3", disabled: true },
+  { command: "4", label: "Action 4", divided: true },
+];
 </script>
 
 <template>
   <div class="row">
     <div class="col">
       <div class="desc">通过 slot 传入 item</div>
-      <xc-dropdown>
+      <ns-dropdown>
         <span class="dropdown-link">
           Dropdown List
-          <xc-icon icon="angle-down" />
+          <ns-icon icon="angle-down" />
         </span>
         <template #dropdown>
-          <xc-dropdown-item command="1">Action 1</xc-dropdown-item>
-          <xc-dropdown-item command="2" label="Action 2" />
-          <xc-dropdown-item command="3" disabled>Action 3</xc-dropdown-item>
-          <xc-dropdown-item command="4" divided>Action 4</xc-dropdown-item>
+          <ns-dropdown-item command="1">Action 1</ns-dropdown-item>
+          <ns-dropdown-item command="2" label="Action 2" />
+          <ns-dropdown-item command="3" disabled>Action 3</ns-dropdown-item>
+          <ns-dropdown-item command="4" divided>Action 4</ns-dropdown-item>
         </template>
-      </xc-dropdown>
+      </ns-dropdown>
     </div>
     <div class="col">
       <div class="desc">通过 props 传入 item</div>
-      <xc-dropdown :items="items">
+      <ns-dropdown :items="items">
         <span class="dropdown-link">
           Dropdown List
-          <xc-icon icon="angle-down" />
+          <ns-icon icon="angle-down" />
         </span>
-      </xc-dropdown>
+      </ns-dropdown>
     </div>
   </div>
 </template>
@@ -48,7 +48,7 @@ const items: DropdownItemProps[] = [
 }
 .desc {
   display: block;
-  color: var(--xc-text-color-secondary);
+  color: var(--ns-text-color-secondary);
   font-size: 14px;
   margin-bottom: 20px;
 }
@@ -56,7 +56,7 @@ const items: DropdownItemProps[] = [
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: var(--xc-color-primary);
+  color: var(--ns-color-primary);
   i {
     margin-left: 8px;
   }

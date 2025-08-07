@@ -44,7 +44,7 @@ demo-preview=../demo/notification/Closeable.vue
 ## 单独引用
 
 ```typescript
-import { XcNotification } from 'shadow-ui'
+import { NsNotification } from "shadow-ui";
 ```
 
 ## Notification API

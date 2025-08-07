@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { XcMessageBox, XcMessage } from 'shadow-ui'
+import { NsMessageBox, NsMessage } from "shadow-ui";
 
 function openAlert() {
-  XcMessageBox.alert('This is a message', 'Title')
+  NsMessageBox.alert("This is a message", "Title")
     .then((action) => {
-      XcMessage.info(`action: ${action}`)
+      NsMessage.info(`action: ${action}`);
     })
     .catch((action) => {
-      XcMessage.warning(`action: ${action}`)
-    })
+      NsMessage.warning(`action: ${action}`);
+    });
 }
 </script>
 
 <template>
-  <xc-button @click="openAlert" plain> Click to open the Alert</xc-button>
+  <ns-button @click="openAlert" plain> Click to open the Alert</ns-button>
 </template>

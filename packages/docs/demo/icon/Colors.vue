@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XcIcon } from 'shadow-ui'
+import { NsIcon } from "shadow-ui";
 </script>
 
 <template>
@@ -7,27 +7,27 @@ import { XcIcon } from 'shadow-ui'
     <h4>内置类型颜色</h4>
     <div class="icon-row">
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" />
+        <NsIcon :icon="['fas', 'star']" size="2x" />
         <span>默认</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" type="primary" />
+        <NsIcon :icon="['fas', 'star']" size="2x" type="primary" />
         <span>primary</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" type="success" />
+        <NsIcon :icon="['fas', 'star']" size="2x" type="success" />
         <span>success</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" type="warning" />
+        <NsIcon :icon="['fas', 'star']" size="2x" type="warning" />
         <span>warning</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" type="danger" />
+        <NsIcon :icon="['fas', 'star']" size="2x" type="danger" />
         <span>danger</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" type="info" />
+        <NsIcon :icon="['fas', 'star']" size="2x" type="info" />
         <span>info</span>
       </div>
     </div>
@@ -35,19 +35,19 @@ import { XcIcon } from 'shadow-ui'
     <h4>自定义颜色</h4>
     <div class="icon-row">
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" color="#8A2BE2" />
+        <NsIcon :icon="['fas', 'star']" size="2x" color="#8A2BE2" />
         <span>#8A2BE2</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" color="#FF1493" />
+        <NsIcon :icon="['fas', 'star']" size="2x" color="#FF1493" />
         <span>#FF1493</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" color="#00CED1" />
+        <NsIcon :icon="['fas', 'star']" size="2x" color="#00CED1" />
         <span>#00CED1</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" color="#FF8C00" />
+        <NsIcon :icon="['fas', 'star']" size="2x" color="#FF8C00" />
         <span>#FF8C00</span>
       </div>
     </div>

@@ -1,18 +1,18 @@
 <template>
   <p>
-    <xc-button>Default</xc-button>
-    <xc-button type="primary">Primary</xc-button>
-    <xc-button type="success">Success</xc-button>
-    <xc-button type="info">Info</xc-button>
-    <xc-button type="warning">Warning</xc-button>
-    <xc-button type="danger">Danger</xc-button>
+    <ns-button>Default</ns-button>
+    <ns-button type="primary">Primary</ns-button>
+    <ns-button type="success">Success</ns-button>
+    <ns-button type="info">Info</ns-button>
+    <ns-button type="warning">Warning</ns-button>
+    <ns-button type="danger">Danger</ns-button>
   </p>
   <p>
-    <xc-button disabled>Default</xc-button>
-    <xc-button type="primary" disabled>Primary</xc-button>
-    <xc-button type="success" disabled>Success</xc-button>
-    <xc-button type="info" disabled>Info</xc-button>
-    <xc-button type="warning" disabled>Warning</xc-button>
-    <xc-button type="danger" disabled>Danger</xc-button>
+    <ns-button disabled>Default</ns-button>
+    <ns-button type="primary" disabled>Primary</ns-button>
+    <ns-button type="success" disabled>Success</ns-button>
+    <ns-button type="info" disabled>Info</ns-button>
+    <ns-button type="warning" disabled>Warning</ns-button>
+    <ns-button type="danger" disabled>Danger</ns-button>
   </p>
 </template>

@@ -1,34 +1,34 @@
 <template>
   <div class="overlay-demo">
-    <xc-button type="primary" @click="showOverlay = true">显示遮罩层</xc-button>
+    <ns-button type="primary" @click="showOverlay = true">显示遮罩层</ns-button>
     <p v-if="clickCount > 0">点击次数: {{ clickCount }}</p>
-    <xc-overlay v-if="showOverlay" @click="handleOverlayClick">
+    <ns-overlay v-if="showOverlay" @click="handleOverlayClick">
       <div class="content-box">
         <p>点击遮罩层会触发 click 事件</p>
         <p>点击次数: {{ clickCount }}</p>
-        <xc-button type="primary" @click.stop
-          >此按钮不会触发遮罩层事件</xc-button
+        <ns-button type="primary" @click.stop
+          >此按钮不会触发遮罩层事件</ns-button
         >
       </div>
-    </xc-overlay>
+    </ns-overlay>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const showOverlay = ref(false)
-const clickCount = ref(0)
+const showOverlay = ref(false);
+const clickCount = ref(0);
 
 const handleOverlayClick = (e: MouseEvent) => {
-  clickCount.value++
+  clickCount.value++;
   if (clickCount.value >= 3) {
-    showOverlay.value = false
+    showOverlay.value = false;
     setTimeout(() => {
-      clickCount.value = 0
-    }, 2000)
+      clickCount.value = 0;
+    }, 2000);
   }
-}
+};
 </script>
 
 <style scoped>

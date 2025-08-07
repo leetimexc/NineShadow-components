@@ -12,7 +12,7 @@ ________________________________________________________________________________
                                                                                               
 __________________________________________________________________________________________________________
                                            author: leetimexc
-`
+`;
 
     const rainbowGradient = `
       background: linear-gradient(135deg, orange 60%, cyan);
@@ -22,10 +22,10 @@ ________________________________________________________________________________
       line-height: 1;
       font-family: monospace;
       font-weight: 600;
-    `
+    `;
 
-    console.info(`%c${logo}`, rainbowGradient)
+    console.info(`%c${logo}`, rainbowGradient);
   } else if (DEV) {
-    console.log('[XcElement]:dev mode...')
+    console.log("[nineshadow-ui]:dev mode...");
   }
 }

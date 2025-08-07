@@ -1,19 +1,19 @@
 <template>
   <div class="overlay-demo">
-    <xc-button type="primary" @click="showOverlay = true">显示遮罩层</xc-button>
-    <xc-overlay v-if="showOverlay" @click="showOverlay = false">
+    <ns-button type="primary" @click="showOverlay = true">显示遮罩层</ns-button>
+    <ns-overlay v-if="showOverlay" @click="showOverlay = false">
       <div class="content-box">
         <p>这是遮罩层内容</p>
-        <xc-button type="primary" @click.stop>点击此处不会关闭遮罩层</xc-button>
+        <ns-button type="primary" @click.stop>点击此处不会关闭遮罩层</ns-button>
       </div>
-    </xc-overlay>
+    </ns-overlay>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const showOverlay = ref(false)
+const showOverlay = ref(false);
 </script>
 
 <style scoped>

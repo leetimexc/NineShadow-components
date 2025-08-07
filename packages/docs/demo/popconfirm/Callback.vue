@@ -1,5 +1,5 @@
 <template>
-  <xc-popconfirm
+  <ns-popconfirm
     width="220"
     confirm-button-text="Delete"
     cancel-button-text="No,Thanks"
@@ -9,6 +9,6 @@
     @confirm="$message.success('Delete Success')"
     @cancel="$message.info('Cancel')"
   >
-    <xc-button>Delete</xc-button>
-  </xc-popconfirm>
+    <ns-button>Delete</ns-button>
+  </ns-popconfirm>
 </template>

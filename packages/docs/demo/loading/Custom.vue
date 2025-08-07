@@ -1,13 +1,13 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const isLoading = ref(true)
-const activeNames = ref([])
+const isLoading = ref(true);
+const activeNames = ref([]);
 </script>
 <template>
   <div class="container" v-loading="isLoading">
-    <xc-collapse v-model="activeNames" accordion>
-      <xc-collapse-item title="Consistency" name="1">
+    <ns-collapse v-model="activeNames" accordion>
+      <ns-collapse-item title="Consistency" name="1">
         <div>
           Consistent with real life: in line with the process and logic of real
           life, and comply with languages and habits that the users are used to;
@@ -16,8 +16,8 @@ const activeNames = ref([])
           Consistent within interface: all elements should be consistent, such
           as: design style, icons and texts, position of elements, etc.
         </div>
-      </xc-collapse-item>
-      <xc-collapse-item title="Feedback" name="2">
+      </ns-collapse-item>
+      <ns-collapse-item title="Feedback" name="2">
         <div>
           Operation feedback: enable the users to clearly perceive their
           operations by style updates and interactive effects;
@@ -26,8 +26,8 @@ const activeNames = ref([])
           Visual feedback: reflect current state by updating or rearranging
           elements of the page.
         </div>
-      </xc-collapse-item>
-      <xc-collapse-item title="Efficiency" name="3">
+      </ns-collapse-item>
+      <ns-collapse-item title="Efficiency" name="3">
         <div>
           Simplify the process: keep operating process simple and intuitive;
         </div>
@@ -39,8 +39,8 @@ const activeNames = ref([])
           Easy to identify: the interface should be straightforward, which helps
           the users to identify and frees them from memorizing and recalling.
         </div>
-      </xc-collapse-item>
-      <xc-collapse-item title="Controllability" name="4">
+      </ns-collapse-item>
+      <ns-collapse-item title="Controllability" name="4">
         <div>
           Decision making: giving advices about operations is acceptable, but do
           not make decisions for the users;
@@ -50,8 +50,8 @@ const activeNames = ref([])
           operate, including canceling, aborting or terminating current
           operation.
         </div>
-      </xc-collapse-item>
-    </xc-collapse>
+      </ns-collapse-item>
+    </ns-collapse>
   </div>
 </template>
 

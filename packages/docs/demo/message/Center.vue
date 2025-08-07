@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { XcMessage } from 'shadow-ui'
+import { NsMessage } from "shadow-ui";
 
 const openCenter = () => {
-  XcMessage({
+  NsMessage({
     showClose: true,
-    message: 'Centered text',
+    message: "Centered text",
     center: true,
-  })
-}
+  });
+};
 </script>
 
 <template>
-  <xc-button plain @click="openCenter">Centered text</xc-button>
+  <ns-button plain @click="openCenter">Centered text</ns-button>
 </template>

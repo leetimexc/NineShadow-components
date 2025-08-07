@@ -1,9 +1,9 @@
 <template>
   <div class="overlay-demo">
-    <xc-button type="primary" @click="showOverlay = true"
-      >显示自定义样式遮罩层</xc-button
+    <ns-button type="primary" @click="showOverlay = true"
+      >显示自定义样式遮罩层</ns-button
     >
-    <xc-overlay
+    <ns-overlay
       v-if="showOverlay"
       @click="showOverlay = false"
       :overlay-class="['custom-overlay', { 'with-border': true }]"
@@ -12,18 +12,18 @@
       <div class="content-box">
         <p>这是自定义样式的遮罩层</p>
         <p>z-index: 1000</p>
-        <xc-button type="primary" @click.stop="showOverlay = false"
-          >关闭</xc-button
+        <ns-button type="primary" @click.stop="showOverlay = false"
+          >关闭</ns-button
         >
       </div>
-    </xc-overlay>
+    </ns-overlay>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const showOverlay = ref(false)
+const showOverlay = ref(false);
 </script>
 
 <style scoped>

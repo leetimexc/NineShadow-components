@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { XcIcon } from 'shadow-ui'
+import { NsIcon } from "shadow-ui";
 </script>
 
 <template>
@@ -7,35 +7,35 @@ import { XcIcon } from 'shadow-ui'
     <h4>动画效果</h4>
     <div class="icon-row">
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'spinner']" size="2x" spin />
+        <NsIcon :icon="['fas', 'spinner']" size="2x" spin />
         <span>spin</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'circle-notch']" size="2x" spinPulse />
+        <NsIcon :icon="['fas', 'circle-notch']" size="2x" spinPulse />
         <span>spinPulse</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'spinner']" size="2x" spinReverse />
+        <NsIcon :icon="['fas', 'spinner']" size="2x" spinReverse />
         <span>spinReverse</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'heart']" size="2x" beat />
+        <NsIcon :icon="['fas', 'heart']" size="2x" beat />
         <span>beat</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'bell']" size="2x" shake />
+        <NsIcon :icon="['fas', 'bell']" size="2x" shake />
         <span>shake</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'star']" size="2x" bounce />
+        <NsIcon :icon="['fas', 'star']" size="2x" bounce />
         <span>bounce</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'lightbulb']" size="2x" fade />
+        <NsIcon :icon="['fas', 'lightbulb']" size="2x" fade />
         <span>fade</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'heart']" size="2x" beatFade />
+        <NsIcon :icon="['fas', 'heart']" size="2x" beatFade />
         <span>beatFade</span>
       </div>
     </div>
@@ -43,31 +43,31 @@ import { XcIcon } from 'shadow-ui'
     <h4>旋转和翻转</h4>
     <div class="icon-row">
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'arrow-up']" size="2x" />
+        <NsIcon :icon="['fas', 'arrow-up']" size="2x" />
         <span>默认</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'arrow-up']" size="2x" rotation="90" />
+        <NsIcon :icon="['fas', 'arrow-up']" size="2x" rotation="90" />
         <span>rotation="90"</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'arrow-up']" size="2x" rotation="180" />
+        <NsIcon :icon="['fas', 'arrow-up']" size="2x" rotation="180" />
         <span>rotation="180"</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'arrow-up']" size="2x" rotation="270" />
+        <NsIcon :icon="['fas', 'arrow-up']" size="2x" rotation="270" />
         <span>rotation="270"</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'arrow-up']" size="2x" flip="horizontal" />
+        <NsIcon :icon="['fas', 'arrow-up']" size="2x" flip="horizontal" />
         <span>flip="horizontal"</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'arrow-up']" size="2x" flip="vertical" />
+        <NsIcon :icon="['fas', 'arrow-up']" size="2x" flip="vertical" />
         <span>flip="vertical"</span>
       </div>
       <div class="icon-item">
-        <XcIcon :icon="['fas', 'arrow-up']" size="2x" flip="both" />
+        <NsIcon :icon="['fas', 'arrow-up']" size="2x" flip="both" />
         <span>flip="both"</span>
       </div>
     </div>

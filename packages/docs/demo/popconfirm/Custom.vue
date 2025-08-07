@@ -1,5 +1,5 @@
 <template>
-  <xc-popconfirm
+  <ns-popconfirm
     width="220"
     confirm-button-text="Delete"
     cancel-button-text="No,Thanks"
@@ -7,6 +7,6 @@
     icon-color="#626aef"
     title="Are you sure to delete this item?"
   >
-    <xc-button>Delete</xc-button>
-  </xc-popconfirm>
+    <ns-button>Delete</ns-button>
+  </ns-popconfirm>
 </template>

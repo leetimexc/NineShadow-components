@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { XcNotification } from 'shadow-ui'
+import { NsNotification } from "shadow-ui";
 
 const open = () => {
-  XcNotification.success({
-    title: 'Info',
-    message: 'This is a message without close button',
+  NsNotification.success({
+    title: "Info",
+    message: "This is a message without close button",
     showClose: false,
-  })
-}
+  });
+};
 </script>
 
 <template>
-  <xc-button plain @click="open"> Hide close button </xc-button>
+  <ns-button plain @click="open"> Hide close button </ns-button>
 </template>
