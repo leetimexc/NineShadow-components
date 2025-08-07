@@ -39,7 +39,7 @@
   background-color: var(--ns-button-bg-color);
   border: var(--ns-border);
   border-color: var(--ns-button-border-color);
-  padding: 8px 16px;
+  padding: 8px 15px;
   font-size: var(--ns-font-size-base);
   border-radius: var(--ns-border-radius-base);
   & + & {
@@ -59,9 +59,17 @@
     outline: none;
   }
   /*plain*/
-  &.is-plain {
+  /* &.is-plain {
     --ns-button-hover-text-color: var(--ns-color-primary);
     --ns-button-hover-bg-color: var(--ns-fill-color-blank);
+    --ns-button-hover-border-color: var(--ns-color-primary);
+  } */
+  &.is-plain {
+    --ns-button-text-color: var(--ns-text-color-regular);
+    --ns-button-bg-color: transparent;
+    --ns-button-border-color: var(--ns-border-color);
+    --ns-button-hover-text-color: var(--ns-color-primary);
+    --ns-button-hover-bg-color: rgba(64, 158, 255, 0.1);
     --ns-button-hover-border-color: var(--ns-color-primary);
   }
   /*round*/
@@ -87,12 +95,12 @@
     background-color: var(--ns-button-disabled-bg-color);
     border-color: var(--ns-button-disabled-border-color);
   }
-  [class*="er-icon"] {
+  [class*='ns-icon'] {
     width: 1em;
     height: 1em;
   }
 }
-@each $val in primary, success, warning, info, danger {
+/* @each $val in primary, success, warning, info, danger {
   .ns-button--$(val) {
     --ns-button-text-color: var(--ns-color-white);
     --ns-button-bg-color: var(--ns-color-$(val));
@@ -121,12 +129,44 @@
     --ns-button-disabled-bg-color: var(--ns-color-$(val)-light-9);
     --ns-button-disabled-border-color: var(--ns-color-$(val)-light-8);
   }
+} */
+@each $val in primary, success, warning, info, danger {
+  .ns-button--$(val) {
+    --ns-button-text-color: var(--ns-color-white);
+    --ns-button-bg-color: var(--ns-color-$(val));
+    --ns-button-border-color: var(--ns-color-$(val));
+    --ns-button-outline-color: var(--ns-color-$(val)-light-5);
+    --ns-button-active-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-hover-text-color: var(--ns-color-white);
+    --ns-button-hover-bg-color: var(--ns-color-$(val)-light-3);
+    --ns-button-hover-border-color: var(--ns-color-$(val)-light-3);
+    --ns-button-active-bg-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-active-border-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-disabled-text-color: var(--ns-color-white);
+    --ns-button-disabled-bg-color: var(--ns-color-$(val)-light-5);
+    --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
+  }
+  .ns-button--$(val).is-plain {
+    --ns-button-text-color: var(--ns-color-$(val));
+    --ns-button-bg-color: transparent;
+    --ns-button-border-color: var(--ns-color-$(val));
+    --ns-button-hover-text-color: var(--ns-color-white);
+    --ns-button-hover-bg-color: var(--ns-color-$(val));
+    --ns-button-hover-border-color: var(--ns-color-$(val));
+    --ns-button-active-bg-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-active-border-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-active-text-color: var(--ns-color-white);
+
+    --ns-button-disabled-text-color: var(--ns-color-$(val)-light-5);
+    --ns-button-disabled-bg-color: transparent;
+    --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
+  }
 }
 .ns-button--large {
   --ns-button-size: 40px;
   height: var(--ns-button-size);
-  padding: 12px 24px;
-  font-size: var(--ns-font-size-medium);
+  padding: 12px 19px;
+  font-size: var(--ns-font-size-base);
   border-radius: var(--ns-border-radius-base);
   /*circle*/
   &.is-circle {
@@ -137,7 +177,7 @@
 .ns-button--small {
   --ns-button-size: 24px;
   height: var(--ns-button-size);
-  padding: 2px 8px;
+  padding: 5px 11px;
   font-size: 12px;
   border-radius: calc(var(--ns-border-radius-base) - 1px);
   /*circle*/
@@ -145,7 +185,7 @@
     border-radius: 50%;
     padding: 5px;
   }
-  [class*="er-icon"] {
+  [class*='ns-icon'] {
     width: 12px;
     height: 12px;
   }
@@ -158,18 +198,18 @@
   &::after {
     clear: both;
   }
-  & > :deep(.ns-button) {
+  & > :deep(.ns-button){
     float: left;
     position: relative;
     margin-left: 0;
-    &:first-child {
+    &:first-child{
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       border-right-color: var(--ns-button-group-border-color);
     }
-    &:last-child {
+    &:last-child{
       border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      border-bottom-left-radius: 0; 
       border-left-color: var(--ns-button-group-border-color);
     }
     &:not(:first-child):not(:last-child) {

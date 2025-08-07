@@ -1,11 +1,4 @@
 <template>
-  <h2>基础按钮</h2>
-  <p>
-    <ns-button type="primary">主要按钮</ns-button>
-    <ns-button type="info">次要按钮</ns-button>
-    <ns-button type="default">线框按钮</ns-button>
-  </p>
-  <hr />
   <p>
     <ns-button>Default</ns-button>
     <ns-button type="primary">Primary</ns-button>

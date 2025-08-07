@@ -46,8 +46,7 @@
   --ns-border-width: 1px;
   --ns-border-style: solid;
   --ns-border-color-hover: var(--ns-text-color-disabled);
-  --ns-border: var(--ns-border-width) var(--ns-border-style)
-    var(--ns-border-color);
+  --ns-border: var(--ns-border-width) var(--ns-border-style) var(--ns-border-color);
   --ns-border-radius-base: 4px;
   --ns-border-radius-small: 2px;
   --ns-border-radius-round: 20px;
