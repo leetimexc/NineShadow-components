@@ -37,7 +37,7 @@
   @each $val, $color in var(--colors) {
     --ns-color-$(val): $(color);
     @for $i from 3 to 9 {
-      --ns-color-$(val)-light-$(i): mix(#fff, $(color), 0$ (i));
+      --ns-color-$(val)-light-$(i): mix(#fff, $(color), $(i)0%);
     }
     --ns-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }
@@ -46,7 +46,8 @@
   --ns-border-width: 1px;
   --ns-border-style: solid;
   --ns-border-color-hover: var(--ns-text-color-disabled);
-  --ns-border: var(--ns-border-width) var(--ns-border-style) var(--ns-border-color);
+  --ns-border: var(--ns-border-width) var(--ns-border-style)
+    var(--ns-border-color);
   --ns-border-radius-base: 4px;
   --ns-border-radius-small: 2px;
   --ns-border-radius-round: 20px;
