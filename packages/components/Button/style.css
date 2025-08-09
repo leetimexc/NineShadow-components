@@ -163,6 +163,11 @@
     --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
   }
 }
+.ns-button--info {
+  --ns-button-text-color: #323843;
+  --ns-button-hover-text-color: #323843;
+  --ns-button-disabled-text-color: #323843;
+}
 .ns-button--large {
   --ns-button-size: 40px;
   height: var(--ns-button-size);
