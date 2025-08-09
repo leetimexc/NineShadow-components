@@ -1,0 +1,125 @@
+.yk-title,
+.yk-text {
+  color: var(--ns-text-color-regular);
+
+  &--primary {
+    color: var(--ns-color-primary);
+  }
+
+  &--secondary {
+    color: var(--ns-text-color-regular);
+  }
+
+  &--success {
+    color: var(--ns-color-success);
+  }
+
+  &--warning {
+    color: var(--ns-color-warning);
+  }
+
+  &--danger {
+    color: var(--ns-color-danger);
+  }
+}
+
+/* Title */
+.yk-title {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+h1.yk-title {
+  font-size: var(--ns-font-size-xxl);
+}
+
+h2.yk-title {
+  font-size: var(--ns-font-size-xl);
+}
+
+h3.yk-title {
+  font-size: var(--ns-font-size-lg);
+}
+
+h4.yk-title {
+  font-size: var(--ns-font-size-base);
+}
+
+h5.yk-title {
+  font-size: var(--ns-font-size-base);
+}
+
+/* // Text */
+.yk-text {
+  font-size: var(--ns-font-size-base);
+
+  &--third {
+    color: var(--ns-text-color-regular);
+  }
+
+  &--disabled {
+    color: var(--ns-text-color-placeholder);
+  }
+
+  &--strong {
+    font-weight: 700;
+  }
+
+  &--mark {
+    background-color: rgba(255, 214, 28, 0.48);
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--del {
+    text-decoration: line-through;
+  }
+}
+
+/* paragraph */
+.yk-paragraph {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1em;
+  transition: all var(--ns-transition-duration);
+
+  .yk-icon {
+    padding: 0.3em;
+    border-radius: 3px;
+    box-sizing: content-box;
+    vertical-align: bottom;
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--ns-fill-color-blank);
+    }
+  }
+
+  .yk-paragraph__more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    color: var(--ns-text-color-regular);
+    background-color: var(--ns-fill-color-blank);
+    user-select: none;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -150%;
+      display: inline-block;
+      width: 150%;
+      height: 100%;
+      background-color: var(--ns-fill-color-blank);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 75%);
+      mask-image: linear-gradient(90deg, transparent, #000 75%);
+      pointer-events: none;
+    }
+  }
+}
