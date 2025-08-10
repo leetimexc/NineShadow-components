@@ -13,7 +13,7 @@
 <ns-title :type="info">H1 欢迎使用 Shadow UI</ns-title>
 
 <!-- 文本 type primary, success, warning, danger, info -->
-<ns-text>Yike Design</ns-text>
+<ns-text>NsElement</ns-text>
 <ns-text type="secondary">Secondary</ns-text>
 <ns-text type="third">third</ns-text>
 <ns-text type="primary">Primary</ns-text>

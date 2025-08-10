@@ -1,9 +1,15 @@
 import type { Ref } from 'vue'
 
-export const STATUS = ['success', 'warning', 'danger', 'primary'] as const
+export const STATUS = [
+  'success',
+  'warning',
+  'danger',
+  'primary',
+  'info',
+] as const
 export type Status = (typeof STATUS)[number]
 
-export const TITLETYPE = [...STATUS, 'secondary'] as const
+export const TITLETYPE = [...STATUS] as const
 export type TitleType = (typeof TITLETYPE)[number]
 // Text
 export const TEXTTYPE = [...TITLETYPE, 'third', 'disabled'] as const
@@ -16,6 +22,7 @@ export type titleProps = {
 
 export type textProps = {
   type?: TextType
+  tag?: string
   del?: boolean
   mark?: boolean
   strong?: boolean

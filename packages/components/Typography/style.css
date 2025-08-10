@@ -1,12 +1,16 @@
-.yk-title,
-.yk-text {
-  color: var(--ns-text-color-regular);
+.ns-title,
+.ns-text {
+  color: var(--ns-text-color-primary);
+  /* #1a1a1a */
 
   &--primary {
     color: var(--ns-color-primary);
   }
 
-  &--secondary {
+  &--info {
+    /* color: var(--ns-color-info); */
+    /* --ns-button-text-color: #323843; */
+    /* color: #5d5e62; */
     color: var(--ns-text-color-regular);
   }
 
@@ -24,38 +28,46 @@
 }
 
 /* Title */
-.yk-title {
+.ns-title {
   margin-top: 1em;
   margin-bottom: 0.5em;
   font-weight: 600;
 }
 
-h1.yk-title {
-  font-size: var(--ns-font-size-xxl);
+h1.ns-title {
+  font-size: var(--ns-font-size-extra-large);
 }
 
-h2.yk-title {
-  font-size: var(--ns-font-size-xl);
+h2.ns-title {
+  font-size: var(--ns-font-size-large);
 }
 
-h3.yk-title {
-  font-size: var(--ns-font-size-lg);
+h3.ns-title {
+  font-size: var(--ns-font-size-medium);
 }
 
-h4.yk-title {
+h4.ns-title {
   font-size: var(--ns-font-size-base);
 }
 
-h5.yk-title {
-  font-size: var(--ns-font-size-base);
+h5.ns-title {
+  font-size: var(--ns-font-size-small);
+}
+
+h6.ns-title {
+  font-size: var(--ns-font-size-extra-small);
 }
 
 /* // Text */
-.yk-text {
+.ns-text {
   font-size: var(--ns-font-size-base);
 
-  &--third {
+  &--secondary {
     color: var(--ns-text-color-regular);
+  }
+
+  &--third {
+    color: var(--ns-text-color-secondary);
   }
 
   &--disabled {
@@ -80,13 +92,13 @@ h5.yk-title {
 }
 
 /* paragraph */
-.yk-paragraph {
+.ns-paragraph {
   position: relative;
   overflow: hidden;
   margin-bottom: 1em;
   transition: all var(--ns-transition-duration);
 
-  .yk-icon {
+  .ns-icon {
     padding: 0.3em;
     border-radius: 3px;
     box-sizing: content-box;
@@ -99,7 +111,7 @@ h5.yk-title {
     }
   }
 
-  .yk-paragraph__more {
+  .ns-paragraph__more {
     position: absolute;
     right: 0;
     bottom: 0;

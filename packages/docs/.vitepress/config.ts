@@ -30,7 +30,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Color 颜色', link: '/color' },
-          { text: 'Typography 字体', link: '/typography' },
+          { text: 'Typography 排版', link: '/components/typography' },
         ],
       },
       {

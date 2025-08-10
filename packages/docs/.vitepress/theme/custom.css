@@ -1,0 +1,38 @@
+/* 重置demo预览区域内的VitePress样式 */
+.vp-demo-preview .vp-demo-display {
+  /* 重置标题样式 */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    line-height: normal;
+    border-bottom: none;
+    border-top: none;
+  }
+
+  /* 重置段落样式 */
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+  }
+
+  /* 确保组件样式不受VitePress影响 */
+  .ns-title, .ns-text, .ns-paragraph {
+    /* 使用 !important 确保覆盖VitePress样式 */
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    border: none !important;
+  }
+}
+
+/* 如果需要，可以针对特定组件添加更多覆盖样式 */
+.vp-doc h2{
+  border-top: none;
+  letter-spacing: -.02em;
+  line-height: auto;
+  margin: 0;
+  padding-top: 0;
+}

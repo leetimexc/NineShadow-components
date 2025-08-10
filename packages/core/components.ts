@@ -19,6 +19,9 @@ import {
   NsOption,
   NsForm,
   NsFormItem,
+  NsTitle,
+  NsText,
+  NsParagraph,
 } from '@shadow-ui/components'
 import type { Plugin } from 'vue'
 
@@ -46,4 +49,7 @@ export default [
   NsOption,
   NsForm,
   NsFormItem,
+  NsTitle,
+  NsText,
+  NsParagraph,
 ] as Plugin[]

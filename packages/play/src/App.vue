@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {
-  XcButton,
-  XcPopconfirm,
+  NsButton,
+  NsPopconfirm,
   type DropdownItemProps,
   type FormInstance,
   ja,
@@ -9,13 +9,16 @@ import {
   en,
   zhCn,
   zhTw,
-  XcConfigProvider,
-  XcNotification,
-  XcMessageBox,
-  XcMessage,
-  XcLoading,
-  XcSelect,
-  XcOption,
+  NsConfigProvider,
+  NsNotification,
+  NsMessageBox,
+  NsMessage,
+  NsLoading,
+  NsSelect,
+  NsOption,
+  NsTitle,
+  NsText,
+  NsParagraph,
 } from 'shadow-ui'
 import { get } from 'lodash-es'
 import { computed, ref, reactive, h } from 'vue'
@@ -31,7 +34,7 @@ function openLoading1() {
 }
 
 function openLoading2() {
-  const _loading = XcLoading.service({
+  const _loading = NsLoading.service({
     lock: true,
     spinner: 'circle-notch',
     text: '加载中...',
@@ -70,34 +73,34 @@ function cancel() {
 }
 
 const open1 = () => {
-  XcMessage({
+  NsMessage({
     showClose: true,
     message: 'This is a message.',
   })
 }
 const open2 = () => {
-  XcMessage({
+  NsMessage({
     showClose: true,
     message: 'Congrats, this is a success message.',
     type: 'success',
   })
 }
 const open3 = () => {
-  XcMessage({
+  NsMessage({
     showClose: true,
     message: 'Warning, this is a warning message.',
     type: 'warning',
   })
 }
 const open4 = () => {
-  XcMessage({
+  NsMessage({
     showClose: true,
     message: 'Oops, this is a error message.',
     type: 'danger',
   })
 }
 function openNotify1() {
-  XcNotification({
+  NsNotification({
     title: 'Title',
     message: h('i', { style: 'color:teal' }, 'This is a remider'),
     position: 'bottom-right',
@@ -105,7 +108,7 @@ function openNotify1() {
 }
 
 function openNotify2() {
-  XcNotification({
+  NsNotification({
     title: 'Prompt',
     message: 'This is a message that does not auto close',
     duration: 0,
@@ -114,16 +117,16 @@ function openNotify2() {
 }
 
 function openConfirm() {
-  XcMessageBox.confirm(
+  NsMessageBox.confirm(
     'proxy will permanently delete the file. Continue?',
     'Warning',
     { type: 'warning' }
   )
     .then((action) => {
-      XcMessage.info(`action: ${action}`)
+      NsMessage.info(`action: ${action}`)
     })
     .catch((action) => {
-      XcMessage.warning(`action: ${action}`)
+      NsMessage.warning(`action: ${action}`)
     })
 }
 const options = ref([
@@ -148,7 +151,7 @@ const rules = reactive({
 const onSubmit = () => {
   formRef.value?.validate().then((valid) => {
     if (valid) {
-      XcMessage.success('submit!')
+      NsMessage.success('submit!')
     }
   })
 }
@@ -159,92 +162,114 @@ const onReset = () => {
 </script>
 
 <template>
-  <xc-button size="small" type="primary">填充按钮</xc-button>
-  <xc-button type="primary">填充按钮</xc-button>
-  <xc-button size="large" type="primary">填充按钮</xc-button>
+  <ns-button size="small" type="primary">填充按钮</ns-button>
+  <ns-button type="primary">填充按钮</ns-button>
+  <ns-button size="large" type="primary">填充按钮</ns-button>
   <hr />
-  <XcButton size="large">large</XcButton>
-  <XcButton size="default">default</XcButton>
-  <XcButton size="small">small</XcButton>
-  <XcButton tag="a">aaaa</XcButton>
-  <XcButton type="primary">primary</XcButton>
-  <XcButton type="success">success</XcButton>
-  <XcButton type="warning">warning</XcButton>
-  <XcButton type="danger">danger</XcButton>
-  <XcButton type="info">info</XcButton>
-  <XcButton nativeType="submit">submit</XcButton>
-  <XcButton nativeType="reset">reset</XcButton>
-  <XcButton nativeType="button">button</XcButton>
+  <NsButton size="large">large</NsButton>
+  <NsButton size="default">default</NsButton>
+  <NsButton size="small">small</NsButton>
+  <NsButton tag="a">aaaa</NsButton>
+  <NsButton type="primary">primary</NsButton>
+  <NsButton type="success">success</NsButton>
+  <NsButton type="warning">warning</NsButton>
+  <NsButton type="danger">danger</NsButton>
+  <NsButton type="info">info</NsButton>
+  <NsButton nativeType="submit">submit</NsButton>
+  <NsButton nativeType="reset">reset</NsButton>
+  <NsButton nativeType="button">button</NsButton>
   <hr />
-  <xc-popconfirm title="确定删除吗？" @confirm="confirm" @cancel="cancel">
-    <xc-button type="primary" size="small">Button</xc-button>
-  </xc-popconfirm>
+  <ns-popconfirm title="确定删除吗？" @confirm="confirm" @cancel="cancel">
+    <ns-button type="primary" size="small">Button</ns-button>
+  </ns-popconfirm>
   <div class="row">
     <div class="col">
       <div class="desc">disabled</div>
-      <xc-dropdown :items="items" disabled>
+      <ns-dropdown :items="items" disabled>
         <span class="dropdown-link"
-          >Dropdown List <xc-icon icon="angle-down"
+          >Dropdown List <ns-icon icon="angle-down"
         /></span>
-      </xc-dropdown>
+      </ns-dropdown>
     </div>
     <div class="col">
       <div class="desc">undisabled</div>
-      <xc-dropdown :items="items">
+      <ns-dropdown :items="items">
         <span class="dropdown-link"
-          >Dropdown List <xc-icon icon="angle-down"
+          >Dropdown List <ns-icon icon="angle-down"
         /></span>
-      </xc-dropdown>
+      </ns-dropdown>
     </div>
   </div>
-  <xc-button @click="changelang" type="info" style="margin-right: 20px"
-    >change language</xc-button
+  <ns-button @click="changelang" type="info" style="margin-right: 20px"
+    >change language</ns-button
   >
-  <xc-config-provider :locale="locale">
-    <xc-popconfirm title="Are you shure to delete this item?">
-      <xc-button>Delete</xc-button>
-    </xc-popconfirm>
-  </xc-config-provider>
-  <xc-button @click="open1">open1</xc-button>
-  <xc-button @click="open2">open2</xc-button>
-  <xc-button @click="open3">open3</xc-button>
-  <xc-button @click="open4">open4</xc-button>
-  <xc-button @click="openNotify1" plain>Closes automatically</xc-button>
-  <xc-button @click="openNotify2" plain>Won't closes automatically</xc-button>
-  <xc-input v-model="form.name" show-password type="password" />
-  <xc-input v-model="form.desc" type="textarea" />
-  <xc-button @click="openConfirm" plain> Click to open the Confirm</xc-button>
-  <xc-button
+  <ns-config-provider :locale="locale">
+    <ns-popconfirm title="Are you shure to delete this item?">
+      <ns-button>Delete</ns-button>
+    </ns-popconfirm>
+  </ns-config-provider>
+  <ns-button @click="open1">open1</ns-button>
+  <ns-button @click="open2">open2</ns-button>
+  <ns-button @click="open3">open3</ns-button>
+  <ns-button @click="open4">open4</ns-button>
+  <ns-button @click="openNotify1" plain>Closes automatically</ns-button>
+  <ns-button @click="openNotify2" plain>Won't closes automatically</ns-button>
+  <ns-input v-model="form.name" show-password type="password" />
+  <ns-input v-model="form.desc" type="textarea" />
+  <ns-button @click="openConfirm" plain> Click to open the Confirm</ns-button>
+  <ns-button
     v-loading.fullscreen.lock="loading"
     type="primary"
     @click="openLoading1"
   >
     As a directive
-  </xc-button>
-  <xc-button type="primary" @click="openLoading2"> As a service </xc-button>
-  <xc-switch
+  </ns-button>
+  <ns-button type="primary" @click="openLoading2"> As a service </ns-button>
+  <ns-switch
     v-model="switchVal"
     size="small"
     :active-value="0"
     :inactive-value="1"
   />
   {{ switchVal }}
-  <xc-select v-model="value" filterable clearable>
-    <xc-option value="beijing" label="Beijing" />
-    <xc-option value="shanghai" label="Shanghai" />
-    <xc-option value="shenzhen" label="Shenzhen" disabled />
-    <xc-option value="hangzhou" label="Hangzhou" />
-  </xc-select>
-  <xc-form ref="formRef" :model="form" :rules="rules">
-    <xc-form-item label="Activity name" prop="name">
-      <xc-input v-model="form.name" />
-    </xc-form-item>
-    <xc-form-item label="Activity form" prop="desc">
-      <xc-input v-model="form.desc" type="textarea" />
-    </xc-form-item>
-    <xc-form-item>
-      <xc-button type="primary" @click="onSubmit">Create</xc-button>
-      <xc-button @click="onReset">Reset</xc-button>
-    </xc-form-item>
-  </xc-form>
+  <ns-select v-model="value" filterable clearable>
+    <ns-option value="beijing" label="Beijing" />
+    <ns-option value="shanghai" label="Shanghai" />
+    <ns-option value="shenzhen" label="Shenzhen" disabled />
+    <ns-option value="hangzhou" label="Hangzhou" />
+  </ns-select>
+  <ns-form ref="formRef" :model="form" :rules="rules">
+    <ns-form-item label="Activity name" prop="name">
+      <ns-input v-model="form.name" />
+    </ns-form-item>
+    <ns-form-item label="Activity form" prop="desc">
+      <ns-input v-model="form.desc" type="textarea" />
+    </ns-form-item>
+    <ns-form-item>
+      <ns-button type="primary" @click="onSubmit">Create</ns-button>
+      <ns-button @click="onReset">Reset</ns-button>
+    </ns-form-item>
+  </ns-form>
+
+  <hr />
+  <ns-title level="1">Title</ns-title>
+  <ns-title level="2">Title</ns-title>
+  <ns-title level="3">Title</ns-title>
+  <ns-title level="4">Title</ns-title>
+  <ns-title level="5">Title</ns-title>
+
+  <ns-text>NsElement</ns-text>
+  <ns-text type="secondary">Secondary</ns-text>
+  <ns-text type="third">third</ns-text>
+  <ns-text type="primary">Primary</ns-text>
+  <ns-text type="success">Success</ns-text>
+  <ns-text type="warning">Warning</ns-text>
+  <ns-text type="info">Info</ns-text>
+  <ns-text type="danger">Danger</ns-text>
+  <ns-text type="disabled">Disabled</ns-text>
+
+  <ns-text mark>Mark</ns-text>
+  <ns-text strong>Bold</ns-text>
+  <ns-text underline>Underline</ns-text>
+  <ns-text del>Line through</ns-text>
 </template>

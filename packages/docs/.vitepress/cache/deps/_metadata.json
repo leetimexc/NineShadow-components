@@ -2,12 +2,12 @@
   "hash": "41e48a54",
   "configHash": "cdda7342",
   "lockfileHash": "7c70d8a2",
-  "browserHash": "56bfdea0",
+  "browserHash": "00553a8a",
   "optimized": {
     "vue": {
       "src": "../../../../../node_modules/.pnpm/vue@3.5.15_typescript@5.8.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "23662f3e",
+      "fileHash": "dee1153d",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
@@ -19,13 +19,13 @@
     "vitepress > @vueuse/core": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+core@10.11.1_vue@3.5.15_typescript@5.8.3_/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "be797580",
+      "fileHash": "8d62eccd",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../../node_modules/.pnpm/@vueuse+integrations@10.11.1_async-validator@4.2.5_focus-trap@7.6.4_vue@3.5.15_typescript@5.8.3_/node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "da995e42",
+      "fileHash": "d0f34838",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
@@ -43,7 +43,7 @@
     "@fortawesome/fontawesome-svg-core": {
       "src": "../../../../../node_modules/.pnpm/@fortawesome+fontawesome-svg-core@6.7.2/node_modules/@fortawesome/fontawesome-svg-core/index.mjs",
       "file": "@fortawesome_fontawesome-svg-core.js",
-      "fileHash": "cbc56c5e",
+      "fileHash": "0016ef27",
       "needsInterop": false
     },
     "@fortawesome/free-solid-svg-icons": {
@@ -55,7 +55,7 @@
     "@fortawesome/vue-fontawesome": {
       "src": "../../../../../node_modules/.pnpm/@fortawesome+vue-fontawesome@3.0.8_@fortawesome+fontawesome-svg-core@6.7.2_vue@3.5.15_typescript@5.8.3_/node_modules/@fortawesome/vue-fontawesome/index.es.js",
       "file": "@fortawesome_vue-fontawesome.js",
-      "fileHash": "66a60148",
+      "fileHash": "de28972e",
       "needsInterop": false
     },
     "@popperjs/core": {
@@ -68,6 +68,12 @@
       "src": "../../../../../node_modules/.pnpm/async-validator@4.2.5/node_modules/async-validator/dist-web/index.js",
       "file": "async-validator.js",
       "fileHash": "f8c827ba",
+      "needsInterop": false
+    },
+    "lodash-es": {
+      "src": "../../../../../node_modules/.pnpm/lodash-es@4.17.21/node_modules/lodash-es/lodash.js",
+      "file": "lodash-es.js",
+      "fileHash": "f2c9a4d1",
       "needsInterop": false
     }
   },

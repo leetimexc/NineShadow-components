@@ -1,18 +1,27 @@
 <template>
-  <component :is="tag" :class="bem([type, _tag, ...classList])">
+  <component
+    :is="tag"
+    class="ns-text"
+    :class="{
+      [`ns-text--${type}`]: type,
+      'ns-text--mark': mark,
+      'ns-text--strong': strong,
+      'ns-text--underline': underline,
+      'ns-text--del': del,
+      [`ns-text--${tag}`]: tag !== 'span',
+    }"
+  >
     <slot></slot>
   </component>
 </template>
 
 <script setup lang="ts">
-import { textProps } from './typography'
-import { createCssScope } from '../../utils'
+import type { textProps } from './types'
 
 defineOptions({
-  name: 'YkText',
+  name: 'NsText',
 })
 
-const bem = createCssScope('text')
 // prettier-ignore
 const props = withDefaults(
   defineProps<textProps>(), 
@@ -24,9 +33,9 @@ const props = withDefaults(
   }
 )
 
-const TagMap = { ...props, type: false }
-const [_tag, ...classList] = Object.entries(TagMap)
-  .filter((item) => item[1])
-  .map((item) => item[0])
-const tag = _tag || 'span'
+const tag = props.tag || 'span'
+const { type } = props
 </script>
+<style scoped>
+@import './style.css';
+</style>
