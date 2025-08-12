@@ -37,7 +37,9 @@
   @each $val, $color in var(--colors) {
     --ns-color-$(val): $(color);
     @for $i from 3 to 9 {
-      --ns-color-$(val)-light-$(i): mix(#fff, $(color), $(i) 0%);
+      /* eslint-disable */
+      --ns-color-$(val)-light-$(i): mix(#fff, $(color), $(i)0%);
+      /* eslint-enable */
     }
     --ns-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }

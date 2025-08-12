@@ -77,7 +77,13 @@ export default defineConfig({
             text: 'ConfigProvider 配置提供者',
             link: '/components/configprovider',
           },
+          { text: 'Space 间距', link: '/components/space' },
         ],
+      },
+      {
+        text: '其他',
+        collapsed: false,
+        items: [{ text: 'Affix 固钉', link: '/components/affix' }],
       },
     ],
 

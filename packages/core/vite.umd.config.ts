@@ -51,7 +51,7 @@ export default defineConfig({
     outDir: 'dist/umd',
     lib: {
       entry: resolve(__dirname, './index.ts'),
-      name: 'XcElement',
+      name: 'shadow-ui',
       fileName: 'index',
       formats: ['umd'],
     },

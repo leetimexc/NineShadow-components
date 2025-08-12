@@ -1,4 +1,5 @@
 import {
+  NsAffix,
   NsButton,
   NsButtonGroup,
   NsIcon,
@@ -23,13 +24,17 @@ import {
   NsText,
   NsParagraph,
   NsSpace,
-} from "@shadow-ui/components";
-import type { Plugin } from "vue";
+  NsCheckbox,
+  NsCheckboxGroup,
+  NsCheckboxButton,
+} from '@shadow-ui/components'
+import type { Plugin } from 'vue'
 
 // Add these named exports
 // export { XcButton, XcButtonGroup, XcIcon, XcCollapse, XcCollapseItem }
 
 export default [
+  NsAffix,
   NsButton,
   NsButtonGroup,
   NsIcon,
@@ -54,4 +59,7 @@ export default [
   NsText,
   NsParagraph,
   NsSpace,
-] as Plugin[];
+  NsCheckbox,
+  NsCheckboxGroup,
+  NsCheckboxButton,
+] as Plugin[]
