@@ -37,7 +37,7 @@
   @each $val, $color in var(--colors) {
     --ns-color-$(val): $(color);
     @for $i from 3 to 9 {
-      --ns-color-$(val)-light-$(i): mix(#fff, $(color), $(i)0%);
+      --ns-color-$(val)-light-$(i): mix(#fff, $(color), $(i) 0%);
     }
     --ns-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }
@@ -73,4 +73,11 @@
   /*animation*/
   --ns-transition-duration: 0.4s;
   --ns-transition-duration-fast: 0.2s;
+
+  /* space*/
+  --ns-space-ss: 4px;
+  --ns-space-s: 8px;
+  --ns-space-m: 12px;
+  --ns-space-l: 16px;
+  --ns-space-xl: 24px;
 }

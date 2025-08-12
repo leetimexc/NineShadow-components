@@ -22,8 +22,9 @@ import {
   NsTitle,
   NsText,
   NsParagraph,
-} from '@shadow-ui/components'
-import type { Plugin } from 'vue'
+  NsSpace,
+} from "@shadow-ui/components";
+import type { Plugin } from "vue";
 
 // Add these named exports
 // export { XcButton, XcButtonGroup, XcIcon, XcCollapse, XcCollapseItem }
@@ -52,4 +53,5 @@ export default [
   NsTitle,
   NsText,
   NsParagraph,
-] as Plugin[]
+  NsSpace,
+] as Plugin[];

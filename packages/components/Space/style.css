@@ -1,0 +1,111 @@
+.ns-space {
+  display: flex;
+  transition: all var(--ns-transition-duration-fast) ease-in-out;
+  gap: var(--ns-space-l);
+}
+
+.ns-space.inline {
+  display: inline-flex;
+}
+
+/* 排列方向 */
+.ns-space.dir-horizontal-reverse {
+  flex-direction: row-reverse;
+}
+
+.ns-space.dir-vertical {
+  flex-direction: column;
+}
+
+.ns-space.dir-vertical-reverse {
+  flex-direction: column-reverse;
+}
+
+/* 对齐方式（y 轴） */
+.ns-space.align-start {
+  align-items: flex-start;
+}
+
+.ns-space.align-center {
+  align-items: center;
+}
+
+.ns-space.align-end {
+  align-items: flex-end;
+}
+
+.ns-space.align-baseline {
+  align-items: baseline;
+}
+
+.ns-space.align.stretch {
+  align-items: stretch;
+}
+
+/* 对齐方式（x 轴） */
+.ns-space.justify-start {
+  justify-content: flex-start;
+}
+
+.ns-space.justify-center {
+  justify-content: center;
+}
+
+.ns-space.justify-end {
+  justify-content: flex-end;
+}
+
+.ns-space.justify-between {
+  justify-content: space-between;
+}
+
+.ns-space.justify-around {
+  justify-content: space-around;
+}
+
+.ns-space.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* 换行（默认值： nowrap） */
+.ns-space.wrap {
+  flex-wrap: wrap;
+}
+
+.ns-space.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* 溢出 */
+.ns-space.overflow-auto {
+  overflow: auto;
+}
+
+.ns-space.overflow-hidden {
+  overflow: hidden;
+}
+
+.ns-space.overflow-scroll {
+  overflow: scroll;
+}
+
+.ns-space.overflow.clip {
+  overflow: clip;
+}
+
+/* 间距 */
+.ns-space.size-ss {
+  gap: var(--ns-space-ss);
+}
+
+.ns-space.size-s {
+  gap: var(--ns-space-s);
+}
+
+.ns-space.size-m {
+  gap: var(--ns-space-m);
+}
+
+.ns-space.size-xl {
+  gap: var(--ns-space-xl);
+}
