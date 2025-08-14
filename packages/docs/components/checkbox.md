@@ -1,101 +1,152 @@
-# NsCheckbox 复选框
+---
+title: Checkbox
+description: Checkbox 组件文档
 
-<!-- :::snippet
-基本用法
-复选框基本用法。
-<CheckboxPrimary/>
+next:
+  link: /components/radio
+  text: Radio 单选框
+
+prev:
+  link: /components/button
+  text: Button 按钮
+---
+
+# Checkbox 多选框
+
+在一组备选项中进行多选。
+
+## 基础用法
+
+单独使用可以表示两种状态之间的切换。
+
+:::preview
+demo-preview=../demo/checkbox/Basic.vue
 :::
 
-:::snippet
-禁用
-复选框禁用状态。
-<CheckboxDisabled/>
+## 禁用状态
+
+多选框不可用状态。设置 `disabled` 属性即可。
+
+:::preview
+demo-preview=../demo/checkbox/Disabled.vue
 :::
 
-:::snippet
-复选框组
-通过 `<yk-checkbox-group>` 组件展示复选框组。设置 `direction="vertical"` 可以展示竖向的复选框组。
-<CheckboxGroupPrimary/>
+## 多选框组
+
+适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。
+
+:::preview
+demo-preview=../demo/checkbox/Group.vue
 :::
 
-:::snippet
-复选框组选项
-`<yk-checkbox-group>` 通过 `options` 属性设置子元素。
-<CheckboxGroupOptions/>
+## 中间状态
+
+`indeterminate` 属性用以表示 checkbox 的不确定状态，一般用于实现全选的效果。
+
+:::preview
+demo-preview=../demo/checkbox/Indeterminate.vue
 :::
 
-:::snippet
-限制可勾选数量
-通过设置 `max` 限制最多可被勾选的项目数。
-<CheckboxMax/>
+## 可选项目数量的限制
+
+使用 `min` 和 `max` 属性能够限制可以被勾选的项目的数量。
+
+:::preview
+demo-preview=../demo/checkbox/Limit.vue
 :::
 
-:::snippet
-全选
-在实现全选的功能时，可以通过 `indeterminate` 属性展示半选效果。
-<CheckboxAll/>
+## 带有边框
+
+设置 `border` 属性可以渲染为带有边框的多选框。
+
+:::preview
+demo-preview=../demo/checkbox/Border.vue
 :::
 
-:::snippet
-间距
-通过`size`实现`<checkbox-group/>`下元素的间距。内置 4 个尺寸，分别是 `s - 4px`，`m - 8px`，`l - 16px`，`xl -24px`，默认为 `l`，为数字或枚举值时，是水平和垂直间距；为数组时，是 `[水平间距, 垂直间距]`。
-<CheckboxGroupSize/>
-::: -->
+## 按钮样式
 
-### API
+按钮样式的多选组合。只需要把 `ns-checkbox` 元素替换为 `ns-checkbox-button` 元素即可。
 
-#### `Checkbox` Props
+:::preview
+demo-preview=../demo/checkbox/Button.vue
+:::
 
-| 参数名            | 描述                                   | 类型                        | 默认值 |
-| ----------------- | -------------------------------------- | --------------------------- | ------ |
-| checked (v-model) | 绑定值                                 | boolean                     | -      |
-| default-checked   | 默认是否选中（非受控状态）             | boolean                     | false  |
-| value             | 选项的 value，当为选项组时为被选中的值 | boolean ｜ number ｜ string | -      |
-| disabled          | 是否禁用                               | boolean                     | false  |
-| indeterminate     | 是否为半选状态                         | boolean                     | false  |
+## 带有边框的按钮样式
 
-#### `Checkbox` Events
+设置 `border` 属性可以渲染为带有边框的按钮样式多选框。
 
-| 事件名 | 描述         | 参数                               |
-| ------ | ------------ | ---------------------------------- |
-| change | 值改变时触发 | value: boolean \| string \| number |
+:::preview
+demo-preview=../demo/checkbox/BorderButton.vue
+:::
 
-#### `Checkbox` Slots
+## 不同尺寸
 
-| 插槽名  | 描述         | 参数 | 版本 |
-| ------- | ------------ | ---- | ---- |
-| default | 自定义 label | -    | -    |
+Checkbox 组件提供除了默认值以外的三种尺寸：`large`、`default`、`small`。
 
-#### `CheckboxGroup` Props
+:::preview
+demo-preview=../demo/checkbox/Size.vue
+:::
 
-| 参数名                | 描述                 | 类型                                            | 默认值       | 版本 |
-| --------------------- | -------------------- | ----------------------------------------------- | ------------ | ---- |
-| model-value (v-model) | 绑定值               | Array<string ｜ number ｜ boolean>              | -            | -    |
-| default-value         | 默认值（非受控状态） | Array<string ｜ number ｜ boolean>              | []           | -    |
-| options               | 选项                 | Array<string ｜ number ｜ CheckboxOption>       | []           | -    |
-| direction             | 复选框的排列方向     | 'horizontal'｜'vertical'                        | 'horizontal' | -    |
-| disabled              | 是否禁用             | boolean                                         | false        | -    |
-| max                   | 支持最多选中的数量   | number                                          | -            | -    |
-| size                  | 间距                 | 's' ｜ 'm' ｜ 'l' ｜ 'xl' ｜ number ｜ number[] | l            |
+## API
 
-#### `CheckboxGroup` Events
+### Checkbox 属性
 
-| 事件名 | 描述         | 参数                               |
-| ------ | ------------ | ---------------------------------- |
-| change | 值改变时触发 | Array<string \| number \| boolean> |
+| 属性名                | 说明                                         | 类型                               | 可选值                  | 默认值  |
+| --------------------- | -------------------------------------------- | ---------------------------------- | ----------------------- | ------- |
+| model-value / v-model | 绑定值                                       | string / number / boolean          | —                       | —       |
+| label                 | 选中状态的值（只有在 checkbox-group 时有效） | string / number / boolean / object | —                       | —       |
+| true-label            | 选中时的值                                   | string / number                    | —                       | —       |
+| false-label           | 没有选中时的值                               | string / number                    | —                       | —       |
+| disabled              | 是否禁用                                     | boolean                            | —                       | false   |
+| border                | 是否显示边框                                 | boolean                            | —                       | false   |
+| size                  | 多选框的尺寸                                 | string                             | large / default / small | default |
+| name                  | 原生 name 属性                               | string                             | —                       | —       |
+| checked               | 当前是否勾选                                 | boolean                            | —                       | false   |
+| indeterminate         | 设置 indeterminate 状态，只负责样式控制      | boolean                            | —                       | false   |
 
-#### `CheckboxGroup` Slots
+### Checkbox 事件
 
-| 插槽名  | 描述              | 参数                 | 版本 |
-| ------- | ----------------- | -------------------- | ---- |
-| default | 自定义内容        | -                    | -    |
-| label   | checkbox 文案内容 | data: CheckboxOption | -    |
+| 事件名 | 说明                     | 回调参数          |
+| ------ | ------------------------ | ----------------- |
+| change | 当绑定值变化时触发的事件 | value: 更新后的值 |
 
-#### `CheckboxOption`
+### Checkbox 插槽
 
-| 插槽名        | 描述           | 类型                        | 默认值 |
-| ------------- | -------------- | --------------------------- | ------ |
-| label         | 文案           | string                      | -      |
-| value         | 选项的 `value` | string ｜ boolean ｜ number | -      |
-| disabled      | 是否禁用       | boolean                     | -      |
-| indeterminate | 是否为半选状态 | boolean                     | false  |
+| 插槽名  | 说明           |
+| ------- | -------------- |
+| default | 自定义默认内容 |
+
+### CheckboxGroup 属性
+
+| 属性名                | 说明                                       | 类型    | 可选值                  | 默认值  |
+| --------------------- | ------------------------------------------ | ------- | ----------------------- | ------- |
+| model-value / v-model | 绑定值                                     | array   | —                       | []      |
+| size                  | 多选框组尺寸                               | string  | large / default / small | default |
+| disabled              | 是否禁用                                   | boolean | —                       | false   |
+| min                   | 可被勾选的 checkbox 的最小数量             | number  | —                       | —       |
+| max                   | 可被勾选的 checkbox 的最大数量             | number  | —                       | —       |
+| text-color            | 按钮形式的 checkbox 激活时的文本颜色       | string  | —                       | #ffffff |
+| fill                  | 按钮形式的 checkbox 激活时的填充色和边框色 | string  | —                       | #409EFF |
+
+### CheckboxGroup 事件
+
+| 事件名 | 说明                     | 回调参数          |
+| ------ | ------------------------ | ----------------- |
+| change | 当绑定值变化时触发的事件 | value: 更新后的值 |
+
+### CheckboxGroup 插槽
+
+| 插槽名  | 说明           |
+| ------- | -------------- |
+| default | 自定义默认内容 |
+
+### CheckboxButton 属性
+
+| 属性名      | 说明                                         | 类型                               | 可选值 | 默认值 |
+| ----------- | -------------------------------------------- | ---------------------------------- | ------ | ------ |
+| label       | 选中状态的值（只有在 checkbox-group 时有效） | string / number / boolean / object | —      | —      |
+| true-label  | 选中时的值                                   | string / number                    | —      | —      |
+| false-label | 没有选中时的值                               | string / number                    | —      | —      |
+| disabled    | 是否禁用                                     | boolean                            | —      | false  |
+| name        | 原生 name 属性                               | string                             | —      | —      |
+| checked     | 当前是否勾选                                 | boolean                            | —      | false  |
