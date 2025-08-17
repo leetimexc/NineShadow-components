@@ -27,6 +27,8 @@ import {
   NsCheckbox,
   NsCheckboxGroup,
   NsCheckboxButton,
+  NsRadio,
+  NsRadioGroup,
 } from '@shadow-ui/components'
 import type { Plugin } from 'vue'
 
@@ -62,4 +64,6 @@ export default [
   NsCheckbox,
   NsCheckboxGroup,
   NsCheckboxButton,
+  NsRadio,
+  NsRadioGroup,
 ] as Plugin[]

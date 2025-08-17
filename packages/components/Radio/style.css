@@ -1,0 +1,257 @@
+/* 移除全局:root定义 */
+
+/* Radio 单选按钮样式 */
+.ns-radio--radio {
+  /* 定义组件级别的CSS变量 */
+  --ns-radio-text-color: var(--font-color-l, #333333);
+  --ns-radio-bg-color: var(--bg-color-l, #ffffff);
+  --ns-radio-border-color: var(--line-color-m, #d9d9d9);
+  --ns-radio-hover-border-color: var(--pcolor, #1890ff);
+  --ns-radio-checked-bg-color: var(--pcolor, #1890ff);
+  --ns-radio-disabled-bg-color: var(--bg-color-s, #f5f5f5);
+  --ns-radio-disabled-border-color: var(--line-color-s, #e8e8e8);
+  --ns-radio-disabled-text-color: var(--font-color-ss, #999999);
+  --ns-radio-inner-bg-color: var(--white, #ffffff);
+  --ns-radio-disabled-inner-bg-color: var(--gray-5, #d9d9d9);
+  
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 22px;
+  font-size: var(--size-s, 14px);
+  cursor: pointer;
+  flex-direction: row;
+}
+
+.ns-radio--radio input {
+  display: none;
+}
+
+.ns-radio--radio.ns-radio--disabled {
+  cursor: not-allowed;
+}
+
+.ns-radio--radio .ns-radio__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: var(--space-s, 8px);
+  min-width: var(--size-m, 16px);
+  min-height: var(--size-m, 16px);
+  border: 1px solid var(--ns-radio-border-color);
+  border-radius: 50%;
+  flex-direction: row;
+  box-sizing: border-box;
+  transition: border 0.3s ease-in-out;
+}
+
+.ns-radio--radio .ns-radio__box:hover {
+  border-color: var(--ns-radio-hover-border-color);
+}
+
+.ns-radio--radio .ns-radio__box--checked {
+  border-color: var(--ns-radio-checked-bg-color);
+  background-color: var(--ns-radio-checked-bg-color);
+}
+
+.ns-radio--radio .ns-radio__box--disabled {
+  border-color: var(--ns-radio-disabled-border-color);
+  background-color: var(--ns-radio-disabled-bg-color);
+}
+
+.ns-radio--radio .ns-radio__inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ns-radio-inner-bg-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ns-radio--radio .ns-radio__inner--checked {
+  opacity: 1;
+}
+
+.ns-radio--radio .ns-radio__inner--disabled {
+  background-color: var(--ns-radio-disabled-inner-bg-color);
+}
+
+.ns-radio--radio .ns-radio__label {
+  color: var(--ns-radio-text-color);
+}
+
+.ns-radio--radio .ns-radio__label--disabled {
+  color: var(--ns-radio-disabled-text-color);
+}
+
+.ns-radio--radio .ns-radio__box--disabled:hover {
+  border-color: var(--ns-radio-disabled-border-color);
+}
+
+.ns-radio--radio:hover .ns-radio__box {
+  border-color: var(--ns-radio-hover-border-color);
+}
+
+.ns-radio--radio:hover .ns-radio__box--disabled {
+  border-color: var(--ns-radio-disabled-border-color);
+}
+
+.ns-radio--radio .ns-radio__box::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  opacity: 0;
+  box-shadow: 0 0 0 calc(17px / 2.5) var(--ns-radio-checked-bg-color);
+  transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  content: '';
+}
+
+.ns-radio--radio .ns-radio__box--shadow::after {
+  opacity: 1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* 按钮样式的Radio */
+.ns-radio--button {
+  cursor: pointer;
+}
+
+.ns-radio--button input {
+  display: none;
+}
+
+.ns-radio--button .ns-radio__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-color-m, #666666);
+  transition: 0.3s;
+  flex-direction: row;
+}
+
+.ns-radio--button .ns-radio__label--s {
+  margin-left: 2px;
+  padding: 0 var(--space-m, 12px);
+  height: 20px;
+  font-size: var(--size-ss, 12px);
+  border-radius: 2px;
+}
+
+.ns-radio--button .ns-radio__label--m {
+  margin-left: 3px;
+  padding: 0 var(--space-m, 12px);
+  height: 26px;
+  font-size: var(--size-s, 14px);
+  border-radius: 3px;
+}
+
+.ns-radio--button .ns-radio__label--l {
+  margin-left: 3px;
+  padding: 0 var(--space-l, 16px);
+  height: 30px;
+  font-size: var(--size-s, 14px);
+  border-radius: 6px;
+}
+
+.ns-radio--button .ns-radio__label--xl {
+  margin-left: 4px;
+  padding: 0 var(--space-xl, 20px);
+  height: 40px;
+  font-size: var(--size-m, 16px);
+  border-radius: 6px;
+}
+
+.ns-radio--button .ns-radio__label--checked {
+  color: var(--ns-radio-checked-bg-color) !important;
+  background-color: var(--ns-radio-bg-color) !important;
+}
+
+.ns-radio--button .ns-radio__label--disabled {
+  opacity: 0.56;
+}
+
+/* Solid样式 */
+.ns-radio--solid .ns-radio__label--checked {
+  color: var(--ns-radio-inner-bg-color) !important;
+  background-color: var(--ns-radio-checked-bg-color) !important;
+}
+
+.ns-radio--button:hover .ns-radio__label {
+  color: var(--font-color-l, #333333);
+  background-color: var(--ns-radio-bg-color);
+}
+
+.ns-radio--disabled {
+  cursor: not-allowed;
+}
+
+.ns-radio--disabled:hover .ns-radio__label {
+  color: var(--font-color-m, #666666);
+  background-color: transparent;
+}
+
+/* Radio组 */
+.ns-radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center !important;
+}
+
+.ns-radio-group--vertical {
+  align-items: flex-start !important;
+}
+
+.ns-radio-group--xl {
+  min-height: 48px;
+}
+
+.ns-radio-group--xl .ns-radio-group__container {
+  padding: 4px 0px;
+  padding-right: 4px;
+  border-radius: var(--radius-m, 6px);
+}
+
+.ns-radio-group--l {
+  min-height: 36px;
+}
+
+.ns-radio-group--l .ns-radio-group__container {
+  padding: 4px 0px;
+  padding-right: 4px;
+  border-radius: var(--radius-m, 6px);
+}
+
+.ns-radio-group--m {
+  min-height: 32px;
+}
+
+.ns-radio-group--m .ns-radio-group__container {
+  padding: 3px 0px;
+  padding-right: 3px;
+  border-radius: var(--radius-s, 4px);
+}
+
+.ns-radio-group--s {
+  min-height: 24px;
+}
+
+.ns-radio-group--s .ns-radio-group__container {
+  padding: 2px 0px;
+  padding-right: 2px;
+  border-radius: var(--radius-s, 4px);
+}
+
+.ns-radio-group__container {
+  display: flex;
+  background: var(--bg-color-s, #f5f5f5);
+}
