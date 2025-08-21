@@ -1,0 +1,68 @@
+.ns-input-number__buttons {
+  position: absolute;
+  right: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ns-input-number__buttons .ns-button {
+  padding: unset;
+  min-width: unset;
+}
+
+.ns-input-number__buttons .ns-button svg {
+  margin: unset !important;
+  fill: #999 !important; /* Assuming @font-color-s is a gray color like #999, replace with actual color */
+}
+
+.ns-input-number__buttons .ns-button:first-child {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.ns-input-number__buttons .ns-button:last-child {
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Small size */
+.ns-input-number--s .ns-button {
+  width: 16px;
+  height: 8px;
+}
+
+.ns-input-number--s svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Medium size */
+.ns-input-number--m .ns-button {
+  width: 20px;
+  height: 12px;
+}
+
+.ns-input-number--m svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Large size */
+.ns-input-number--l .ns-button {
+  width: 24px;
+  height: 14px;
+}
+
+.ns-input-number--l svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Extra large size */
+.ns-input-number--xl .ns-button {
+  width: 28px;
+  height: 20px;
+}
+
+.ns-input-number--xl svg {
+  width: 12px !important;
+  height: 12px !important;
+}
