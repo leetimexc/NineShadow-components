@@ -1,45 +1,48 @@
 <script lang="ts" setup>
-import { ref, computed, inject } from "vue";
-import type { ButtonProps, ButtonEmits, ButtonInstance } from "./types";
-import { throttle } from "lodash-es";
-import { BUTTON_GROUP_CTX_KEY } from "./constants";
-import NsIcon from "../Icon/Icon.vue";
+import { ref, computed, inject } from 'vue'
+import type { ButtonProps, ButtonEmits, ButtonInstance } from './types'
+import { throttle } from 'lodash-es'
+import { BUTTON_GROUP_CTX_KEY } from './constants'
+import NsIcon from '../Icon/Icon.vue'
 
 defineOptions({
-  name: "NsButton",
-});
+  name: 'NsButton',
+})
 const props = withDefaults(defineProps<ButtonProps>(), {
-  tag: "button",
-  nativeType: "button",
+  tag: 'button',
+  nativeType: 'button',
   useThrottle: true,
   throttleDuration: 500,
-});
+  type: 'primary', // 默认类型
+})
 
-const emits = defineEmits<ButtonEmits>();
+const emits = defineEmits<ButtonEmits>()
 
-const slots = defineSlots();
-const ctx = inject(BUTTON_GROUP_CTX_KEY, void 0);
-const _ref = ref<HTMLButtonElement>();
-const size = computed(() => ctx?.size ?? props?.size ?? "");
-const type = computed(() => ctx?.type ?? props?.type ?? "");
-const disabled = computed(() => ctx?.disabled || props?.disabled || false);
+const slots = defineSlots()
+const ctx = inject(BUTTON_GROUP_CTX_KEY, void 0)
+const _ref = ref<HTMLButtonElement>()
+const size = computed(() => ctx?.size ?? props?.size ?? '')
+const type = computed(() => ctx?.type ?? props?.type ?? '')
+const status = computed(() => ctx?.status ?? props?.status ?? '')
+const disabled = computed(() => ctx?.disabled || props?.disabled || false)
 const iconStyle = computed(() => ({
-  marginRight: slots.default ? "6px" : "0px",
-}));
+  marginRight: slots.default ? '6px' : '0px',
+}))
 
-const handleBtnClick = (e: MouseEvent) => emits("click", e);
+const handleBtnClick = (e: MouseEvent) => emits('click', e)
 const handleBtnClickThrottle = throttle(
   handleBtnClick,
   props.throttleDuration,
   { trailing: false }
-);
+)
 
 defineExpose<ButtonInstance>({
   ref: _ref,
   disabled,
   size,
   type,
-});
+  status,
+})
 </script>
 <template>
   <component
@@ -51,8 +54,8 @@ defineExpose<ButtonInstance>({
     :disabled="disabled || loading ? true : void 0"
     :class="{
       [`ns-button--${type}`]: true,
+      [`ns-button--${status}`]: true,
       [`ns-button--${size}`]: true,
-      'is-plain': plain,
       'is-round': round,
       'is-circle': circle,
       'is-disabled': disabled,
@@ -76,5 +79,5 @@ defineExpose<ButtonInstance>({
   </component>
 </template>
 <style scoped>
-@import "./style.css";
+@import './style.css';
 </style>

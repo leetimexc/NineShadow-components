@@ -147,7 +147,7 @@
     --ns-button-disabled-bg-color: var(--ns-color-$(val)-light-5);
     --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
   }
-  .ns-button--$(val).is-plain {
+  .ns-button--$(val).ns-button--outline {
     --ns-button-text-color: var(--ns-color-$(val));
     --ns-button-bg-color: transparent;
     --ns-button-border-color: var(--ns-color-$(val));
@@ -160,6 +160,22 @@
 
     --ns-button-disabled-text-color: var(--ns-color-$(val)-light-5);
     --ns-button-disabled-bg-color: transparent;
+    --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
+  }
+  /* secondary 样式 */
+  .ns-button--secondary.ns-button--$(val) {
+    --ns-button-text-color: var(--ns-color-$(val));
+    --ns-button-bg-color: var(--ns-color-white);
+    --ns-button-border-color: var(--ns-color-$(val));
+    --ns-button-hover-text-color: var(--ns-color-white);
+    --ns-button-hover-bg-color: var(--ns-color-$(val));
+    --ns-button-hover-border-color: var(--ns-color-$(val));
+    --ns-button-active-bg-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-active-border-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-active-text-color: var(--ns-color-white);
+    
+    --ns-button-disabled-text-color: var(--ns-color-$(val)-light-5);
+    --ns-button-disabled-bg-color: var(--ns-color-white);
     --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
   }
 }
