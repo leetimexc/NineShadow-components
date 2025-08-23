@@ -15,9 +15,24 @@ prev:
 
 常用的操作按钮。
 
-## 基础用法
+## 按钮类型
 
-使用 `type`、`plain`、 `round`和 `circle`来定义按钮的样式。
+按钮有三种类型：primary 、secondary 、outline 。
+::: preview
+demo-preview=../demo/button/Primary.vue
+:::
+
+## 按钮状态
+
+按钮的状态分为 primary 主要、success 成功、warning 警告、danger 危险五种，可以与按钮类型同时使用。
+
+::: preview
+demo-preview=../demo/button/Status.vue
+:::
+
+## 按钮形状
+
+使用 `round`和 `circle`来定义按钮的样式。
 
 ::: preview
 demo-preview=../demo/button/Basic.vue
@@ -89,22 +104,22 @@ demo-preview=../demo/button/Throttle.vue
 
 ### Props
 
-| Name              | Description                       | Type                                                             | Default |
-| ----------------- | --------------------------------- | ---------------------------------------------------------------- | ------- |
-| size              | 尺寸                              | `enum` - `'large'\| 'default'\| 'small'`                         | —       |
-| type              | 类型                              | `enum` - `'primary'\| 'success'\| 'warning'\| 'danger'\| 'info'` | info    |
-| plain             | 是否为朴素按钮                    | `boolean`                                                        | false   |
-| round             | 是否为圆角按钮                    | `boolean`                                                        | false   |
-| circle            | 是否为圆形按钮                    | `boolean`                                                        | false   |
-| loading           | 是否为加载中状态                  | `boolean`                                                        | false   |
-| loading-icon      | 自定义加载中状态图标组件          | `string`                                                         | spinner |
-| disabled          | 按钮是否为禁用状态                | `boolean`                                                        | false   |
-| icon              | 按钮图标                          | `string`                                                         | -       |
-| autofocus         | 是否自动聚焦(原生`autofocus`属性) | `boolean`                                                        | false   |
-| native-type       | 原生 type 属性                    | `enum` - `'button'\| 'submit'\| 'reset'`                         | button  |
-| tag               | 自定义元素标签                    | `string`\/`Component`                                            | button  |
-| use-throttle      | 是否使用节流模式                  | `boolean`                                                        | true    |
-| throttle-duration | 节流模式下，节流时间间隔(ms)      | `number`                                                         | 500     |
+| Name              | Description                       | Type                                            | Default |
+| ----------------- | --------------------------------- | ----------------------------------------------- | ------- |
+| type              | 类型                              | `'primary'\| 'secondary'\| 'outline'`           | primary |
+| status            | 状态                              | ` 'primary'\| 'success'\| 'warning'\| 'danger'` | -       |
+| size              | 尺寸                              | `enum` - `'large'\| 'default'\| 'small'`        | -       |
+| round             | 是否为圆角按钮                    | `boolean`                                       | false   |
+| circle            | 是否为圆形按钮                    | `boolean`                                       | false   |
+| loading           | 是否为加载中状态                  | `boolean`                                       | false   |
+| loading-icon      | 自定义加载中状态图标组件          | `string`                                        | spinner |
+| disabled          | 按钮是否为禁用状态                | `boolean`                                       | false   |
+| icon              | 按钮图标                          | `string`                                        | -       |
+| autofocus         | 是否自动聚焦(原生`autofocus`属性) | `boolean`                                       | false   |
+| native-type       | 原生 type 属性                    | `enum` - `'button'\| 'submit'\| 'reset'`        | button  |
+| tag               | 自定义元素标签                    | `string`\/`Component`                           | button  |
+| use-throttle      | 是否使用节流模式                  | `boolean`                                       | true    |
+| throttle-duration | 节流模式下，节流时间间隔(ms)      | `number`                                        | 500     |
 
 ### Events
 

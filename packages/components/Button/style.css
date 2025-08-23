@@ -65,14 +65,14 @@
     --ns-button-hover-bg-color: var(--ns-fill-color-blank);
     --ns-button-hover-border-color: var(--ns-color-primary);
   } */
-  &.is-plain {
+  /* &.is-plain {
     --ns-button-text-color: var(--ns-text-color-regular);
     --ns-button-bg-color: transparent;
     --ns-button-border-color: var(--ns-border-color);
     --ns-button-hover-text-color: var(--ns-color-primary);
     --ns-button-hover-bg-color: transparent;
     --ns-button-hover-border-color: var(--ns-color-primary);
-  }
+  } */
   /*round*/
   &.is-round {
     border-radius: var(--ns-border-radius-round);
@@ -150,26 +150,42 @@
   .ns-button--$(val).ns-button--outline {
     --ns-button-text-color: var(--ns-color-$(val));
     --ns-button-bg-color: transparent;
-    --ns-button-border-color: var(--ns-color-$(val));
-    --ns-button-hover-text-color: var(--ns-color-white);
-    --ns-button-hover-bg-color: var(--ns-color-$(val));
+    --ns-button-border-color: var(--ns-color-$(val)-light-5);
+    --ns-button-hover-text-color: var(--ns-color-$(val));
+    /* --ns-button-hover-bg-color: var(--ns-color-$(val)); */
+    --ns-button-hover-bg-color: var(--ns-color-$(val)-light-9);
     --ns-button-hover-border-color: var(--ns-color-$(val));
     --ns-button-active-bg-color: var(--ns-color-$(val)-dark-2);
     --ns-button-active-border-color: var(--ns-color-$(val)-dark-2);
-    --ns-button-active-text-color: var(--ns-color-white);
+    --ns-button-active-text-color: var(--ns-color-$(val));
 
     --ns-button-disabled-text-color: var(--ns-color-$(val)-light-5);
     --ns-button-disabled-bg-color: transparent;
     --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
   }
   /* secondary 样式 */
+  .ns-button--secondary {
+    /* 次要按钮样式 - 白色背景 */
+    /* --ns-button-bg-color: var(--ns-color-white); */
+    /* --ns-button-border-color: none; */
+    /* --ns-button-text-color: var(--ns-color-text-regular); */
+    --ns-button-text-color: #1e2025;
+    --ns-button-bg-color: rgba(30, 32, 37, .08);
+    --ns-button-border-color: transparent;
+    --ns-button-hover-border-color: transparent;
+    --ns-button-hover-text-color: #1e2025;
+    --ns-button-hover-bg-color: rgba(30, 32, 37, .12);
+  }
   .ns-button--secondary.ns-button--$(val) {
     --ns-button-text-color: var(--ns-color-$(val));
-    --ns-button-bg-color: var(--ns-color-white);
-    --ns-button-border-color: var(--ns-color-$(val));
-    --ns-button-hover-text-color: var(--ns-color-white);
-    --ns-button-hover-bg-color: var(--ns-color-$(val));
-    --ns-button-hover-border-color: var(--ns-color-$(val));
+    /* --ns-button-bg-color: var(--ns-color-white); */
+    --ns-button-bg-color: var(--ns-color-$(val)-light-9);
+    /* --ns-button-border-color: var(--ns-color-$(val)); */
+    /* --ns-button-hover-text-color: var(--ns-color-white); */
+    --ns-button-hover-text-color: var(--ns-color-$(val));
+    --ns-button-hover-bg-color: var(--ns-color-$(val)-light-8);
+    /* --ns-button-hover-border-color: var(--ns-color-$(val)); */
+    /* --ns-button-hover-border-color: transparent; */
     --ns-button-active-bg-color: var(--ns-color-$(val)-dark-2);
     --ns-button-active-border-color: var(--ns-color-$(val)-dark-2);
     --ns-button-active-text-color: var(--ns-color-white);
