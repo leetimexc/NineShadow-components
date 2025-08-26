@@ -38,8 +38,9 @@
   vertical-align: middle;
   -webkit-appearance: none;
   background-color: var(--ns-button-bg-color);
-  border: var(--ns-border);
-  border-color: var(--ns-button-border-color);
+  /* border: var(--ns-border); */
+  border: 1px solid var(--ns-button-border-color);
+  /* border-color: var(--ns-button-border-color); */
   padding: 8px 15px;
   font-size: var(--ns-font-size-base);
   border-radius: var(--ns-border-radius-base);
@@ -147,6 +148,20 @@
     --ns-button-disabled-bg-color: var(--ns-color-$(val)-light-5);
     --ns-button-disabled-border-color: var(--ns-color-$(val)-light-5);
   }
+  .ns-button--outline{
+    /* --ns-button-text-color: #1e2025;
+    --ns-button-bg-color: rgba(30, 32, 37, .08);
+    --ns-button-border-color: transparent;
+    --ns-button-hover-border-color: transparent;
+    --ns-button-hover-text-color: #1e2025;
+   
+
+    --ns-button-active-bg-color: rgba(30, 32, 37, .08);
+    --ns-button-active-border-color: transparent;
+    --ns-button-active-text-color: #1e2025; */
+    --ns-button-hover-bg-color: #F2F3F5;
+    --ns-button-active-border-color: var(--ns-color-primary-light-5);
+  }
   .ns-button--$(val).ns-button--outline {
     --ns-button-text-color: var(--ns-color-$(val));
     --ns-button-bg-color: transparent;
@@ -154,9 +169,9 @@
     --ns-button-hover-text-color: var(--ns-color-$(val));
     /* --ns-button-hover-bg-color: var(--ns-color-$(val)); */
     --ns-button-hover-bg-color: var(--ns-color-$(val)-light-9);
-    --ns-button-hover-border-color: var(--ns-color-$(val));
-    --ns-button-active-bg-color: var(--ns-color-$(val)-dark-2);
-    --ns-button-active-border-color: var(--ns-color-$(val)-dark-2);
+    --ns-button-hover-border-color: var(--ns-color-$(val)-light-5);
+    --ns-button-active-bg-color: var(--ns-color-$(val)-light-8);
+    --ns-button-active-border-color: var(--ns-color-$(val)-light-5);
     --ns-button-active-text-color: var(--ns-color-$(val));
 
     --ns-button-disabled-text-color: var(--ns-color-$(val)-light-5);
@@ -170,11 +185,15 @@
     /* --ns-button-border-color: none; */
     /* --ns-button-text-color: var(--ns-color-text-regular); */
     --ns-button-text-color: #1e2025;
-    --ns-button-bg-color: rgba(30, 32, 37, .08);
+    --ns-button-bg-color: rgba(30, 32, 37, .12);
     --ns-button-border-color: transparent;
     --ns-button-hover-border-color: transparent;
     --ns-button-hover-text-color: #1e2025;
-    --ns-button-hover-bg-color: rgba(30, 32, 37, .12);
+    --ns-button-hover-bg-color: rgba(30, 32, 37, .08);
+
+    --ns-button-active-bg-color: rgba(30, 32, 37, .12);
+    --ns-button-active-border-color: transparent;
+    --ns-button-active-text-color: #1e2025;
   }
   .ns-button--secondary.ns-button--$(val) {
     --ns-button-text-color: var(--ns-color-$(val));
@@ -186,9 +205,9 @@
     --ns-button-hover-bg-color: var(--ns-color-$(val)-light-8);
     /* --ns-button-hover-border-color: var(--ns-color-$(val)); */
     /* --ns-button-hover-border-color: transparent; */
-    --ns-button-active-bg-color: var(--ns-color-$(val)-dark-2);
-    --ns-button-active-border-color: var(--ns-color-$(val)-dark-2);
-    --ns-button-active-text-color: var(--ns-color-white);
+    --ns-button-active-bg-color: var(--ns-color-$(val)-light-7);
+    /* --ns-button-active-border-color: var(--ns-color-$(val)-dark-2); */
+    --ns-button-active-text-color: var(--ns-color-$(val));
     
     --ns-button-disabled-text-color: var(--ns-color-$(val)-light-5);
     --ns-button-disabled-bg-color: var(--ns-color-white);
