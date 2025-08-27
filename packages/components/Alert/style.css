@@ -88,7 +88,7 @@
   opacity: 0;
 }
 
-@each $val in success, warning, info, danger {
+@each $val in success, warning, danger {
   .ns-alert__$(val).ns-alert__light {
     --ns-alert-text-color: var(--ns-color-$(val));
     --ns-alert-bg-color: var(--ns-color-$(val)-light-9);
@@ -97,4 +97,14 @@
     --ns-alert-text-color: var(--ns-color-white);
     --ns-alert-bg-color: var(--ns-color-$(val));
   }
+}
+
+/* 单独处理info状态，使背景色更浅 */
+.ns-alert__info.ns-alert__light {
+  --ns-alert-text-color: #7d8592; /* 使用较浅的灰色 */
+  --ns-alert-bg-color: var(--ns-color-info-light-8); /* 使用light-8而不是light-6，背景更浅一些 */
+}
+.ns-alert__info.ns-alert__dark {
+  --ns-alert-text-color: var(--ns-color-white);
+  --ns-alert-bg-color: #7d8592; /* 使用较浅的灰色 */
 }

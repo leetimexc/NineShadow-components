@@ -1,12 +1,13 @@
 <template>
-  <h2>通过 slot 传入内容</h2>
+  <ns-title :level="2">通过 slot 传入内容</ns-title>
   <div style="max-width: 600px">
     <ns-alert type="success">Success alert</ns-alert>
     <ns-alert type="info">Info alert</ns-alert>
     <ns-alert type="warning">Warning alert</ns-alert>
     <ns-alert type="danger">Error alert</ns-alert>
   </div>
-  <h2>通过 prop 传入内容</h2>
+  <hr />
+  <ns-title :level="2">通过 prop 传入内容</ns-title>
   <div style="max-width: 600px">
     <ns-alert type="success" title="Success alert" />
     <ns-alert type="info" title="Info alert" />
