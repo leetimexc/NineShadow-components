@@ -1,4 +1,5 @@
 .ns-select {
+  /* 使用主题文件中已定义的变量 */
   --ns-select-item-hover-bg-color: var(--ns-fill-color-light);
   --ns-select-item-font-size: var(--ns-font-size-base);
   --ns-select-item-font-color: var(--ns-text-color-regular);
@@ -7,68 +8,119 @@
   --ns-select-input-focus-border-color: var(--ns-color-primary);
 }
 
-.ns-select{
- display: inline-block;
+.ns-select {
+  display: inline-block;
   vertical-align: middle;
   line-height: 32px;
-  :deep(.ns-tooltip__popper) {
-    padding: 0;
-  }
+}
 
-  :deep(.ns-input){
-    .header-angle {
-      transition: transform var(--ns-transition-duration);
-      &.is-active {
-        transform: rotate(180deg);
-      }
-    }
-  }
+/* 使用属性选择器替代:deep()选择器 */
+.ns-select [class^="ns-tooltip__popper"] {
+  padding: 0;
+}
 
-  .ns-select__nodata, .ns-select__loading {
-    padding: 10px 0;
-    margin: 0;
-    text-align: center;
-    color: var(--ns-text-color-secondary);
-    font-size: var(--ns-select-font-size);
-  }
-  .ns-select__menu {
-    list-style: none;
-    margin: 6px 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .ns-select__menu-item { 
-    margin: 0;
-    font-size: var(--ns-select-item-font-size);
-    padding: 0 32px 0 20px;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: var(--ns-select-item-font-color);
-    height: 34px;
-    line-height: 34px;
-    box-sizing: border-box;
-    cursor: pointer;
-    &:hover {
-      background-color: var(--ns-select-item-hover-bg-color);
-    }
-    &.is-selected {
-      color: var(--ns-select-item-selected-font-color);
-      font-weight: 700;    
-    }
-    &.is-highlighted {
-      background-color: var(--ns-select-item-hover-bg-color);
-    }
-    &.is-disabled {
-      color: var(--ns-select-item-disabled-font-color);
-      cursor: not-allowed;
-      &:hover {
-        background-color: transparent;
-      }
-    }
-  }
-  :deep(.ns-input__inner) {
-    cursor: pointer;
-  }
+.ns-select [class^="ns-input"] .header-angle {
+  transition: transform var(--ns-transition-duration);
+}
+
+.ns-select [class^="ns-input"] .header-angle.is-active {
+  transform: rotate(180deg);
+}
+
+.ns-select__nodata, 
+.ns-select__loading {
+  padding: 10px 0;
+  margin: 0;
+  text-align: center;
+  color: var(--ns-text-color-secondary);
+  font-size: var(--ns-font-size-base);
+}
+
+.ns-select__menu {
+  list-style: none;
+  margin: 6px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ns-select__menu-item { 
+  margin: 0;
+  font-size: var(--ns-font-size-base);
+  padding: 0 32px 0 20px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ns-text-color-regular);
+  height: 34px;
+  line-height: 34px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.ns-select__menu-item:hover {
+  background-color: var(--ns-fill-color-light);
+}
+
+.ns-select__menu-item.is-selected {
+  color: var(--ns-color-primary);
+  font-weight: var(--ns-font-weight-primary);    
+}
+
+.ns-select__menu-item.is-highlighted {
+  background-color: var(--ns-fill-color-light);
+}
+
+.ns-select__menu-item.is-disabled {
+  color: var(--ns-text-color-placeholder);
+  cursor: not-allowed;
+}
+
+.ns-select__menu-item.is-disabled:hover {
+  background-color: transparent;
+}
+
+.ns-select__menu-item--active {
+  background-color: var(--ns-fill-color-light);
+  color: var(--ns-color-primary);
+}
+
+.ns-select__group-title {
+  padding: 8px 15px;
+  font-size: var(--ns-font-size-base);
+  color: var(--ns-text-color-secondary);
+  font-weight: var(--ns-font-weight-primary);
+}
+
+.ns-select [class^="ns-input__inner"] {
+  cursor: pointer;
+}
+
+/* 添加下拉菜单样式 */
+.ns-select__dropdown {
+  position: absolute;
+  z-index: 1001;
+  border-radius: var(--ns-border-radius-base);
+  background-color: var(--ns-bg-color-overlay);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* 添加输入框聚焦样式 */
+.ns-select [class^="ns-input"].is-focus [class^="ns-input__inner"] {
+  border-color: var(--ns-color-primary);
+}
+
+/* 添加箭头旋转效果 */
+.ns-select [class^="ns-input__suffix"] {
+  display: flex;
+  align-items: center;
+  color: var(--ns-text-color-placeholder);
+  transition: transform var(--ns-transition-duration-fast);
+}
+
+.ns-select [class^="ns-input"].is-focus [class^="ns-input__suffix"] {
+  transform: rotate(180deg);
 }

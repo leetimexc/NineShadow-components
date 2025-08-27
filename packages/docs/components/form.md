@@ -19,7 +19,7 @@ ps: 表单控件目前不全，待完善
 
 ## 基本用法
 
-最基础的表单包括各种输入表单项，比如`input`、`select`、`switch`等。(目前只开发了这三个 🤣)
+最基础的表单包括各种输入表单项，比如`input`、`input-number`、`select`、`switch`、`radio`、`checkbox` 等。
 在每个 `from` 组件中，需要使用 `from-item` 组件来包裹每个表单项,用于获取值与校验。
 
 ::: preview
