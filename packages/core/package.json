@@ -1,6 +1,6 @@
 {
-  "name": "shadow-ui",
-  "version": "1.0.2",
+  "name": "@nine-shadow/ui",
+  "version": "1.0.0",
   "description": "Components library by Vue3 + TS",
   "type": "module",
   "main": "./dist/umd/index.umd.cjs",
@@ -44,12 +44,13 @@
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
-    "@shadow-ui/components": "workspace:*",
+    "@shadow-ui/components": "1.0.0",
     "terser": "^5.41.0",
     "vite-plugin-compression2": "^2.0.1",
     "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
     "vue": "^3.4.19"
-  }
+  },
+  "gitHead": "ecaa620cd9d29038b30ef1e23b11d8dcf6e0e90b"
 }
