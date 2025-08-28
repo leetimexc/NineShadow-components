@@ -10,7 +10,7 @@ next:
 ## 安装
 
 ```bash
-npm i @shadow-ui --save
+npm i @nine-shadow/ui --save
 ```
 
 ## 开始使用
@@ -19,9 +19,9 @@ npm i @shadow-ui --save
 
 ```js
 // 引入所有组件
-import NsElement from "@shadow-ui";
+import NsElement from "@nine-shadow/ui";
 // 引入样式
-import "@shadow-ui/dist/style.css";
+import "@nine-shadow/ui/dist/style.css";
 
 import App from "./App.vue";
 // 全局使用
@@ -36,14 +36,14 @@ createApp(App).use(NsElement).mount("#app");
 
 **单个导入**
 
-shadow-ui 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
+nine-shadow/ui 提供了基于 ES Module 的开箱即用的 Tree Shaking 功能。
 
 ```vue
 <template>
   <ns-button>我是 Button</ns-button>
 </template>
 <script>
-import { NsButton } from "@shadow-ui";
+import { NsButton } from "@nine-shadow/ui";
 export default {
   components: { NsButton },
 };

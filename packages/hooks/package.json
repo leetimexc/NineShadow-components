@@ -19,7 +19,8 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "vue": "^3.4.27",
-    "lodash-es": "^4.17.21"
-  }
+    "lodash-es": "^4.17.21",
+    "vue": "^3.4.27"
+  },
+  "gitHead": "ecaa620cd9d29038b30ef1e23b11d8dcf6e0e90b"
 }
