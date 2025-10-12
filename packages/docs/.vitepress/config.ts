@@ -90,7 +90,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/leetimexc/shadow-ui' },
+      { icon: 'github', link: 'https://github.com/leetimexc/NineShadow-components' },
     ],
   },
   markdown: {
